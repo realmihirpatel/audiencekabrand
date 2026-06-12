@@ -1,24 +1,397 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>See You At The Movies</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>See You At The Movies | Audience Ka Brand</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
-body{background:#0b0b0b;color:white;font-family:Arial,sans-serif;text-align:center;padding:40px}
-img{max-width:500px;width:100%;border-radius:20px}
-.price{font-size:32px;color:#D4AF37;font-weight:bold}
-.old{text-decoration:line-through;color:gray}
-a{color:#D4AF37}
+
+:root{
+--gold:#D4AF37;
+--black:#0B0B0B;
+--card:#161616;
+--white:#ffffff;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:var(--black);
+color:white;
+}
+
+header{
+background:black;
+padding:20px 8%;
+border-bottom:1px solid var(--gold);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:var(--gold);
+text-decoration:none;
+}
+
+.container{
+max-width:1400px;
+margin:auto;
+padding:60px 8%;
+}
+
+.product{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:60px;
+align-items:center;
+}
+
+.product-image img{
+width:100%;
+border-radius:25px;
+border:2px solid var(--gold);
+}
+
+.badge{
+display:inline-block;
+background:var(--gold);
+color:black;
+font-weight:700;
+padding:8px 15px;
+border-radius:30px;
+margin-bottom:20px;
+}
+
+.product-title{
+font-size:3rem;
+font-weight:800;
+margin-bottom:20px;
+}
+
+.product-subtitle{
+font-size:1.1rem;
+color:#cfcfcf;
+margin-bottom:30px;
+line-height:1.8;
+}
+
+.price{
+display:flex;
+align-items:center;
+gap:15px;
+margin-bottom:30px;
+}
+
+.old-price{
+text-decoration:line-through;
+font-size:24px;
+color:#777;
+}
+
+.new-price{
+font-size:42px;
+font-weight:800;
+color:var(--gold);
+}
+
+.discount{
+background:#0d8c57;
+padding:8px 14px;
+border-radius:30px;
+font-size:14px;
+font-weight:700;
+}
+
+.section-label{
+font-size:18px;
+font-weight:600;
+margin-bottom:15px;
+}
+
+.size-options{
+display:flex;
+gap:10px;
+margin-bottom:30px;
+flex-wrap:wrap;
+}
+
+.size{
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid var(--gold);
+border-radius:12px;
+cursor:pointer;
+transition:.3s;
+}
+
+.size:hover{
+background:var(--gold);
+color:black;
+}
+
+.quantity{
+width:100px;
+padding:12px;
+border:none;
+border-radius:10px;
+font-size:16px;
+margin-bottom:30px;
+}
+
+.buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:16px 35px;
+border:none;
+border-radius:50px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:.3s;
+}
+
+.buy{
+background:var(--gold);
+color:black;
+}
+
+.buy:hover{
+transform:translateY(-3px);
+}
+
+.cart{
+background:white;
+color:black;
+}
+
+.features{
+margin-top:80px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+}
+
+.feature{
+background:var(--card);
+padding:25px;
+border-radius:20px;
+border:1px solid #333;
+}
+
+.feature h3{
+color:var(--gold);
+margin-bottom:10px;
+}
+
+.description{
+margin-top:60px;
+background:var(--card);
+padding:40px;
+border-radius:20px;
+line-height:2;
+}
+
+.back{
+display:inline-block;
+margin-top:40px;
+color:var(--gold);
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+margin-top:80px;
+border-top:1px solid #222;
+color:#888;
+}
+
+@media(max-width:900px){
+
+.product{
+grid-template-columns:1fr;
+}
+
+.product-title{
+font-size:2rem;
+}
+
+.new-price{
+font-size:32px;
+}
+
+}
+
 </style>
+
 </head>
+
 <body>
-<h1>🎬 See You At The Movies</h1>
+
+<header>
+
+<a href="index.html" class="logo">
+🎬 Audience Ka Brand
+</a>
+
+</header>
+
+<div class="container">
+
+<div class="product">
+
+<div class="product-image">
+
 <img src="seeyouatthemovies.png" alt="See You At The Movies">
-<p><span class="old">₹1299</span></p>
-<p class="price">₹999</p>
-<p>Premium oversized cinephile collection.</p>
-<p><a href="index.html">⬅ Back to Store</a></p>
+
+</div>
+
+<div class="product-info">
+
+<div class="badge">
+🎬 NOW SHOWING
+</div>
+
+<h1 class="product-title">
+See You At The Movies
+</h1>
+
+<p class="product-subtitle">
+For the people who never skip a theatrical experience.
+
+A statement piece for every movie lover, theatre explorer and cinephile.
+</p>
+
+<div class="price">
+
+<span class="old-price">
+₹1299
+</span>
+
+<span class="new-price">
+₹999
+</span>
+
+<span class="discount">
+23% OFF
+</span>
+
+</div>
+
+<div class="section-label">
+Select Size
+</div>
+
+<div class="size-options">
+
+<div class="size">S</div>
+<div class="size">M</div>
+<div class="size">L</div>
+<div class="size">XL</div>
+<div class="size">XXL</div>
+
+</div>
+
+<div class="section-label">
+Quantity
+</div>
+
+<input
+type="number"
+value="1"
+min="1"
+class="quantity">
+
+<div class="buttons">
+
+<button class="btn buy">
+🎟 Buy Now
+</button>
+
+<button class="btn cart">
+🍿 Add To Cart
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="features">
+
+<div class="feature">
+<h3>Premium Fabric</h3>
+<p>180-220 GSM oversized fit.</p>
+</div>
+
+<div class="feature">
+<h3>Cinephile Design</h3>
+<p>Created for movie lovers.</p>
+</div>
+
+<div class="feature">
+<h3>High Quality Print</h3>
+<p>Long-lasting vibrant print.</p>
+</div>
+
+<div class="feature">
+<h3>Comfort Fit</h3>
+<p>Everyday wearable oversized silhouette.</p>
+</div>
+
+</div>
+
+<div class="description">
+
+<h2 style="color:#D4AF37;margin-bottom:20px;">
+🍿 Product Story
+</h2>
+
+<p>
+
+Cinema is more than entertainment.
+
+It's anticipation, the smell of popcorn, the darkness before the film begins and the unforgettable moments shared with strangers.
+
+"See You At The Movies" celebrates that feeling.
+
+Wear it to your next screening and let everyone know where you'll be.
+
+</p>
+
+<a href="index.html" class="back">
+⬅ Back To Collection
+</a>
+
+</div>
+
+</div>
+
+<footer>
+
+AUDIENCE KA BRAND<br>
+ROW A | SEAT 01 | ADMIT ONE CINEPHILE
+
+</footer>
+
 </body>
 </html>
