@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audience Ka Brand</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0d0d0d;
+    color:white;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+    background:rgba(0,0,0,0.9);
+    backdrop-filter:blur(10px);
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:800;
+    color:#fff;
+}
+
+.logo span{
+    color:#ff3131;
+}
+
+nav ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ff3131;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:120px 10%;
+    background:
+    linear-gradient(rgba(0,0,0,.75),
+    rgba(0,0,0,.85)),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba');
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content h1{
+    font-size:4rem;
+    margin-bottom:20px;
+}
+
+.hero-content span{
+    color:#ff3131;
+}
+
+.hero-content p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.8;
+    color:#ccc;
+    font-size:1.1rem;
+}
+
+.buttons{
+    margin-top:35px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 30px;
+    margin:10px;
+    border-radius:50px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#ff3131;
+    color:white;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.btn-secondary:hover{
+    background:white;
+    color:black;
+}
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    font-size:2.5rem;
+    margin-bottom:50px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#161616;
+    border-radius:15px;
+    overflow:hidden;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:20px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#bbb;
+}
+
+.about{
+    text-align:center;
+    max-width:900px;
+    margin:auto;
+}
+
+.about p{
+    color:#ccc;
+    line-height:1.9;
+    font-size:1.05rem;
+}
+
+.events{
+    text-align:center;
+}
+
+.event-box{
+    background:#161616;
+    padding:35px;
+    border-radius:15px;
+}
+
+.youtube{
+    text-align:center;
+}
+
+.youtube iframe{
+    width:100%;
+    max-width:900px;
+    height:500px;
+    border:none;
+    border-radius:20px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    background:black;
+    color:#888;
+}
+
+@media(max-width:768px){
+
+.hero-content h1{
+    font-size:2.5rem;
+}
+
+.youtube iframe{
+    height:250px;
+}
+
+nav ul{
+    display:none;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+<div class="logo">Audience<span>KaBrand</span></div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#merch">Merch</a></li>
+<li><a href="#youtube">YouTube</a></li>
+<li><a href="#events">Events</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="hero">
+<div class="hero-content">
+<h1>Made By The <span>Audience</span>, For The Audience.</h1>
+
+<p>
+A community built around Cinema, Cricket, WWE, Theatre Experiences,
+Travel Vlogs and Premium Merchandise.
+Watch. Wear. Experience.
+</p>
+
+<div class="buttons">
+<a href="#merch" class="btn btn-primary">Shop Merch</a>
+<a href="#youtube" class="btn btn-secondary">Watch Videos</a>
+</div>
+</div>
+</section>
+
+<section id="merch">
+<h2 class="section-title">Featured Collection</h2>
+
+<div class="cards">
+
+<div class="card">
+<img src="https://via.placeholder.com/500x500">
+<div class="card-content">
+<h3>I Doom You 3000</h3>
+<p>Oversized premium fan merchandise.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/500x500">
+<div class="card-content">
+<h3>Cinema Collection</h3>
+<p>Designed for movie lovers and theatre fans.</p>
+</div>
+</div>
+
+<div class="card">
+<img src="https://via.placeholder.com/500x500">
+<div class="card-content">
+<h3>Wrestling Collection</h3>
+<p>Inspired by iconic moments and fandom culture.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="youtube" class="youtube">
+
+<h2 class="section-title">Latest YouTube Content</h2>
+
+<iframe
+src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+allowfullscreen>
+</iframe>
+
+</section>
+
+<section id="events" class="events">
+
+<h2 class="section-title">Upcoming Fan Events</h2>
+
+<div class="event-box">
+
+<h3>Movie Screenings • Cricket Watch Parties • WWE Live Events</h3>
+
+<br>
+
+<p>
+Join fellow fans for unforgettable community experiences.
+Audience Ka Brand is more than merchandise —
+it's a movement built around entertainment.
+</p>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">About Audience Ka Brand</h2>
+
+<div class="about">
+
+<p>
+Audience Ka Brand was created by a passionate YouTuber and
+entertainment enthusiast who believes fans deserve more than
+just content.
+
+Our goal is to unite movie lovers, cricket fans,
+wrestling fans and theatre explorers under one community.
+Through videos, merchandise and live events, we bring
+fans together to celebrate what they love.
+</p>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Audience Ka Brand | All Rights Reserved
+</footer>
+
+</body>
+</html>
