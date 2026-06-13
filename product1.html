@@ -36,7 +36,16 @@ position:sticky;
 top:0;
 z-index:100;
 }
+img{
+pointer-events:none;
+user-select:none;
+-webkit-user-drag:none;
+}
 
+body{
+-webkit-user-select:none;
+user-select:none;
+}
 .logo{
 font-size:28px;
 font-weight:800;
@@ -322,6 +331,27 @@ Delivery usually takes 4-10 days across India.
 </div>
 
 </div>
+<script>
+// Disable right click
+document.addEventListener("contextmenu", e => e.preventDefault());
 
+// Disable drag
+document.addEventListener("dragstart", e => e.preventDefault());
+
+// Disable text selection
+document.addEventListener("selectstart", e => e.preventDefault());
+
+// Disable some common shortcuts
+document.addEventListener("keydown", function(e){
+
+if(
+(e.ctrlKey && ["s","u","p"].includes(e.key.toLowerCase())) ||
+e.key === "F12"
+){
+e.preventDefault();
+}
+
+});
+</script>
 </body>
 </html>
