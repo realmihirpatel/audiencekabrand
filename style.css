@@ -1,0 +1,63 @@
+#intro-screen{
+position:fixed;
+inset:0;
+background:black;
+z-index:99999;
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+}
+
+.curtain{
+position:absolute;
+top:0;
+width:50%;
+height:100%;
+background:#4a0000;
+}
+
+.curtain-left{
+left:0;
+animation:openLeft 2s forwards;
+}
+
+.curtain-right{
+right:0;
+animation:openRight 2s forwards;
+}
+
+@keyframes openLeft{
+to{
+transform:translateX(-100%);
+}
+}
+
+@keyframes openRight{
+to{
+transform:translateX(100%);
+}
+}
+
+.ticket-intro{
+text-align:center;
+color:#D4AF37;
+z-index:5;
+}
+
+.ticket-intro h1{
+font-size:4rem;
+}
+
+.ticket-intro p{
+margin:15px 0;
+}
+
+.ticket-intro span{
+border:1px solid #D4AF37;
+padding:10px 20px;
+}
+
+#popcorn-overlay{
+display:none;
+}
