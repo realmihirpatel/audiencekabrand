@@ -1,351 +1,226 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Audience Ka Brand</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
---gold:#D4AF37;
---gold-light:#F5D76E;
---black:#0B0B0B;
---card:#161616;
-}
+<title>
+Audience Ka Brand
+</title>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-scroll-behavior:smooth;
-}
+<meta
+name="description"
+content="Premium apparel made by movie lovers for movie lovers.">
 
-body{
-background:var(--black);
-color:white;
-overflow-x:hidden;
-}
+<link
+rel="preconnect"
+href="https://fonts.googleapis.com">
 
-header{
-position:fixed;
-width:100%;
-top:0;
-background:rgba(0,0,0,.95);
-backdrop-filter:blur(10px);
-z-index:999;
-}
+<link
+rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
-nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:20px 8%;
-}
+<link
+href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+rel="stylesheet">
 
-.logo{
-font-size:28px;
-font-weight:800;
-color:var(--gold);
-}
+<link
+rel="stylesheet"
+href="assets/css/style.css">
 
-nav ul{
-display:flex;
-gap:25px;
-list-style:none;
-}
-
-nav a{
-text-decoration:none;
-color:white;
-}
-
-.hero{
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:20px;
-background:
-linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.9)),
-url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80');
-background-size:cover;
-background-position:center;
-}
-
-.announcement{
-display:inline-block;
-padding:10px 20px;
-background:var(--gold);
-color:black;
-font-weight:700;
-border-radius:50px;
-margin-bottom:20px;
-}
-
-.hero h1{
-font-size:4rem;
-color:var(--gold);
-}
-
-.hero p{
-max-width:800px;
-margin:20px auto;
-color:#ddd;
-}
-
-.btn{
-display:inline-block;
-padding:14px 30px;
-background:var(--gold);
-color:black;
-font-weight:700;
-text-decoration:none;
-border-radius:30px;
-}
-
-section{
-padding:100px 8%;
-}
-
-.section-title{
-font-size:2.7rem;
-text-align:center;
-color:var(--gold);
-margin-bottom:50px;
-}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-gap:30px;
-}
-
-.card{
-background:var(--card);
-border:2px solid var(--gold);
-border-radius:20px;
-overflow:hidden;
-cursor:pointer;
-transition:.4s;
-opacity:0;
-transform:translateY(60px);
-}
-
-.card.show{
-opacity:1;
-transform:translateY(0);
-}
-
-.card:hover{
-transform:translateY(-10px) scale(1.02);
-}
-
-.card::before{
-content:"NOW SHOWING";
-position:absolute;
-margin:15px;
-background:var(--gold);
-color:black;
-padding:8px 12px;
-font-size:11px;
-font-weight:700;
-border-radius:20px;
-}
-
-.card img{
-width:100%;
-height:450px;
-object-fit:cover;
-}
-
-.card-content{
-padding:20px;
-}
-
-.price-box{
-display:flex;
-gap:10px;
-align-items:center;
-margin-top:15px;
-}
-
-.old-price{
-text-decoration:line-through;
-color:#888;
-}
-
-.new-price{
-font-size:24px;
-font-weight:700;
-color:var(--gold-light);
-}
-
-.discount{
-background:#0d8c57;
-padding:5px 10px;
-border-radius:20px;
-font-size:12px;
-}
-
-.event-box,.about-box{
-background:#151515;
-padding:40px;
-border-radius:20px;
-border:1px solid var(--gold);
-text-align:center;
-}
-
-footer{
-text-align:center;
-padding:40px;
-background:black;
-color:var(--gold);
-}
-
-.popcorn-transition{
-position:fixed;
-inset:0;
-background:black;
-display:flex;
-justify-content:center;
-align-items:center;
-gap:20px;
-z-index:99999;
-}
-
-.popcorn{
-font-size:80px;
-animation:explode .8s forwards;
-}
-
-.smash-text{
-position:absolute;
-font-size:3rem;
-font-weight:800;
-color:var(--gold);
-letter-spacing:5px;
-}
-
-@keyframes explode{
-0%{transform:scale(0);opacity:0;}
-50%{transform:scale(2);opacity:1;}
-100%{transform:translateY(-300px) rotate(720deg);opacity:0;}
-}
-
-@media(max-width:768px){
-.hero h1{font-size:2.4rem;}
-nav ul{display:none;}
-}
-</style>
 </head>
 
 <body>
 
-<header>
-<nav>
-<div class="logo">🎬 Audience Ka Brand</div>
-<ul>
-<li><a href="#home">🏠 Home</a></li>
-<li><a href="#merch">🎬 Collection</a></li>
-<li><a href="#events">🎟 Events</a></li>
-<li><a href="#about">🍿 About</a></li>
+<!-- =======================================
+INTRO ANIMATION
+======================================= -->
+
+<div id="intro-screen">
+
+    <div class="curtain curtain-left"></div>
+
+    <div class="curtain curtain-right"></div>
+
+    <div class="ticket-intro">
+
+        <h1>
+            AUDIENCE KA BRAND
+        </h1>
+
+        <p>
+            ADMIT ONE CINEPHILE
+        </p>
+
+        <span>
+            NOW SHOWING
+        </span>
+
+    </div>
+
+</div>
+
+<!-- =======================================
+POPCORN OVERLAY
+======================================= -->
+
+<div id="popcorn-overlay">
+
+    <span class="popcorn">🍿</span>
+    <span class="popcorn">🍿</span>
+    <span class="popcorn">🍿</span>
+    <span class="popcorn">🍿</span>
+    <span class="popcorn">🍿</span>
+
+</div>
+
+<!-- =======================================
+NAVIGATION
+======================================= -->
+
+<header class="navbar">
+
+<div class="container nav-container">
+
+<a
+href="index.html"
+class="logo">
+
+<img
+src="assets/images/logo.png"
+alt="Audience Ka Brand">
+
+<span>
+Audience Ka Brand
+</span>
+
+</a>
+
+<ul class="nav-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="shop.html">
+Shop
+</a>
+</li>
+
+<li>
+<a href="youtube.html">
+YouTube
+</a>
+</li>
+
+<li>
+<a href="events.html">
+Events
+</a>
+</li>
+
+<li>
+<a href="community.html">
+Community
+</a>
+</li>
+
+<li>
+<a href="about.html">
+About
+</a>
+</li>
+
+<li>
+<a href="contact.html">
+Contact
+</a>
+</li>
+
+<li>
+<a href="cart.html">
+🛒 Cart
+</a>
+</li>
+
 </ul>
-</nav>
+
+<div class="mobile-menu">
+
+☰
+
+</div>
+
+</div>
+
 </header>
 
-<section class="hero" id="home">
-<div>
-<div class="announcement">🔥 GRAND LAUNCH OFFER • ALL T-SHIRTS ₹999</div>
-<h1>Made By The Audience, For The Audience</h1>
-<p>🍿 Premium Cinephile Merchandise • 🎬 Theatre Vlogs • 🎟 Fan Events</p>
-<a href="#merch" class="btn">Enter The Theatre</a>
-</div>
-</section>
+<!-- =======================================
+HERO SECTION
+======================================= -->
 
-<section id="merch">
-<h2 class="section-title">🎬 NOW SHOWING</h2>
+<section class="hero">
 
-<div class="cards">
+<div class="hero-content">
 
-<div class="card" onclick="openProduct('product1.html')">
-<img src="seeyouatthemovies.png">
-<div class="card-content">
-<h3>See You At The Movies</h3>
-<div class="price-box"><span class="old-price">₹1299</span><span class="new-price">₹999</span><span class="discount">23% OFF</span></div>
-</div></div>
+<div class="hero-subtitle">
 
-<div class="card" onclick="openProduct('product2.html')">
-<img src="jimcarrey.png">
-<div class="card-content">
-<h3>I Just Love Watching Movies</h3>
-<div class="price-box"><span class="old-price">₹1299</span><span class="new-price">₹999</span><span class="discount">23% OFF</span></div>
-</div></div>
-
-<div class="card" onclick="openProduct('product3.html')">
-<img src="wannagoseeamovie.png">
-<div class="card-content">
-<h3>Wanna Go See A Movie?</h3>
-<div class="price-box"><span class="old-price">₹1299</span><span class="new-price">₹999</span><span class="discount">23% OFF</span></div>
-</div></div>
-
-<div class="card" onclick="openProduct('product4.html')">
-<img src="toomanyfilms.png">
-<div class="card-content">
-<h3>Too Many Films, So Little Time</h3>
-<div class="price-box"><span class="old-price">₹1299</span><span class="new-price">₹999</span><span class="discount">23% OFF</span></div>
-</div></div>
-
-<div class="card" onclick="openProduct('product5.html')">
-<img src="cinephile.png">
-<div class="card-content">
-<h3>Film Addict</h3>
-<div class="price-box"><span class="old-price">₹1299</span><span class="new-price">₹999</span><span class="discount">23% OFF</span></div>
-</div></div>
+🎬 MADE BY MOVIE LOVERS
 
 </div>
-</section>
 
-<section id="events">
-<h2 class="section-title">🎟 FAN EVENTS</h2>
-<div class="event-box">
-Movie Screenings • Cricket Watch Parties • WWE Premium Live Events
+<h1>
+
+FOR MOVIE LOVERS
+
+</h1>
+
+<p>
+
+Premium apparel inspired by cinema,
+theatre culture and unforgettable
+big-screen experiences.
+
+Wear your love for movies.
+
+Live the theatre experience.
+
+</p>
+
+<div class="hero-buttons">
+
+<a
+href="shop.html"
+class="btn btn-gold">
+
+🎟 Shop Collection
+
+</a>
+
+<a
+href="https://youtube.com/@audiencekareaction"
+target="_blank"
+class="btn btn-outline">
+
+📽 Watch Audience Ka Reaction
+
+</a>
+
 </div>
-</section>
 
-<section id="about">
-<h2 class="section-title">🍿 THE AUDIENCE EXPERIENCE</h2>
-<div class="about-box">
-Audience Ka Brand is a cinema-inspired community built for movie lovers.
 </div>
+
 </section>
 
-<footer>
-AUDIENCE KA BRAND<br>
-ROW A | SEAT 01<br>
-ADMIT ONE CINEPHILE
-</footer>
-
-<script>
-function openProduct(page){
-const overlay=document.createElement('div');
-overlay.className='popcorn-transition';
-overlay.innerHTML='<div class="popcorn">🍿</div><div class="popcorn">🍿</div><div class="popcorn">🍿</div><div class="smash-text">NOW SHOWING</div>';
-document.body.appendChild(overlay);
-setTimeout(()=>{window.location.href=page;},1500);
-}
-
-const observer=new IntersectionObserver(entries=>{
-entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add('show');}
-});
-});
-
-document.querySelectorAll('.card').forEach(card=>observer.observe(card));
-</script>
-
-</body>
-</html>
+<!-- =======================================
+FEATURED COLLECTION STARTS HERE
+PART 2 CONTINUES...
+======================================= -->
