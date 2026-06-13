@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -14,9 +12,9 @@
 
 :root{
 --gold:#D4AF37;
+--gold-light:#F5D76E;
 --black:#0B0B0B;
 --card:#161616;
---white:#ffffff;
 }
 
 *{
@@ -32,201 +30,148 @@ color:white;
 }
 
 header{
-background:black;
 padding:20px 8%;
-border-bottom:1px solid var(--gold);
+background:#111;
+position:sticky;
+top:0;
+z-index:100;
 }
 
 .logo{
 font-size:28px;
 font-weight:800;
 color:var(--gold);
-text-decoration:none;
 }
 
 .container{
-max-width:1400px;
+max-width:1300px;
 margin:auto;
 padding:60px 8%;
 }
 
-.product{
+.product-layout{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
+gap:50px;
+align-items:start;
+}
+
+.product-image{
+background:#161616;
+border:2px solid var(--gold);
+border-radius:20px;
+overflow:hidden;
 }
 
 .product-image img{
 width:100%;
-border-radius:25px;
-border:2px solid var(--gold);
-}
-
-.badge{
-display:inline-block;
-background:var(--gold);
-color:black;
-font-weight:700;
-padding:8px 15px;
-border-radius:30px;
-margin-bottom:20px;
+display:block;
 }
 
 .product-title{
 font-size:3rem;
-font-weight:800;
-margin-bottom:20px;
+color:var(--gold);
+margin-bottom:15px;
 }
 
-.product-subtitle{
-font-size:1.1rem;
-color:#cfcfcf;
-margin-bottom:30px;
-line-height:1.8;
-}
-
-.price{
+.price-row{
 display:flex;
-align-items:center;
 gap:15px;
-margin-bottom:30px;
+align-items:center;
+margin:20px 0;
 }
 
 .old-price{
 text-decoration:line-through;
-font-size:24px;
 color:#777;
+font-size:1.2rem;
 }
 
 .new-price{
-font-size:42px;
-font-weight:800;
-color:var(--gold);
+font-size:2rem;
+font-weight:700;
+color:var(--gold-light);
 }
 
 .discount{
 background:#0d8c57;
 padding:8px 14px;
-border-radius:30px;
-font-size:14px;
-font-weight:700;
+border-radius:20px;
+font-size:13px;
 }
 
-.section-label{
-font-size:18px;
-font-weight:600;
-margin-bottom:15px;
-}
-
-.size-options{
+.size-grid{
 display:flex;
 gap:10px;
-margin-bottom:30px;
-flex-wrap:wrap;
+margin:20px 0;
 }
 
-.size{
-width:60px;
-height:60px;
-display:flex;
-align-items:center;
-justify-content:center;
+.size-btn{
+padding:12px 20px;
 border:1px solid var(--gold);
-border-radius:12px;
+background:none;
+color:white;
 cursor:pointer;
-transition:.3s;
+border-radius:10px;
 }
 
-.size:hover{
+.size-btn:hover{
 background:var(--gold);
 color:black;
 }
 
-.quantity{
-width:100px;
-padding:12px;
-border:none;
-border-radius:10px;
-font-size:16px;
-margin-bottom:30px;
+.qty{
+margin:20px 0;
 }
 
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
+.qty input{
+width:80px;
+padding:10px;
+font-size:18px;
 }
 
 .btn{
-padding:16px 35px;
-border:none;
-border-radius:50px;
-font-size:16px;
+display:inline-block;
+padding:15px 30px;
+border-radius:40px;
 font-weight:700;
-cursor:pointer;
-transition:.3s;
+text-decoration:none;
+margin-right:15px;
+margin-top:15px;
 }
 
-.buy{
+.buy-btn{
 background:var(--gold);
 color:black;
 }
 
-.buy:hover{
-transform:translateY(-3px);
-}
-
-.cart{
-background:white;
-color:black;
-}
-
-.features{
-margin-top:80px;
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-gap:20px;
-}
-
-.feature{
-background:var(--card);
-padding:25px;
-border-radius:20px;
-border:1px solid #333;
-}
-
-.feature h3{
+.cart-btn{
+border:1px solid var(--gold);
 color:var(--gold);
-margin-bottom:10px;
 }
 
-.description{
+.section{
 margin-top:60px;
-background:var(--card);
-padding:40px;
+background:#161616;
+padding:30px;
 border-radius:20px;
-line-height:2;
 }
 
-.back{
+.section h2{
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.back-btn{
 display:inline-block;
-margin-top:40px;
+margin-bottom:30px;
 color:var(--gold);
 text-decoration:none;
 }
 
-footer{
-text-align:center;
-padding:40px;
-margin-top:80px;
-border-top:1px solid #222;
-color:#888;
-}
-
 @media(max-width:900px){
 
-.product{
+.product-layout{
 grid-template-columns:1fr;
 }
 
@@ -234,53 +179,41 @@ grid-template-columns:1fr;
 font-size:2rem;
 }
 
-.new-price{
-font-size:32px;
-}
-
 }
 
 </style>
-
 </head>
 
 <body>
 
 <header>
-
-<a href="index.html" class="logo">
-🎬 Audience Ka Brand
-</a>
-
+<div class="logo">🎬 Audience Ka Brand</div>
 </header>
 
 <div class="container">
 
-<div class="product">
+<a href="index.html" class="back-btn">
+← Back To Collection
+</a>
+
+<div class="product-layout">
 
 <div class="product-image">
-
 <img src="seeyouatthemovies.png" alt="See You At The Movies">
-
 </div>
 
-<div class="product-info">
-
-<div class="badge">
-🎬 NOW SHOWING
-</div>
+<div>
 
 <h1 class="product-title">
 See You At The Movies
 </h1>
 
-<p class="product-subtitle">
-For the people who never skip a theatrical experience.
-
-A statement piece for every movie lover, theatre explorer and cinephile.
+<p>
+A premium oversized tee made for true cinephiles.
+Inspired by the magic of theatres and unforgettable movie nights.
 </p>
 
-<div class="price">
+<div class="price-row">
 
 <span class="old-price">
 ₹1299
@@ -296,102 +229,99 @@ A statement piece for every movie lover, theatre explorer and cinephile.
 
 </div>
 
-<div class="section-label">
-Select Size
-</div>
+<h3>Select Size</h3>
 
-<div class="size-options">
+<div class="size-grid">
 
-<div class="size">S</div>
-<div class="size">M</div>
-<div class="size">L</div>
-<div class="size">XL</div>
-<div class="size">XXL</div>
+<button class="size-btn">S</button>
+<button class="size-btn">M</button>
+<button class="size-btn">L</button>
+<button class="size-btn">XL</button>
+<button class="size-btn">XXL</button>
 
 </div>
 
-<div class="section-label">
+<div class="qty">
+
+<label>
 Quantity
-</div>
+</label>
 
-<input
-type="number"
-value="1"
-min="1"
-class="quantity">
+<br><br>
 
-<div class="buttons">
-
-<button class="btn buy">
-🎟 Buy Now
-</button>
-
-<button class="btn cart">
-🍿 Add To Cart
-</button>
+<input type="number" value="1" min="1">
 
 </div>
 
-</div>
+<a href="cart.html" class="btn cart-btn">
+Add To Cart
+</a>
 
-</div>
-
-<div class="features">
-
-<div class="feature">
-<h3>Premium Fabric</h3>
-<p>180-220 GSM oversized fit.</p>
-</div>
-
-<div class="feature">
-<h3>Cinephile Design</h3>
-<p>Created for movie lovers.</p>
-</div>
-
-<div class="feature">
-<h3>High Quality Print</h3>
-<p>Long-lasting vibrant print.</p>
-</div>
-
-<div class="feature">
-<h3>Comfort Fit</h3>
-<p>Everyday wearable oversized silhouette.</p>
-</div>
-
-</div>
-
-<div class="description">
-
-<h2 style="color:#D4AF37;margin-bottom:20px;">
-🍿 Product Story
-</h2>
-
-<p>
-
-Cinema is more than entertainment.
-
-It's anticipation, the smell of popcorn, the darkness before the film begins and the unforgettable moments shared with strangers.
-
-"See You At The Movies" celebrates that feeling.
-
-Wear it to your next screening and let everyone know where you'll be.
-
-</p>
-
-<a href="index.html" class="back">
-⬅ Back To Collection
+<a href="checkout.html" class="btn buy-btn">
+Buy Now
 </a>
 
 </div>
 
 </div>
 
-<footer>
+<div class="section">
 
-AUDIENCE KA BRAND<br>
-ROW A | SEAT 01 | ADMIT ONE CINEPHILE
+<h2>
+🎬 Product Description
+</h2>
 
-</footer>
+<p>
+Designed for movie lovers who believe the theatre experience never gets old.
+Wear your passion for cinema proudly.
+</p>
+
+</div>
+
+<div class="section">
+
+<h2>
+🧵 Fabric Details
+</h2>
+
+<ul>
+<li>100% Premium Cotton</li>
+<li>240 GSM</li>
+<li>Oversized Fit</li>
+<li>Screen Printed Design</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>
+🧼 Wash Care
+</h2>
+
+<ul>
+<li>Machine Wash Cold</li>
+<li>Do Not Iron On Print</li>
+<li>Wash Inside Out</li>
+<li>Do Not Bleach</li>
+</ul>
+
+</div>
+
+<div class="section">
+
+<h2>
+🚚 Shipping Information
+</h2>
+
+<p>
+Orders are processed within 2-4 business days.
+Delivery usually takes 4-10 days across India.
+</p>
+
+</div>
+
+</div>
 
 </body>
 </html>
