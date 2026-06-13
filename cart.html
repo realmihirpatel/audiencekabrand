@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cart | Audience Ka Brand</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--gold:#D4AF37;
+--gold-light:#F5D76E;
+--black:#0B0B0B;
+--card:#161616;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:var(--black);
+color:white;
+min-height:100vh;
+}
+
+header{
+background:#111;
+padding:20px 8%;
+position:sticky;
+top:0;
+z-index:100;
+border-bottom:1px solid rgba(212,175,55,.2);
+}
+
+.logo{
+font-size:28px;
+font-weight:800;
+color:var(--gold);
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:50px 8%;
+}
+
+.page-title{
+font-size:3rem;
+color:var(--gold);
+margin-bottom:40px;
+text-align:center;
+}
+
+.cart-layout{
+display:grid;
+grid-template-columns:2fr 1fr;
+gap:30px;
+}
+
+.cart-items{
+background:var(--card);
+border-radius:20px;
+padding:25px;
+}
+
+.cart-item{
+display:flex;
+gap:20px;
+align-items:center;
+padding:20px 0;
+border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.cart-item img{
+width:120px;
+border-radius:12px;
+pointer-events:none;
+user-select:none;
+-webkit-user-drag:none;
+}
+
+.item-info{
+flex:1;
+}
+
+.item-name{
+font-size:1.2rem;
+font-weight:700;
+margin-bottom:10px;
+}
+
+.item-price{
+color:var(--gold);
+font-size:1.2rem;
+}
+
+.qty-box{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:10px;
+}
+
+.qty-box input{
+width:70px;
+padding:8px;
+background:#111;
+border:1px solid #333;
+color:white;
+border-radius:8px;
+}
+
+.remove-btn{
+background:#8b1d1d;
+border:none;
+color:white;
+padding:10px 16px;
+border-radius:10px;
+cursor:pointer;
+}
+
+.summary{
+background:var(--card);
+padding:25px;
+border-radius:20px;
+height:fit-content;
+}
+
+.summary h2{
+color:var(--gold);
+margin-bottom:20px;
+}
+
+.summary-row{
+display:flex;
+justify-content:space-between;
+margin:15px 0;
+}
+
+.total{
+font-size:1.4rem;
+font-weight:700;
+color:var(--gold-light);
+}
+
+.checkout-btn{
+display:block;
+width:100%;
+margin-top:25px;
+padding:16px;
+background:var(--gold);
+color:black;
+font-weight:700;
+text-align:center;
+text-decoration:none;
+border-radius:12px;
+}
+
+.empty-cart{
+text-align:center;
+padding:50px;
+color:#aaa;
+}
+
+.back-btn{
+display:inline-block;
+margin-bottom:30px;
+color:var(--gold);
+text-decoration:none;
+}
+
+footer{
+text-align:center;
+padding:40px;
+margin-top:50px;
+border-top:1px solid rgba(255,255,255,.08);
+color:var(--gold);
+}
+
+@media(max-width:900px){
+
+.cart-layout{
+grid-template-columns:1fr;
+}
+
+.cart-item{
+flex-direction:column;
+align-items:flex-start;
+}
+
+.page-title{
+font-size:2rem;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="logo">🎬 Audience Ka Brand</div>
+</header>
+
+<div class="container">
+
+<a href="index.html" class="back-btn">
+← Continue Shopping
+</a>
+
+<h1 class="page-title">
+🛒 Your Cart
+</h1>
+
+<div class="cart-layout">
+
+<div class="cart-items" id="cartItems">
+
+<div class="cart-item">
+
+<img src="seeyouatthemovies.png" alt="Product">
+
+<div class="item-info">
+
+<div class="item-name">
+See You At The Movies
+</div>
+
+<div class="item-price">
+₹999
+</div>
+
+<div class="qty-box">
+
+<label>Qty:</label>
+
+<input
+type="number"
+value="1"
+min="1"
+id="qty">
+
+</div>
+
+</div>
+
+<button class="remove-btn">
+Remove
+</button>
+
+</div>
+
+</div>
+
+<div class="summary">
+
+<h2>
+Order Summary
+</h2>
+
+<div class="summary-row">
+<span>Subtotal</span>
+<span>₹999</span>
+</div>
+
+<div class="summary-row">
+<span>Shipping</span>
+<span>FREE</span>
+</div>
+
+<hr style="margin:15px 0;border-color:#333;">
+
+<div class="summary-row total">
+<span>Total</span>
+<span>₹999</span>
+</div>
+
+<a
+href="checkout.html"
+class="checkout-btn">
+
+Proceed To Checkout
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+<footer>
+
+AUDIENCE KA BRAND
+
+<br><br>
+
+Made By Movie Lovers,
+For Movie Lovers
+
+</footer>
+
+<script>
+
+/* Disable Right Click */
+document.addEventListener(
+'contextmenu',
+e=>e.preventDefault()
+);
+
+/* Disable Drag */
+document.addEventListener(
+'dragstart',
+e=>e.preventDefault()
+);
+
+/* Disable Selection */
+document.addEventListener(
+'selectstart',
+e=>e.preventDefault()
+);
+
+/* Disable Save Source */
+document.addEventListener(
+'keydown',
+function(e){
+
+if(
+(e.ctrlKey &&
+(
+e.key==='s' ||
+e.key==='u'
+))
+||
+e.key==='F12'
+){
+e.preventDefault();
+}
+
+});
+
+</script>
+
+</body>
+</html>
