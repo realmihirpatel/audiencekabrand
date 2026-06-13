@@ -175,7 +175,32 @@ object-fit:cover;
 .card-content{
 padding:20px;
 }
+img{
+pointer-events:none;
+user-select:none;
+-webkit-user-drag:none;
+}
 
+body{
+-webkit-user-select:none;
+user-select:none;
+}
+
+.hero h1{
+text-shadow:
+0 0 15px rgba(212,175,55,.4),
+0 0 30px rgba(212,175,55,.2);
+}
+
+.card:hover{
+transform:
+translateY(-15px)
+scale(1.03);
+
+box-shadow:
+0 20px 50px
+rgba(212,175,55,.25);
+}
 .price-box{
 display:flex;
 gap:10px;
@@ -334,27 +359,84 @@ Audience Ka Brand is a cinema-inspired community built for movie lovers.
 </section>
 
 <footer>
-AUDIENCE KA BRAND<br>
-ROW A | SEAT 01<br>
-ADMIT ONE CINEPHILE
+
+<h2>🎬 Audience Ka Brand</h2>
+
+<br>
+
+<p>
+Made By Movie Lovers,
+For Movie Lovers
+</p>
+
+<br>
+
+<p>
+📧 Contactus@audiencekabrand.com
+</p>
+
+<p>
+📽 Audience Ka Reaction
+</p>
+
+<p>
+🍿 AudienceKaBrand.com
+</p>
+
+<br>
+
+© 2026 Audience Ka Brand
+
 </footer>
 
 <script>
+
 function openProduct(page){
+
 const overlay=document.createElement('div');
+
 overlay.className='popcorn-transition';
-overlay.innerHTML='<div class="popcorn">🍿</div><div class="popcorn">🍿</div><div class="popcorn">🍿</div><div class="smash-text">NOW SHOWING</div>';
+
+overlay.innerHTML=
+'<div class="popcorn">🍿</div>\
+<div class="popcorn">🍿</div>\
+<div class="popcorn">🍿</div>\
+<div class="smash-text">NOW SHOWING</div>';
+
 document.body.appendChild(overlay);
-setTimeout(()=>{window.location.href=page;},1500);
+
+setTimeout(()=>{
+window.location.href=page;
+},1500);
+
 }
 
 const observer=new IntersectionObserver(entries=>{
 entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add('show');}
+if(entry.isIntersecting){
+entry.target.classList.add('show');
+}
 });
 });
 
-document.querySelectorAll('.card').forEach(card=>observer.observe(card));
+document.querySelectorAll('.card')
+.forEach(card=>observer.observe(card));
+
+document.addEventListener(
+'contextmenu',
+e=>e.preventDefault()
+);
+
+document.addEventListener(
+'dragstart',
+e=>e.preventDefault()
+);
+
+document.addEventListener(
+'selectstart',
+e=>e.preventDefault()
+);
+
 </script>
 
 </body>
