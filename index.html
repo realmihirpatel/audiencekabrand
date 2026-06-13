@@ -123,7 +123,17 @@ display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:30px;
 }
-
+.card{
+position:relative;
+background:var(--card);
+border:2px solid var(--gold);
+border-radius:20px;
+overflow:hidden;
+cursor:pointer;
+transition:.4s;
+opacity:0;
+transform:translateY(60px);
+}
 .card{
 background:var(--card);
 border:2px solid var(--gold);
