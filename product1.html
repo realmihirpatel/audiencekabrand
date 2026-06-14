@@ -241,13 +241,15 @@ Inspired by the magic of theatres and unforgettable movie nights.
 <h3>Select Size</h3>
 
 <div class="size-grid">
+<select id="sizeSelect" style="padding:12px;border-radius:10px;background:#111;color:white;border:1px solid #D4AF37;">
 
-<button class="size-btn">S</button>
-<button class="size-btn">M</button>
-<button class="size-btn">L</button>
-<button class="size-btn">XL</button>
-<button class="size-btn">XXL</button>
+<option value="S">S</option>
+<option value="M">M</option>
+<option value="L" selected>L</option>
+<option value="XL">XL</option>
+<option value="XXL">XXL</option>
 
+</select>
 </div>
 
 <div class="qty">
@@ -258,7 +260,11 @@ Quantity
 
 <br><br>
 
-<input type="number" value="1" min="1">
+<input
+type="number"
+value="1"
+min="1"
+id="quantity">
 
 </div>
 <button onclick="addToCart()" class="btn cart-btn">
@@ -351,6 +357,60 @@ e.preventDefault();
 }
 
 });
+
+  function addToCart(){
+
+const product = {
+
+name:"See You At The Movies",
+
+price:999,
+
+image:"seeyouatthemovies.png",
+
+size:document.getElementById("sizeSelect").value,
+
+quantity:parseInt(
+document.getElementById("quantity").value
+)
+
+};
+
+localStorage.setItem(
+"cartItem",
+JSON.stringify(product)
+);
+
+window.location.href="cart.html";
+
+}
+
+function buyNow(){
+
+const product = {
+
+name:"See You At The Movies",
+
+price:999,
+
+image:"seeyouatthemovies.png",
+
+size:document.getElementById("sizeSelect").value,
+
+quantity:parseInt(
+document.getElementById("quantity").value
+)
+
+};
+
+localStorage.setItem(
+"cartItem",
+JSON.stringify(product)
+);
+
+window.location.href="checkout.html";
+
+}
 </script>
 </body>
 </html>
