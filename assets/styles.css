@@ -1,0 +1,514 @@
+
+:root{
+  --yellow:#F4C542;
+  --yellow-dark:#D9A900;
+  --paper:#ffffff;
+  --paper-2:#faf7ef;
+  --ink:#111111;
+  --muted:#5d5d5d;
+  --line:#e8e1cd;
+  --card:#ffffff;
+  --shadow:0 18px 48px rgba(0,0,0,.08);
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  color:var(--ink);
+  background:linear-gradient(180deg,#fff, #fffaf1);
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button,input,textarea,select{font:inherit}
+.container{max-width:1280px;margin:0 auto;padding:0 20px}
+.topbar{
+  position:sticky;top:0;z-index:1000;
+  background:var(--yellow);
+  color:#111;
+  padding:10px 0;
+  font-weight:800;
+  overflow:hidden;
+}
+.ticker{
+  white-space:nowrap;
+  display:flex;
+  gap:70px;
+  animation:marquee 35s linear infinite;
+}
+@keyframes marquee{from{transform:translateX(0)} to{transform:translateX(-50%)}}
+header{
+  position:sticky;top:0;z-index:999;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+.nav{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  gap:18px;
+  align-items:center;
+  padding:14px 0;
+}
+.brand{
+  display:flex;align-items:center;gap:10px;
+  font-weight:900;color:var(--yellow-dark);
+  white-space:nowrap;
+}
+.brand img{width:32px;height:32px;border-radius:50%;object-fit:contain}
+.navlinks{
+  display:flex;justify-content:center;gap:20px;flex-wrap:wrap
+}
+.navlinks a{font-weight:700;padding:6px 0}
+.navlinks a:hover{color:var(--yellow-dark)}
+.actions{display:flex;gap:10px;align-items:center;justify-content:flex-end;flex-wrap:wrap}
+.search{
+  width:220px;max-width:100%;
+  padding:11px 14px;border:1px solid #ddd;border-radius:14px;background:#fff;
+}
+.pill{
+  display:inline-flex;align-items:center;justify-content:center;
+  height:42px;padding:0 14px;border-radius:14px;border:1px solid #ddd;background:#fff;font-weight:700
+}
+.pill.highlight{background:#FFF1CC;border-color:#F0D38A}
+.hero{
+  padding:58px 0 28px;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:22px;
+  align-items:stretch;
+}
+.hero-main, .panel, .card, .info{
+  background:var(--card);
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:26px;
+  box-shadow:var(--shadow);
+}
+.hero-main{
+  min-height:540px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.74) 48%, rgba(255,255,255,.34) 100%),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;background-position:center;
+  padding:34px;
+  display:grid;
+  grid-template-columns:1fr minmax(300px,390px);
+  gap:22px;
+  align-items:stretch;
+}
+.hero-copy{
+  display:flex;flex-direction:column;justify-content:center
+}
+.badge{
+  display:inline-flex;align-items:center;gap:8px;
+  width:max-content;
+  padding:10px 16px;border-radius:999px;
+  background:#FFF3C9;border:1px solid #F0D58A;
+  font-weight:900;font-size:.92rem;
+}
+h1{
+  font-size:clamp(2.5rem,5vw,5.8rem);
+  line-height:.92;
+  letter-spacing:-1.5px;
+  margin:16px 0 14px;
+}
+.lead{max-width:62ch;font-size:1.02rem;line-height:1.8;color:var(--muted)}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.btn, .btn-outline{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 24px;border-radius:999px;border:none;
+  font-weight:800;cursor:pointer;transition:.2s ease
+}
+.btn{background:var(--yellow);color:#111;box-shadow:0 12px 28px rgba(244,197,66,.25)}
+.btn-outline{background:transparent;border:1px solid #C7A631;color:#111}
+.btn:hover,.btn-outline:hover{transform:translateY(-2px)}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+.meta span{
+  padding:10px 14px;border-radius:999px;background:#fff;border:1px solid #e9e3cd;
+  font-size:.9rem;font-weight:700
+}
+.side{
+  display:grid;grid-template-rows:1fr auto;gap:16px
+}
+.feature{
+  border-radius:24px;
+  background:linear-gradient(135deg,#FFE089,#FFD24D);
+  padding:22px;
+  position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.feature::after{
+  content:"";position:absolute;right:-34px;top:-34px;width:160px;height:160px;border-radius:50%;background:rgba(255,255,255,.22)
+}
+.feature h2{font-size:clamp(1.5rem,2vw,2.2rem);line-height:1.02;margin:0 0 12px}
+.feature p{margin:0;color:#222;line-height:1.7;font-weight:600}
+.qrbox{
+  display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:stretch;
+  padding:18px;border-radius:24px;background:#fff;border:1px solid #ead9a2
+}
+.qrleft{
+  border-radius:18px;background:#FFF7DE;border:1px solid #f0d68f;
+  padding:16px;display:flex;flex-direction:column;justify-content:center
+}
+.qrleft small{font-weight:900;color:#7a5d00}
+.qrleft h3{margin:8px 0 10px}
+.qrright{
+  border-radius:18px;background:#111;color:#fff;font-weight:900;
+  display:flex;align-items:center;justify-content:center;text-align:center;padding:18px
+}
+.quick{
+  margin-top:18px;
+  background:#fff3d0;
+  border-top:1px solid rgba(0,0,0,.04);
+  border-bottom:1px solid rgba(0,0,0,.04);
+}
+.quick-inner{
+  display:grid;grid-template-columns:auto auto 1fr auto;gap:14px;align-items:center;
+  padding:18px 0;
+}
+.quick-title{font-weight:900;white-space:nowrap}
+.tabs{
+  display:flex;gap:8px;flex-wrap:wrap;padding:6px;background:#fff;border:1px solid #ead9a2;border-radius:14px
+}
+.tabs button{
+  border:none;background:transparent;padding:10px 14px;border-radius:10px;cursor:pointer;font-weight:800
+}
+.tabs button.active{background:var(--yellow)}
+.searchwide{
+  width:100%;padding:13px 16px;border-radius:14px;border:1px solid #e0d6b2;background:#fff
+}
+.goldbtn{
+  border:none;background:#111;color:#fff;padding:13px 18px;border-radius:14px;font-weight:800;cursor:pointer
+}
+.section-nav{
+  display:flex;gap:26px;overflow:auto;border-bottom:1px solid #eee;
+  margin-top:14px;
+}
+.section-nav a{padding:16px 0 14px;font-weight:800;white-space:nowrap;border-bottom:2px solid transparent}
+.section-nav a.active,.section-nav a:hover{color:var(--yellow-dark);border-bottom-color:var(--yellow-dark)}
+section{
+  padding:72px 0;
+}
+.section-header{
+  display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:24px
+}
+.section-title{
+  font-size:clamp(1.8rem,3vw,2.8rem);line-height:1.05;letter-spacing:-.8px;margin:0
+}
+.section-subtitle{color:var(--muted);line-height:1.8;max-width:70ch;margin:0}
+.poster-grid,.cards,.info-grid{
+  display:grid;gap:20px
+}
+.poster-grid{grid-template-columns:repeat(5,minmax(0,1fr))}
+.cards{grid-template-columns:repeat(3,minmax(0,1fr))}
+.info-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.poster, .info, .card{
+  overflow:hidden
+}
+.poster{
+  position:relative;
+  background:#fff;
+  border:1px solid #e8e3d3;
+  border-radius:24px;
+  box-shadow:var(--shadow);
+}
+.poster .tag{
+  position:absolute;top:14px;left:14px;z-index:2;
+  padding:8px 12px;border-radius:999px;background:rgba(244,197,66,.95);font-size:.72rem;font-weight:900
+}
+.poster .media{aspect-ratio:4/5;background:#f4f4f4}
+.poster img{width:100%;height:100%;object-fit:cover}
+.poster .body{padding:16px}
+.poster h3{margin:0 0 8px;font-size:1.02rem}
+.poster p{margin:0;color:#5c5c5c;line-height:1.65;min-height:48px}
+.price{display:flex;flex-direction:column;gap:4px}
+.price .old{color:#9a9a9a;text-decoration:line-through;font-size:.85rem}
+.price .new{font-size:1.14rem;font-weight:900}
+.poster-footer{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:14px}
+.smallbtn{
+  border:none;background:var(--yellow);color:#111;font-weight:900;border-radius:12px;padding:10px 14px;cursor:pointer
+}
+.card, .info{
+  padding:26px;background:#fff;border:1px solid #e8e3d3
+}
+.card h3,.info h3{margin:0 0 10px}
+.card p,.info p{margin:0;color:#595959;line-height:1.8}
+.banner{
+  display:grid;grid-template-columns:1.2fr .8fr;gap:22px;
+  background:#111;color:#fff;border-radius:28px;padding:28px;box-shadow:var(--shadow)
+}
+.banner .art{
+  background:#fff;color:#111;border-radius:22px;padding:12px;min-height:220px;
+  display:flex;align-items:center;justify-content:center;font-weight:900;text-align:center
+}
+.actions-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:18px}
+footer{
+  margin-top:18px;
+  background:#0E0E0E;color:#fff;
+  padding:64px 0 36px;border-top:1px solid rgba(255,255,255,.06)
+}
+.footer-grid{
+  display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:24px
+}
+.footer-grid h4{margin:0 0 14px;color:var(--yellow)}
+.footer-grid a,.footer-grid p{display:block;margin:0;color:#d8d8d8;line-height:2}
+.footer-grid a:hover{color:var(--yellow)}
+.footer-bottom{
+  margin-top:30px;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);
+  color:#a8a8a8;text-align:center
+}
+.reveal{opacity:0;transform:translateY(20px);transition:.6s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+.popcorn-transition{
+  position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.96);
+  display:flex;align-items:center;justify-content:center;gap:16px
+}
+.popcorn{font-size:72px;animation:boom .8s forwards}
+.smash-text{
+  position:absolute;color:var(--yellow);font-weight:900;font-size:clamp(2rem,4vw,3.2rem);letter-spacing:5px;text-align:center
+}
+@keyframes boom{
+  0%{transform:scale(0);opacity:0}
+  50%{transform:scale(2);opacity:1}
+  100%{transform:translateY(-250px) rotate(720deg);opacity:0}
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1280px){
+  .hero-shell{grid-template-columns:1fr}
+  .hero-main{grid-template-columns:1fr .9fr;min-height:auto}
+  .poster-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .cards{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+
+@media (max-width: 980px){
+  .nav{grid-template-columns:1fr;justify-items:center}
+  .header-inner{grid-template-columns:1fr;justify-items:center}
+  .header-actions{justify-content:center;flex-wrap:wrap}
+  .navlinks{flex-wrap:wrap}
+  .quick-inner{grid-template-columns:1fr}
+  .quick-title{text-align:center}
+  .tabs{justify-content:center}
+  .banner{grid-template-columns:1fr}
+  .info-grid{grid-template-columns:1fr}
+}
+
+@media (max-width: 720px){
+  .promo-bar{height:38px}
+  .site-header{top:38px}
+  .hero{padding-top:172px}
+  .hero-main{grid-template-columns:1fr;padding:24px}
+  .hero h1{font-size:2.7rem}
+  .hero p{font-size:.98rem}
+  .qrbox{grid-template-columns:1fr}
+  .poster-grid,.cards,.footer-grid{grid-template-columns:1fr}
+  .section-header{flex-direction:column;align-items:flex-start}
+  .search{width:100%}
+  .pill, .location, .cart{width:100%}
+}
+
+@media (max-width: 420px){
+  .hero h1{font-size:2.25rem}
+  .cta-row{flex-direction:column}
+  .btn,.btn-outline{width:100%}
+  .meta span{width:100%;text-align:center}
+}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="container"><div class="ticker"><span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span><span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span><span>🎟 ALL T-SHIRTS ₹999 • LIMITED DROPS •</span><span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span></div></div></div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html"><img src="favicon.png" alt=""><span>Audience Ka Brand</span></a>
+    <nav class="navlinks" aria-label="Primary">
+      <a href="shop.html">Shop</a>
+      <a href="coming-soon.html">Coming Soon</a>
+      <a href="community.html">Community</a>
+      <a href="giveaway.html">Giveaway</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="actions">
+      <input class="search" placeholder="Search collection">
+      <a class="pill" href="track-order.html">Track</a>
+      <a class="pill highlight" href="cart.html">Cart</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="container hero-shell">
+    <div class="hero-card hero-main reveal">
+      <div class="hero-copy">
+        <div class="badge">NOW SHOWING • THE CINEPHILE COLLECTION</div>
+        <h1>WEAR THE MOVIE EXPERIENCE</h1>
+        <p class="lead">Premium cinema-inspired apparel built for opening-night energy, big-screen lovers, and the audience culture around movies.</p>
+        <div class="cta-row">
+          <a class="btn" href="shop.html">Browse Collection</a>
+          <a class="btn-outline" href="giveaway.html">Join Giveaway</a>
+        </div>
+        <div class="meta">
+          <span>Premium Cotton</span>
+          <span>Oversized Fit</span>
+          <span>Limited Drops</span>
+        </div>
+      </div>
+      <div class="side">
+        <div class="feature">
+          <div>
+            <h2>Season’s Biggest Cinephile Lineup</h2>
+            <p>Built like a movie release banner, designed for a premium merchandise store.</p>
+          </div>
+          <a class="btn" href="shop.html" style="width:max-content;">Shop Now</a>
+        </div>
+        <div class="qrbox">
+          <div class="qrleft">
+            <small>AUDIENCE REWARDS</small>
+            <h3>Win Free Merch</h3>
+            <p>Use your YouTube community and giveaway form to turn visitors into fans.</p>
+          </div>
+          <div class="qrright">SCAN TO<br>ENTER</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="quick">
+  <div class="container quick-inner">
+    <div class="quick-title">Quick Browse</div>
+    <div class="tabs" role="tablist" aria-label="Quick browse">
+      <button class="active" type="button">Tees</button>
+      <button type="button">New Drop</button>
+      <button type="button">Limited</button>
+      <button type="button">Giveaway</button>
+    </div>
+    <input class="searchwide" placeholder="Search by product or quote">
+    <button class="goldbtn">Browse</button>
+  </div>
+</div>
+
+<div class="container section-nav">
+  <a class="active" href="shop.html">Now Showing</a>
+  <a href="coming-soon.html">Coming Soon</a>
+  <a href="community.html">Experiences</a>
+  <a href="giveaway.html">Offers</a>
+  <a href="about.html">About</a>
+</div>
+
+<div class="container" style="padding-top:22px">
+  <div class="section-nav" style="margin:0;border-bottom:none">
+    <span class="pill">Cinephile</span>
+    <span class="pill">Oversized</span>
+    <span class="pill">Limited Edit</span>
+    <span class="pill">Movie Quote</span>
+    <span class="pill">Collector Drop</span>
+    <span class="pill">Audience Core</span>
+    <span class="pill">Fan Favourite</span>
+  </div>
+</div>
+
+<section id="shop">
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">🎬 Pages to Launch the Full Site</h2>
+        <p class="section-subtitle">These are the remaining essential pages for a complete, conversion-ready store package.</p>
+      </div>
+    </div>
+
+    <div class="poster-grid">
+      <article class="poster">
+        <div class="tag">STORE HUB</div>
+        <div class="media" style="background:#FFF7DE;display:flex;align-items:center;justify-content:center;font-weight:900;color:#111;font-size:1.2rem">SHOP.HTML</div>
+        <div class="body">
+          <h3>Collection / Shop</h3>
+          <p>Browse all products, categories, and featured drops in one central storefront.</p>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="tag">CHECKOUT</div>
+        <div class="media" style="background:#FFF7DE;display:flex;align-items:center;justify-content:center;font-weight:900;color:#111;font-size:1.2rem">CHECKOUT.HTML</div>
+        <div class="body">
+          <h3>Checkout</h3>
+          <p>Customer details, address fields, payment summary, and Razorpay-ready checkout flow.</p>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="tag">SUCCESS</div>
+        <div class="media" style="background:#FFF7DE;display:flex;align-items:center;justify-content:center;font-weight:900;color:#111;font-size:1.2rem">ORDER-SUCCESS.HTML</div>
+        <div class="body">
+          <h3>Order Success</h3>
+          <p>Confirmation page with order number, estimated delivery, and continue shopping button.</p>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="tag">POLICY</div>
+        <div class="media" style="background:#FFF7DE;display:flex;align-items:center;justify-content:center;font-weight:900;color:#111;font-size:1.2rem">POLICIES</div>
+        <div class="body">
+          <h3>Shipping / Refund / Privacy / Terms</h3>
+          <p>Legal trust pages needed for payment review, customer confidence, and platform compliance.</p>
+        </div>
+      </article>
+      <article class="poster">
+        <div class="tag">SUPPORT</div>
+        <div class="media" style="background:#FFF7DE;display:flex;align-items:center;justify-content:center;font-weight:900;color:#111;font-size:1.2rem">SUPPORT</div>
+        <div class="body">
+          <h3>About / Contact / FAQ / Track Order</h3>
+          <p>Support and brand trust pages to make the site feel complete and real.</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <h4>Audience Ka Brand</h4>
+      <p>Made by Movie Lovers, For Movie Lovers.</p>
+      <p>Contactus@audiencekabrand.com</p>
+      <p>Audience Ka Reaction</p>
+    </div>
+    <div>
+      <h4>Store</h4>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="track-order.html">Track Order</a>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </div>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">© 2026 Audience Ka Brand • All Rights Reserved.</div>
+</footer>
+
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('dragstart', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+</script>
+</body>
+</html>
