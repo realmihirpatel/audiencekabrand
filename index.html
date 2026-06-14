@@ -28,16 +28,26 @@ background:var(--black);
 color:white;
 overflow-x:hidden;
 }
-
+.announcement-bar{
+background:#D4AF37;
+color:black;
+text-align:center;
+padding:10px;
+font-weight:700;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+}
 header{
 position:fixed;
 width:100%;
-top:0;
-background:rgba(0,0,0,.95);
-backdrop-filter:blur(10px);
+top:40px;
+background:rgba(0,0,0,.92);
+backdrop-filter:blur(15px);
 z-index:999;
 }
-
 nav{
 display:flex;
 justify-content:space-between;
@@ -126,7 +136,7 @@ gap:30px;
 .card{
 position:relative;
 background:var(--card);
-border:2px solid var(--gold);
+border:1px solid rgba(255,255,255,.08);
 border-radius:20px;
 overflow:hidden;
 cursor:pointer;
@@ -279,6 +289,9 @@ nav ul{display:none;}
 </head>
 
 <body>
+<div class="announcement">
+🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION
+</div>
 
 <header>
 <nav>
@@ -343,7 +356,44 @@ nav ul{display:none;}
 
 </div>
 </section>
+<section id="why-us">
 
+<h2 class="section-title">
+Why Audience Ka Brand?
+</h2>
+
+<div class="cards">
+
+<div class="card show">
+<div class="card-content">
+<h3>🎬 Cinema Inspired</h3>
+<p>
+Designed for movie lovers and theatre enthusiasts.
+</p>
+</div>
+</div>
+
+<div class="card show">
+<div class="card-content">
+<h3>🧵 Premium Quality</h3>
+<p>
+Comfortable oversized tees with premium fabric.
+</p>
+</div>
+</div>
+
+<div class="card show">
+<div class="card-content">
+<h3>🍿 Community Driven</h3>
+<p>
+Powered by Audience Ka Reaction and movie fans.
+</p>
+</div>
+</div>
+
+</div>
+
+</section>
 <section id="events">
 <h2 class="section-title">🎟 FAN EVENTS</h2>
 <div class="event-box">
@@ -357,7 +407,38 @@ Movie Screenings • Cricket Watch Parties • WWE Premium Live Events
 Audience Ka Brand is a cinema-inspired community built for movie lovers.
 </div>
 </section>
+<section id="giveaway">
 
+<h2 class="section-title">
+🎁 Giveaway
+</h2>
+
+<div class="about-box">
+
+<h3>
+Win Free Audience Ka Brand Merch
+</h3>
+
+<br>
+
+<p>
+Enter our movie lover giveaway for a chance to win free merchandise.
+</p>
+
+<br><br>
+
+<a
+href="https://docs.google.com/forms/d/e/1FAIpQLSdPYJpunBpfYx5sGTskxypkDVc_lbjOlK7aQ3Xmiz5VYpviZQ/viewform"
+target="_blank"
+class="btn">
+
+🎬 Enter Giveaway
+
+</a>
+
+</div>
+
+</section>
 <footer>
 
 <h2>🎬 Audience Ka Brand</h2>
