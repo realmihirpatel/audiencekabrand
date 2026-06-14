@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>About | Audience Ka Brand</title>
+
 <link rel="icon" href="favicon.png">
-<link rel="shortcut icon" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
-</head>
-<body>
+
+<style>
+
 :root{
 --gold:#D4AF37;
 --gold-light:#F5D76E;
---black:#111111;
---white:#ffffff;
+--black:#111;
 --bg:#fafafa;
 --border:#ececec;
 }
@@ -27,28 +27,30 @@ box-sizing:border-box;
 font-family:'Poppins',sans-serif;
 }
 
-html{
-scroll-behavior:smooth;
-}
-
 body{
 background:var(--bg);
 color:var(--black);
 overflow-x:hidden;
 }
 
-/* TOP TICKER */
+.container{
+width:min(1400px,92%);
+margin:auto;
+}
+
+/* TOP BAR */
 
 .topbar{
+position:fixed;
+top:0;
+left:0;
+width:100%;
 height:42px;
 background:var(--gold);
 overflow:hidden;
+z-index:1000;
 display:flex;
 align-items:center;
-position:fixed;
-top:0;
-width:100%;
-z-index:1000;
 }
 
 .ticker{
@@ -79,11 +81,6 @@ border-bottom:1px solid var(--border);
 z-index:999;
 }
 
-.container{
-width:min(1400px,92%);
-margin:auto;
-}
-
 .nav{
 display:flex;
 justify-content:space-between;
@@ -96,9 +93,9 @@ display:flex;
 align-items:center;
 gap:10px;
 text-decoration:none;
-color:var(--black);
 font-weight:800;
-font-size:20px;
+font-size:22px;
+color:#111;
 }
 
 .brand img{
@@ -109,40 +106,33 @@ object-fit:contain;
 
 .navlinks{
 display:flex;
-gap:30px;
+gap:25px;
 }
 
 .navlinks a{
 text-decoration:none;
-color:#333;
+color:#222;
 font-weight:600;
-transition:.3s;
-}
-
-.navlinks a:hover{
-color:var(--gold);
 }
 
 .actions{
 display:flex;
-align-items:center;
-gap:12px;
+gap:10px;
 }
 
 .search{
 padding:12px 18px;
+border:1px solid #ddd;
 border-radius:30px;
-border:1px solid var(--border);
-width:220px;
 }
 
 .pill{
-padding:12px 20px;
+padding:12px 18px;
 border-radius:30px;
-border:1px solid var(--border);
 text-decoration:none;
+border:1px solid #ddd;
+color:#111;
 font-weight:600;
-color:var(--black);
 }
 
 .highlight{
@@ -157,40 +147,26 @@ padding-top:180px;
 padding-bottom:80px;
 }
 
-.hero-shell{
-display:flex;
-justify-content:center;
-}
-
 .hero-card{
-width:100%;
 background:white;
-border-radius:30px;
 padding:70px;
-box-shadow:
-0 20px 60px rgba(0,0,0,.08);
-border:1px solid var(--border);
-}
-
-.hero-copy{
+border-radius:30px;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
 text-align:center;
 }
 
 .badge{
 display:inline-block;
-padding:10px 18px;
+padding:10px 20px;
 background:var(--gold);
-color:black;
-font-weight:700;
 border-radius:30px;
-margin-bottom:25px;
+font-weight:700;
+margin-bottom:20px;
 }
 
 .hero h1{
 font-size:5rem;
-font-weight:900;
 color:var(--gold);
-line-height:1;
 margin-bottom:20px;
 }
 
@@ -205,62 +181,57 @@ margin:auto;
 display:flex;
 justify-content:center;
 gap:15px;
-margin-top:35px;
+margin-top:30px;
 flex-wrap:wrap;
 }
 
 .btn{
 padding:15px 30px;
 background:var(--gold);
-border-radius:40px;
-text-decoration:none;
-font-weight:700;
 color:black;
+text-decoration:none;
+border-radius:40px;
+font-weight:700;
 }
 
 .btn-outline{
 padding:15px 30px;
 border:2px solid var(--gold);
-border-radius:40px;
-text-decoration:none;
-font-weight:700;
 color:var(--gold);
+text-decoration:none;
+border-radius:40px;
+font-weight:700;
 }
 
 .meta{
 display:flex;
 justify-content:center;
 gap:15px;
-margin-top:35px;
+margin-top:30px;
 flex-wrap:wrap;
 }
 
 .meta span{
+background:#f3f3f3;
 padding:12px 20px;
 border-radius:25px;
-background:#f3f3f3;
-font-weight:600;
 }
 
-/* SECTIONS */
+/* CONTENT */
 
 section{
 padding:80px 0;
 }
 
-.section-header{
-margin-bottom:40px;
-}
-
 .section-title{
 font-size:3rem;
-font-weight:800;
 color:var(--gold);
 margin-bottom:10px;
 }
 
 .section-subtitle{
 color:#666;
+margin-bottom:40px;
 }
 
 .info-grid{
@@ -273,25 +244,12 @@ gap:30px;
 background:white;
 padding:40px;
 border-radius:25px;
-box-shadow:
-0 10px 30px rgba(0,0,0,.06);
-border:1px solid var(--border);
-transition:.3s;
-}
-
-.info:hover{
-transform:translateY(-8px);
+box-shadow:0 10px 30px rgba(0,0,0,.06);
 }
 
 .info h3{
-margin-bottom:15px;
-font-size:24px;
 color:var(--gold);
-}
-
-.info p{
-line-height:1.8;
-color:#555;
+margin-bottom:15px;
 }
 
 /* FOOTER */
@@ -323,71 +281,20 @@ margin-bottom:10px;
 }
 
 .footer-grid p{
-color:#ccc;
 margin-bottom:10px;
+color:#ccc;
 }
 
 .footer-bottom{
 border-top:1px solid rgba(255,255,255,.1);
-padding:25px 0;
+padding:25px;
 text-align:center;
 color:#999;
-}
-
-/* ANIMATIONS */
-
-.reveal{
-opacity:0;
-transform:translateY(50px);
-transition:.8s;
-}
-
-.reveal.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* TABLET */
-
-@media(max-width:1024px){
-
-.hero h1{
-font-size:3.8rem;
-}
-
-.navlinks{
-gap:15px;
-}
-
-.search{
-width:160px;
-}
-
-.info-grid{
-grid-template-columns:1fr;
-}
-
-.footer-grid{
-grid-template-columns:repeat(2,1fr);
-}
-
 }
 
 /* MOBILE */
 
 @media(max-width:768px){
-
-.hero{
-padding-top:160px;
-}
-
-.hero-card{
-padding:35px 25px;
-}
-
-.hero h1{
-font-size:2.8rem;
-}
 
 .nav{
 flex-direction:column;
@@ -400,13 +307,28 @@ justify-content:center;
 }
 
 .actions{
-width:100%;
-justify-content:center;
 flex-wrap:wrap;
+justify-content:center;
 }
 
 .search{
 width:100%;
+}
+
+.hero{
+padding-top:220px;
+}
+
+.hero-card{
+padding:35px 25px;
+}
+
+.hero h1{
+font-size:2.8rem;
+}
+
+.info-grid{
+grid-template-columns:1fr;
 }
 
 .footer-grid{
@@ -418,105 +340,149 @@ font-size:2rem;
 }
 
 }
-<div class="topbar"><div class="container"><div class="ticker"><span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span><span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span><span>🎟 ALL T-SHIRTS ₹999 • LIMITED DROPS •</span><span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span></div></div></div>
+
+</style>
+
+</head>
+
+<body>
+
+<div class="topbar">
+<div class="container">
+<div class="ticker">
+<span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span>
+<span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
+<span>🎟 ALL T-SHIRTS ₹999 • LIMITED DROPS •</span>
+<span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span>
+</div>
+</div>
+</div>
 
 <header>
-  <div class="container nav">
-    <a class="brand" href="index.html"><img src="favicon.png" alt=""><span>Audience Ka Brand</span></a>
-    <nav class="navlinks" aria-label="Primary">
-      <a href="shop.html">Shop</a>
-      <a href="coming-soon.html">Coming Soon</a>
-      <a href="community.html">Community</a>
-      <a href="giveaway.html">Giveaway</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <div class="actions">
-      <input class="search" placeholder="Search collection">
-      <a class="pill" href="track-order.html">Track</a>
-      <a class="pill highlight" href="cart.html">Cart</a>
-    </div>
-  </div>
+<div class="container nav">
+
+<a class="brand" href="index.html">
+<img src="favicon.png" alt="">
+<span>Audience Ka Brand</span>
+</a>
+
+<nav class="navlinks">
+<a href="shop.html">Shop</a>
+<a href="coming-soon.html">Coming Soon</a>
+<a href="community.html">Community</a>
+<a href="giveaway.html">Giveaway</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<div class="actions">
+<input class="search" placeholder="Search Collection">
+<a class="pill" href="track-order.html">Track</a>
+<a class="pill highlight" href="cart.html">Cart</a>
+</div>
+
+</div>
 </header>
 
-<main>
-<section class="hero" id="home">
-  <div class="container">
-    <div class="hero-shell">
-      <div class="hero-card hero-main reveal" style="grid-template-columns:1fr;min-height:auto">
-        <div class="hero-copy">
-          <div class="badge">ABOUT</div>
-          <h1 style="max-width:12ch">ABOUT</h1>
-          <p class="lead">Our brand story and mission.</p>
-          <div class="cta-row">
-            <a class="btn" href="shop.html">Go to Shop</a>
-            <a class="btn-outline" href="index.html">Back Home</a>
-          </div>
-          <div class="meta">
-            <span>Premium Layout</span>
-            <span>Mobile Ready</span>
-            <span>SEO Friendly</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+<section class="hero">
+<div class="container">
+
+<div class="hero-card">
+
+<div class="badge">ABOUT</div>
+
+<h1>Audience Ka Brand</h1>
+
+<p class="lead">
+A premium cinephile clothing brand built for movie lovers, theatre enthusiasts and fans who live for the big-screen experience.
+</p>
+
+<div class="cta-row">
+<a class="btn" href="shop.html">Shop Collection</a>
+<a class="btn-outline" href="index.html">Back Home</a>
+</div>
+
+<div class="meta">
+<span>Premium Quality</span>
+<span>Community Driven</span>
+<span>Made For Cinephiles</span>
+</div>
+
+</div>
+
+</div>
 </section>
 
 <section>
-  <div class="container">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">About</h2>
-        <p class="section-subtitle">Our brand story and mission.</p>
-      </div>
-    </div>
+<div class="container">
 
-    <div class="info-grid">
-      <div class="info reveal">
-        <h3>Section 1</h3>
-        <p>This page is ready as a clean starter template. Replace this content with your final copy, forms, or policy text.</p>
-      </div>
-      <div class="info reveal">
-        <h3>Section 2</h3>
-        <p>Keep the same header and footer so every page feels consistent across desktop, tablet, and mobile.</p>
-      </div>
-    </div>
-  </div>
+<h2 class="section-title">Our Story</h2>
+
+<p class="section-subtitle">
+Made by Movie Lovers, For Movie Lovers.
+</p>
+
+<div class="info-grid">
+
+<div class="info">
+<h3>🎬 The Vision</h3>
+<p>
+Audience Ka Brand was created to bring cinema culture into everyday fashion. Every design celebrates the magic of movies and theatre experiences.
+</p>
+</div>
+
+<div class="info">
+<h3>🍿 The Community</h3>
+<p>
+Powered by Audience Ka Reaction, this brand aims to unite movie fans through merchandise, events, screenings and giveaways.
+</p>
+</div>
+
+</div>
+
+</div>
 </section>
-</main>
 
 <footer>
-  <div class="container footer-grid">
-    <div>
-      <h4>Audience Ka Brand</h4>
-      <p>Made by Movie Lovers, For Movie Lovers.</p>
-      <p>Contactus@audiencekabrand.com</p>
-      <p>Audience Ka Reaction</p>
-    </div>
-    <div>
-      <h4>Store</h4>
-      <a href="shop.html">Shop</a>
-      <a href="cart.html">Cart</a>
-      <a href="track-order.html">Track Order</a>
-    </div>
-    <div>
-      <h4>Support</h4>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-      <a href="faq.html">FAQ</a>
-    </div>
-    <div>
-      <h4>Legal</h4>
-      <a href="privacy-policy.html">Privacy Policy</a>
-      <a href="shipping-policy.html">Shipping Policy</a>
-      <a href="refund-policy.html">Refund Policy</a>
-      <a href="terms.html">Terms & Conditions</a>
-    </div>
-  </div>
-  <div class="container footer-bottom">© 2026 Audience Ka Brand • All Rights Reserved.</div>
+
+<div class="container footer-grid">
+
+<div>
+<h4>Audience Ka Brand</h4>
+<p>Made by Movie Lovers, For Movie Lovers.</p>
+<p>Contactus@audiencekabrand.com</p>
+<p>Audience Ka Reaction</p>
+</div>
+
+<div>
+<h4>Store</h4>
+<a href="shop.html">Shop</a>
+<a href="cart.html">Cart</a>
+<a href="track-order.html">Track Order</a>
+</div>
+
+<div>
+<h4>Support</h4>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+<a href="faq.html">FAQ</a>
+</div>
+
+<div>
+<h4>Legal</h4>
+<a href="privacy-policy.html">Privacy Policy</a>
+<a href="shipping-policy.html">Shipping Policy</a>
+<a href="refund-policy.html">Refund Policy</a>
+<a href="terms.html">Terms & Conditions</a>
+</div>
+
+</div>
+
+<div class="footer-bottom">
+© 2026 Audience Ka Brand • All Rights Reserved.
+</div>
+
 </footer>
 
-<script src="assets/main.js"></script>
 </body>
 </html>
