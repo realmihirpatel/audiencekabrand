@@ -204,44 +204,42 @@ input{
 
 /* HERO */
 .hero{
-  padding:148px 4.5% 32px;
-  background:
-    linear-gradient(180deg, #ffffff, #fffaf0);
+  padding-top:140px;
+  padding-bottom:0;
+  padding-left:0;
+  padding-right:0;
+  background:#fff;
 }
-
 .hero-shell{
   width:100%;
-  max-width:1600px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1.45fr .95fr;
-  gap:24px;
-  align-items:stretch;
-}
-
-.hero-card{
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  border:1px solid rgba(0,0,0,.06);
-  background:#fff;
-  position:relative;
+  max-width:100%;
+  margin:0;
+  padding:0;
 }
 
 .hero-main{
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.98), rgba(255,255,255,.84)),
-    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80');
-  background-size:cover;
-  background-position:center;
-  padding:34px;
-  min-height:620px;
-  display:grid;
-  grid-template-columns:minmax(0,1fr) minmax(320px, 420px);
-  gap:24px;
-  align-items:stretch;
-}
+  width:100%;
+  min-height:85vh;
 
+  display:grid;
+  grid-template-columns:65% 35%;
+
+  padding:80px;
+
+  background:
+  linear-gradient(
+  90deg,
+  rgba(255,255,255,.95) 0%,
+  rgba(255,255,255,.75) 45%,
+  rgba(255,255,255,.35) 100%
+  ),
+  url('hero.jpg');
+
+  background-size:cover;
+  background-position:center center;
+
+  gap:40px;
+}
 .hero-copy{
   z-index:2;
   display:flex;
@@ -265,14 +263,10 @@ input{
   font-size:.9rem;
   width:max-content;
 }
-
 .hero h1{
-  font-size:clamp(2.8rem, 5.3vw, 5.8rem);
-  line-height:.92;
-  letter-spacing:-1.6px;
-  color:#111;
-  max-width:9ch;
-  margin-bottom:18px;
+  font-size:clamp(4rem,8vw,8rem);
+  line-height:.9;
+  max-width:7ch;
   font-weight:900;
 }
 
@@ -1157,7 +1151,7 @@ footer{
 
   <section class="hero" id="home">
     <div class="hero-shell">
-      <div class="hero-card hero-main reveal">
+   <div class="hero-main reveal">
         <div class="hero-copy">
           <span class="badge">NOW SHOWING • THE CINEPHILE COLLECTION</span>
           <h1>WEAR THE MOVIE EXPERIENCE</h1>
