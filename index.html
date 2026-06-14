@@ -34,18 +34,39 @@ body{
 }
 
 /* TOP ANNOUNCEMENT BAR */
-
 .announcement-bar{
-  background:var(--gold);
-  color:black;
-  text-align:center;
-  padding:10px;
-  font-weight:700;
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  z-index:1000;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:48px;
+background:#D4AF37;
+overflow:hidden;
+z-index:1000;
+display:flex;
+align-items:center;
+}
+
+.ticker{
+display:flex;
+white-space:nowrap;
+animation:ticker 20s linear infinite;
+font-weight:700;
+font-size:18px;
+color:#000;
+}
+
+.ticker span{
+padding-right:100px;
+}
+
+@keyframes ticker{
+0%{
+transform:translateX(100%);
+}
+100%{
+transform:translateX(-100%);
+}
 }
 
 /* NAVBAR */
@@ -354,7 +375,31 @@ footer{
 
 <body>
 <div class="announcement-bar">
-🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION
+
+<div class="ticker">
+
+<span>
+🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •
+</span>
+
+<span>
+🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •
+</span>
+
+<span>
+🎟 GRAND LAUNCH OFFER • ALL T-SHIRTS ₹999 •
+</span>
+
+<span>
+📽 AUDIENCE KA REACTION • THEATRE EXPLORER •
+</span>
+
+<span>
+🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •
+</span>
+
+</div>
+
 </div>
 
 <header>
