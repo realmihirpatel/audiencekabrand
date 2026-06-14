@@ -243,7 +243,18 @@ border-radius:20px;
 border:1px solid var(--gold);
 text-align:center;
 }
+.feature-card{
+background:var(--card);
+border:1px solid rgba(255,255,255,.08);
+border-radius:20px;
+padding:30px;
+transition:.3s;
+}
 
+.feature-card:hover{
+transform:translateY(-8px);
+box-shadow:0 20px 40px rgba(212,175,55,.15);
+}
 footer{
 text-align:center;
 padding:40px;
@@ -364,7 +375,7 @@ Why Audience Ka Brand?
 
 <div class="cards">
 
-<div class="card show">
+<div class="feature-card">
 <div class="card-content">
 <h3>🎬 Cinema Inspired</h3>
 <p>
@@ -373,7 +384,7 @@ Designed for movie lovers and theatre enthusiasts.
 </div>
 </div>
 
-<div class="card show">
+<div class="feature-card">
 <div class="card-content">
 <h3>🧵 Premium Quality</h3>
 <p>
@@ -382,7 +393,7 @@ Comfortable oversized tees with premium fabric.
 </div>
 </div>
 
-<div class="card show">
+<div class="feature-card">
 <div class="card-content">
 <h3>🍿 Community Driven</h3>
 <p>
