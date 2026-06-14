@@ -1,1169 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Audience Ka Brand</title>
-
-<link rel="icon" href="favicon.png">
-<link rel="shortcut icon" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-<style>
-:root{
-  --yellow:#F4C542;
-  --yellow-dark:#D9A900;
-  --cream:#FFF8E6;
-  --paper:#FFFFFF;
-  --paper-2:#F8F8F8;
-  --ink:#111111;
-  --muted:#5F5F5F;
-  --line:#E9E4D2;
-  --dark-card:#1A1A1A;
-  --shadow:0 16px 40px rgba(0,0,0,.08);
-}
-
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-  scroll-behavior:smooth;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-  background:var(--paper);
-  color:var(--ink);
-  overflow-x:hidden;
-  user-select:none;
-  -webkit-user-select:none;
-}
-
-img{
-  pointer-events:none;
-  -webkit-user-drag:none;
-  user-select:none;
-  display:block;
-  max-width:100%;
-}
-
-/* TOP BAR */
-.promo-bar{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:44px;
-  z-index:1000;
-  background:var(--yellow);
-  color:#111;
-  overflow:hidden;
-  display:flex;
-  align-items:center;
-  border-bottom:1px solid rgba(0,0,0,.06);
-}
-
-.promo-track{
-  display:flex;
-  width:max-content;
-  white-space:nowrap;
-  animation:promo 60s linear infinite;
-  font-weight:800;
-  font-size:14px;
-}
-
-.promo-track span{
-  padding-right:90px;
-}
-
-@keyframes promo{
-  0%{transform:translateX(0);}
-  100%{transform:translateX(-50%);}
-}
-
-/* HEADER */
-.site-header{
-  position:fixed;
-  top:44px;
-  left:0;
-  width:100%;
-  z-index:999;
-  background:rgba(255,255,255,.96);
-  backdrop-filter:blur(18px);
-  border-bottom:1px solid rgba(0,0,0,.06);
-}
-
-.header-inner{
-  max-width:1560px;
-  margin:0 auto;
-  padding:16px 6%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
-
-.brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  color:var(--yellow-dark);
-  font-weight:900;
-  font-size:1.15rem;
-  white-space:nowrap;
-}
-
-.brand img{
-  width:32px;
-  height:32px;
-  object-fit:contain;
-  border-radius:50%;
-}
-
-.nav-links{
-  display:flex;
-  align-items:center;
-  gap:28px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.nav-links a{
-  color:#111;
-  text-decoration:none;
-  font-weight:700;
-  font-size:.98rem;
-  opacity:.9;
-  transition:.25s;
-}
-
-.nav-links a:hover{
-  color:var(--yellow-dark);
-  opacity:1;
-}
-
-.header-actions{
-  display:flex;
-  align-items:center;
-  gap:12px;
-}
-
-.search-box{
-  width:240px;
-  padding:12px 16px;
-  border-radius:14px;
-  border:1px solid #ddd;
-  background:#fff;
-  outline:none;
-  color:#111;
-}
-
-.search-box::placeholder{
-  color:#9a9a9a;
-}
-
-.location-btn,
-.login-btn{
-  height:46px;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:0 16px;
-  border-radius:14px;
-  border:1px solid #ddd;
-  text-decoration:none;
-  color:#111;
-  font-weight:700;
-  background:#fff;
-}
-
-.login-btn{
-  background:#FFF1CC;
-  border-color:#F0D38A;
-}
-
-/* HERO */
-.hero{
-  padding:145px 6% 28px;
-  background:
-    linear-gradient(180deg, #ffffff, #fffaf0);
-}
-
-.hero-grid{
-  max-width:1560px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  gap:24px;
-  align-items:stretch;
-}
-
-.hero-card{
-  border-radius:28px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  border:1px solid rgba(0,0,0,.06);
-  background:#fff;
-  min-height:420px;
-  position:relative;
-}
-
-.hero-main{
-  background:
-    linear-gradient(90deg, rgba(255,255,255,.98), rgba(255,255,255,.85)),
-    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80');
-  background-size:cover;
-  background-position:center;
-  padding:34px;
-  display:grid;
-  grid-template-columns:1fr .72fr;
-  gap:24px;
-  align-items:center;
-}
-
-.hero-copy{
-  z-index:2;
-}
-
-.badge{
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:10px 16px;
-  border-radius:999px;
-  background:#FFF3C9;
-  border:1px solid #F0D58A;
-  font-weight:900;
-  color:#111;
-  margin-bottom:20px;
-  letter-spacing:.4px;
-}
-
-.hero h1{
-  font-size:clamp(2.6rem, 5.2vw, 5.1rem);
-  line-height:.95;
-  letter-spacing:-1.4px;
-  max-width:9ch;
-  color:#111;
-  margin-bottom:18px;
-}
-
-.hero p{
-  max-width:620px;
-  color:#3a3a3a;
-  font-size:1rem;
-  line-height:1.8;
-}
-
-.hero-actions{
-  display:flex;
-  gap:14px;
-  flex-wrap:wrap;
-  margin-top:28px;
-}
-
-.btn,
-.btn-outline{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 24px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:800;
-  transition:.25s ease;
-}
-
-.btn{
-  background:var(--yellow);
-  color:#111;
-  box-shadow:0 12px 28px rgba(244,197,66,.25);
-}
-
-.btn:hover{
-  transform:translateY(-2px);
-}
-
-.btn-outline{
-  background:transparent;
-  border:1px solid #C7A631;
-  color:#111;
-}
-
-.btn-outline:hover{
-  background:#FFF5D6;
-  transform:translateY(-2px);
-}
-
-.hero-meta{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:28px;
-}
-
-.hero-meta span{
-  padding:10px 14px;
-  background:#fff;
-  border:1px solid #e9e3cd;
-  border-radius:999px;
-  font-size:.9rem;
-  font-weight:700;
-  color:#222;
-}
-
-.hero-visual{
-  display:grid;
-  grid-template-rows:1fr auto;
-  gap:16px;
-}
-
-.showcase-panel{
-  border-radius:24px;
-  background:linear-gradient(135deg, #FFE089, #FFD24D);
-  padding:22px;
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  position:relative;
-  overflow:hidden;
-  min-height:258px;
-}
-
-.showcase-panel::after{
-  content:"";
-  position:absolute;
-  right:-38px;
-  top:-38px;
-  width:160px;
-  height:160px;
-  background:rgba(255,255,255,.22);
-  border-radius:50%;
-}
-
-.showcase-panel h3{
-  font-size:1.9rem;
-  line-height:1.05;
-  color:#111;
-  max-width:8ch;
-  margin-bottom:12px;
-  z-index:1;
-}
-
-.showcase-panel p{
-  color:#222;
-  font-weight:600;
-  z-index:1;
-  max-width:360px;
-  line-height:1.7;
-}
-
-.qr-panel{
-  border-radius:24px;
-  border:1px solid #ead9a2;
-  background:#fff;
-  box-shadow:var(--shadow);
-  padding:18px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:14px;
-  align-items:center;
-}
-
-.qr-left{
-  background:#FFF7DE;
-  border:1px solid #f0d68f;
-  border-radius:18px;
-  padding:16px;
-  min-height:180px;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-
-.qr-left small{
-  font-weight:900;
-  color:#7a5d00;
-  margin-bottom:8px;
-}
-
-.qr-left h4{
-  font-size:1.15rem;
-  margin-bottom:10px;
-}
-
-.qr-left p{
-  color:#4a4a4a;
-  font-size:.92rem;
-  line-height:1.7;
-}
-
-.qr-right{
-  background:#111;
-  border-radius:18px;
-  min-height:180px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#fff;
-  font-weight:900;
-  letter-spacing:1px;
-  text-align:center;
-  padding:18px;
-}
-
-/* QUICK BROWSE */
-.quick-book{
-  max-width:1560px;
-  margin:18px auto 0;
-  padding:18px 6%;
-  background:#fff3d0;
-  border-top:1px solid rgba(0,0,0,.04);
-  border-bottom:1px solid rgba(0,0,0,.04);
-}
-
-.quick-row{
-  display:grid;
-  grid-template-columns:auto auto 1fr auto;
-  gap:14px;
-  align-items:center;
-}
-
-.quick-title{
-  font-weight:900;
-  white-space:nowrap;
-}
-
-.quick-toggle{
-  display:flex;
-  gap:8px;
-  padding:6px;
-  background:#fff;
-  border:1px solid #ead9a2;
-  border-radius:14px;
-}
-
-.quick-toggle button{
-  border:none;
-  background:transparent;
-  padding:10px 14px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:800;
-  color:#222;
-}
-
-.quick-toggle button.active{
-  background:var(--yellow);
-}
-
-.quick-search{
-  width:100%;
-  min-width:0;
-  padding:13px 16px;
-  border-radius:14px;
-  border:1px solid #e0d6b2;
-  background:#fff;
-  color:#111;
-  outline:none;
-}
-
-.quick-go{
-  border:none;
-  background:#111;
-  color:#fff;
-  padding:13px 20px;
-  border-radius:14px;
-  font-weight:800;
-  cursor:pointer;
-}
-
-/* SECTION NAV */
-.section-nav{
-  max-width:1560px;
-  margin:14px auto 0;
-  padding:0 6%;
-  display:flex;
-  gap:30px;
-  overflow-x:auto;
-  border-bottom:1px solid #eee;
-}
-
-.section-nav a{
-  padding:18px 0 16px;
-  text-decoration:none;
-  color:#111;
-  font-weight:800;
-  border-bottom:2px solid transparent;
-  white-space:nowrap;
-}
-
-.section-nav a.active,
-.section-nav a:hover{
-  color:var(--yellow-dark);
-  border-bottom-color:var(--yellow-dark);
-}
-
-/* COLLECTION BADGES */
-.collection-strip{
-  max-width:1560px;
-  margin:22px auto 0;
-  padding:0 6%;
-}
-
-.collection-row{
-  display:flex;
-  gap:12px;
-  overflow-x:auto;
-  padding-bottom:4px;
-}
-
-.collection-pill{
-  flex:0 0 auto;
-  min-width:120px;
-  padding:12px 16px;
-  border-radius:16px;
-  background:#fff;
-  color:#1d1d1d;
-  border:1px solid #e6e0ce;
-  font-weight:900;
-  text-align:center;
-  box-shadow:0 8px 16px rgba(0,0,0,.06);
-}
-
-/* SECTIONS */
-section{
-  padding:82px 6%;
-  scroll-margin-top:170px;
-}
-
-.container{
-  max-width:1560px;
-  margin:0 auto;
-}
-
-.section-header{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:18px;
-  margin-bottom:28px;
-}
-
-.section-title{
-  font-size:clamp(2rem, 3.5vw, 3rem);
-  line-height:1.05;
-  color:#111;
-  font-weight:900;
-  letter-spacing:-.8px;
-}
-
-.section-subtitle{
-  color:var(--muted);
-  max-width:720px;
-  line-height:1.8;
-}
-
-/* POSTER GRID */
-.poster-grid{
-  display:grid;
-  grid-template-columns:repeat(5, minmax(0, 1fr));
-  gap:20px;
-}
-
-.poster-card{
-  background:#fff;
-  border:1px solid #e8e3d3;
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:var(--shadow);
-  cursor:pointer;
-  transform:translateY(24px);
-  opacity:0;
-  transition:.45s ease;
-}
-
-.poster-card.show{
-  transform:translateY(0);
-  opacity:1;
-}
-
-.poster-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 24px 50px rgba(0,0,0,.10);
-}
-
-.poster-tag{
-  position:absolute;
-  top:14px;
-  left:14px;
-  z-index:2;
-  padding:8px 12px;
-  border-radius:999px;
-  background:rgba(244,197,66,.95);
-  color:#111;
-  font-size:.72rem;
-  font-weight:900;
-}
-
-.poster-media{
-  position:relative;
-  aspect-ratio:4 / 5;
-  overflow:hidden;
-  background:#f4f4f4;
-}
-
-.poster-media img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:.35s ease;
-}
-
-.poster-card:hover .poster-media img{
-  transform:scale(1.04);
-}
-
-.poster-body{
-  padding:16px 16px 18px;
-}
-
-.poster-body h3{
-  font-size:1.02rem;
-  margin-bottom:8px;
-  color:#111;
-}
-
-.poster-body p{
-  color:#5c5c5c;
-  font-size:.92rem;
-  line-height:1.65;
-  min-height:48px;
-}
-
-.poster-footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  margin-top:14px;
-}
-
-.poster-price{
-  display:flex;
-  flex-direction:column;
-  gap:4px;
-}
-
-.poster-price .old{
-  color:#9a9a9a;
-  text-decoration:line-through;
-  font-size:.85rem;
-}
-
-.poster-price .new{
-  color:#111;
-  font-weight:900;
-  font-size:1.14rem;
-}
-
-.poster-btn{
-  border:none;
-  background:var(--yellow);
-  color:#111;
-  font-weight:900;
-  border-radius:12px;
-  padding:10px 14px;
-  cursor:pointer;
-}
-
-/* BIG BANNER */
-.feature-banner{
-  background:linear-gradient(90deg, #111, #1e1e1e);
-  color:#fff;
-  border-radius:28px;
-  padding:28px;
-  box-shadow:var(--shadow);
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:22px;
-  align-items:center;
-  overflow:hidden;
-}
-
-.feature-banner .text h3{
-  font-size:2rem;
-  margin-bottom:10px;
-}
-
-.feature-banner .text p{
-  color:#dadada;
-  line-height:1.8;
-  max-width:700px;
-}
-
-.feature-banner .art{
-  background:#fff;
-  border-radius:22px;
-  padding:12px;
-  min-height:220px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  color:#111;
-  font-weight:900;
-  text-align:center;
-}
-
-/* INFO CARDS */
-.feature-grid{
-  display:grid;
-  grid-template-columns:repeat(3, minmax(0, 1fr));
-  gap:20px;
-}
-
-.feature-card{
-  background:#fff;
-  border:1px solid #e8e3d3;
-  border-radius:24px;
-  padding:26px;
-  min-height:210px;
-  box-shadow:var(--shadow);
-  opacity:0;
-  transform:translateY(22px);
-  transition:.45s ease;
-}
-
-.feature-card.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-.feature-card:hover{
-  transform:translateY(-8px);
-}
-
-.feature-card h3{
-  font-size:1.15rem;
-  margin-bottom:10px;
-}
-
-.feature-card p{
-  color:#595959;
-  line-height:1.8;
-}
-
-/* INFO BLOCKS */
-.info-grid{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
-
-.info-card{
-  background:#fff;
-  border:1px solid #e8e3d3;
-  border-radius:24px;
-  padding:26px;
-  box-shadow:var(--shadow);
-}
-
-.info-card h3{
-  margin-bottom:10px;
-  color:#111;
-}
-
-.info-card p{
-  color:#595959;
-  line-height:1.8;
-}
-
-.info-actions{
-  margin-top:18px;
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-}
-
-.info-actions a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:13px 20px;
-  border-radius:999px;
-  text-decoration:none;
-  font-weight:800;
-}
-
-.info-actions .primary{
-  background:var(--yellow);
-  color:#111;
-}
-
-.info-actions .secondary{
-  border:1px solid #c7ae55;
-  color:#111;
-  background:#fff;
-}
-
-/* FOOTER */
-footer{
-  background:#0E0E0E;
-  color:#fff;
-  padding:70px 6% 40px;
-  margin-top:20px;
-  border-top:1px solid rgba(255,255,255,.06);
-}
-
-.footer-grid{
-  max-width:1560px;
-  margin:0 auto;
-  display:grid;
-  grid-template-columns:1.2fr 1fr 1fr 1fr;
-  gap:24px;
-}
-
-.footer-col h4{
-  color:var(--yellow);
-  margin-bottom:14px;
-  font-size:1.05rem;
-}
-
-.footer-col a,
-.footer-col p{
-  display:block;
-  color:#d8d8d8;
-  text-decoration:none;
-  line-height:2;
-  font-size:.95rem;
-}
-
-.footer-col a:hover{
-  color:var(--yellow);
-}
-
-.footer-bottom{
-  max-width:1560px;
-  margin:34px auto 0;
-  padding-top:18px;
-  border-top:1px solid rgba(255,255,255,.08);
-  text-align:center;
-  color:#a8a8a8;
-  font-size:.92rem;
-}
-
-/* POPCORN TRANSITION */
-.popcorn-transition{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.96);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  z-index:99999;
-}
-
-.popcorn{
-  font-size:72px;
-  animation:explode .8s forwards;
-}
-
-.smash-text{
-  position:absolute;
-  color:var(--yellow);
-  font-weight:900;
-  font-size:clamp(2rem, 4vw, 3.2rem);
-  letter-spacing:5px;
-  text-align:center;
-}
-
-@keyframes explode{
-  0%{ transform:scale(0); opacity:0; }
-  50%{ transform:scale(2); opacity:1; }
-  100%{ transform:translateY(-250px) rotate(720deg); opacity:0; }
-}
-
-/* REVEAL */
-.reveal{
-  opacity:0;
-  transform:translateY(24px);
-  transition:.6s ease;
-}
-
-.reveal.show{
-  opacity:1;
-  transform:translateY(0);
-}
-
-/* RESPONSIVE */
-@media (max-width: 1280px){
-  .hero-grid{
-    grid-template-columns:1fr;
-  }
-
-  .poster-grid{
-    grid-template-columns:repeat(3, minmax(0, 1fr));
-  }
-
-  .feature-grid{
-    grid-template-columns:repeat(2, minmax(0, 1fr));
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-@media (max-width: 980px){
-  .navbar-inner{
-    flex-wrap:wrap;
-    justify-content:center;
-  }
-
-  .header-actions{
-    width:100%;
-    justify-content:center;
-  }
-
-  .search-box{
-    width:min(100%, 420px);
-  }
-
-  .quick-row{
-    grid-template-columns:1fr;
-  }
-
-  .quick-title{
-    text-align:center;
-  }
-
-  .quick-toggle{
-    justify-content:center;
-  }
-
-  .feature-banner{
-    grid-template-columns:1fr;
-  }
-
-  .info-grid{
-    grid-template-columns:1fr;
-  }
-}
-
-@media (max-width: 640px){
-  .hero{
-    padding-top:170px;
-  }
-
-  .hero-main{
-    grid-template-columns:1fr;
-  }
-
-  .hero h1{
-    font-size:2.9rem;
-  }
-
-  .poster-grid{
-    grid-template-columns:1fr;
-  }
-
-  .feature-grid{
-    grid-template-columns:1fr;
-  }
-
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
-  section{
-    padding:68px 6%;
-  }
-
-  .section-header{
-    flex-direction:column;
-    align-items:flex-start;
-  }
-
-  .nav-links{
-    gap:16px;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="promo-bar" aria-label="Promo ticker">
-  <div class="promo-track">
-    <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION • MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
-    <span>🍿 LIMITED EDITION DROPS • AUDIENCE KA REACTION • THEATRE INSPIRED APPAREL •</span>
-    <span>🎟 GRAND LAUNCH OFFER • ALL T-SHIRTS ₹999 • FREE GIVEAWAY •</span>
-    <span>📽 COMING SOON • NEW DROPS • COMMUNITY EVENTS •</span>
-    <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION • MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
-  </div>
-</div>
-
-<header class="site-header">
-  <div class="header-inner">
-    <div class="brand">
-      <img src="favicon.png" alt="Audience Ka Brand">
-      <span>Audience Ka Brand</span>
-    </div>
-
-    <nav class="nav-links" aria-label="Primary">
-      <a href="#home">Home</a>
-      <a href="#merch">Now Showing</a>
-      <a href="#coming-soon">Coming Soon</a>
-      <a href="#community">Community</a>
-      <a href="#giveaway">Giveaway</a>
-      <a href="#about">About</a>
-    </nav>
-
-    <div class="header-actions">
-      <input class="search-box" type="text" id="collectionSearch" placeholder="Search Collection">
-      <a href="#" class="location-btn">Mumbai ▾</a>
-      <a href="cart.html" class="login-btn">Cart</a>
-    </div>
-  </div>
-</header>
-
-<main>
-
-  <section class="hero" id="home">
-    <div class="hero-grid">
-      <div class="hero-card hero-main reveal">
-        <div class="hero-copy">
-          <span class="badge">NOW SHOWING • THE CINEPHILE COLLECTION</span>
-          <h1>WEAR THE MOVIE EXPERIENCE</h1>
-          <p>
-            Premium white-and-yellow cinema-inspired merch for people who love big screens,
-            opening nights, and the culture around movies.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#merch" class="btn">Browse Collection</a>
-            <a href="#giveaway" class="btn-outline">Join Giveaway</a>
-          </div>
-
-          <div class="hero-meta">
-            <span>Premium Cotton</span>
-            <span>Oversized Fit</span>
-            <span>Limited Drops</span>
-          </div>
-        </div>
-
-        <div class="hero-visual">
-          <div class="showcase-panel">
-            <div>
-              <h3>Season’s Biggest Cinephile Lineup</h3>
-              <p>Built like a movie release banner, designed for a premium merchandise store.</p>
-            </div>
-            <a href="#merch" class="btn" style="width:max-content;">Shop Now</a>
-          </div>
-
-          <div class="qr-panel">
-            <div class="qr-left">
-              <small>AUDIENCE REWARDS</small>
-              <h4>Win Free Merch</h4>
-              <p>Use your YouTube community and giveaway form to turn visitors into fans.</p>
-            </div>
-            <div class="qr-right">
-              SCAN TO<br>ENTER
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="quick-book">
-    <div class="container">
-      <div class="quick-row">
-        <div class="quick-title">Quick Browse</div>
-
-        <div class="quick-toggle" aria-label="Quick browse">
-          <button class="active" type="button">Tees</button>
-          <button type="button">New Drop</button>
-          <button type="button">Limited</button>
-          <button type="button">Giveaway</button>
-        </div>
-
-        <input class="quick-search" type="text" placeholder="Search by product or quote">
-
-        <button class="quick-go" type="button">Browse</button>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-nav">
-    <a class="active" href="#merch">Now Showing</a>
-    <a href="#coming-soon">Coming Soon</a>
-    <a href="#community">Experiences</a>
-    <a href="#giveaway">Offers</a>
-    <a href="#about">About</a>
-  </div>
-
-  <div class="collection-strip">
-    <div class="collection-row">
-      <div class="collection-pill">Cinephile</div>
-      <div class="collection-pill">Oversized</div>
-      <div class="collection-pill">Limited Edit</div>
-      <div class="collection-pill">Movie Quote</div>
-      <div class="collection-pill">Collector Drop</div>
-      <div class="collection-pill">Theatre Mood</div>
-      <div class="collection-pill">Audience Core</div>
-      <div class="collection-pill">Fan Favourite</div>
-      <div class="collection-pill">Premium Cotton</div>
-    </div>
-  </div>
-
-  <section id="merch">
-    <div class="container">
-      <div class="section-header">
-        <div>
-          <div class="section-title">🎬 Now Showing</div>
-          <div class="section-subtitle">
-            A poster-style display for your five core products, built for a premium white and yellow cinema layout.
-          </div>
-        </div>
-      </div>
-
-      <div class="poster-grid" id="posterGrid">
-
-        <article class="poster-card reveal" data-name="see you at the movies" data-cat="limited" onclick="openProduct('product1.html')">
-          <div class="poster-tag">LIMITED EDITION</div>
-          <div class="poster-media">
-            <img src="seeyouatthemovies.png" alt="See You At The Movies">
-          </div>
-          <div class="poster-body">
-            <h3>See You At The Movies</h3>
-            <p>Premium black tee for opening-night energy and theatre lovers.</p>
-            <div class="poster-footer">
-              <div class="poster-price">
-                <span class="old">₹1299</span>
-                <span class="new">₹999</span>
-              </div>
-              <button class="poster-btn" type="button">View</button>
-            </div>
-          </div>
-        </article>
-
-        <article class="poster-card reveal" data-name="i just love watching movies" data-cat="new" onclick="openProduct('product2.html')">
-          <div class="poster-tag">NEW DROP</div>
-          <div class="poster-media">
-            <img src="jimcarrey.png" alt="I Just Love Watching Movies">
-          </div>
-          <div class="poster-body">
-            <h3>I Just Love Watching Movies</h3>
-            <p>Soft, sky-toned apparel for everyday movie lovers.</p>
-            <div class="poster-footer">
+ter">
               <div class="poster-price">
                 <span class="old">₹1299</span>
                 <span class="new">₹999</span>
@@ -1466,3 +301,1457 @@ document.addEventListener('selectstart', e => e.preventDefault());
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Audience Ka Brand</title>
+
+<link rel="icon" href="favicon.png">
+<link rel="shortcut icon" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --yellow:#F4C542;
+  --yellow-dark:#D9A900;
+  --cream:#FFF6DD;
+  --white:#FFFFFF;
+  --paper:#FAFAFA;
+  --ink:#111111;
+  --muted:#666666;
+  --line:#E8E0C7;
+  --card:#FFFFFF;
+  --shadow:0 16px 40px rgba(0,0,0,.08);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+  scroll-behavior:smooth;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  user-select:none;
+  -webkit-user-select:none;
+}
+
+img{
+  pointer-events:none;
+  -webkit-user-drag:none;
+  user-select:none;
+  display:block;
+  max-width:100%;
+}
+
+/* TOP TICKER */
+.promo-bar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:42px;
+  z-index:1000;
+  background:var(--yellow);
+  color:#111;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+
+.promo-track{
+  display:flex;
+  width:max-content;
+  white-space:nowrap;
+  animation:promo 65s linear infinite;
+  font-weight:800;
+  font-size:14px;
+}
+
+.promo-track span{
+  padding-right:90px;
+}
+
+@keyframes promo{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
+}
+
+/* HEADER */
+.site-header{
+  position:fixed;
+  top:42px;
+  left:0;
+  width:100%;
+  z-index:999;
+  background:rgba(255,255,255,.98);
+  backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(0,0,0,.06);
+}
+
+.header-inner{
+  max-width:1560px;
+  margin:0 auto;
+  padding:15px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:1.1rem;
+  font-weight:900;
+  color:var(--yellow-dark);
+  white-space:nowrap;
+}
+
+.brand img{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  object-fit:contain;
+}
+
+.nav-links{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:28px;
+  flex-wrap:wrap;
+}
+
+.nav-links a{
+  color:var(--ink);
+  text-decoration:none;
+  font-weight:700;
+  font-size:.98rem;
+  opacity:.92;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:var(--yellow-dark);
+}
+
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.search-box{
+  width:235px;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  background:#fff;
+  outline:none;
+  color:#111;
+}
+
+.search-box::placeholder{
+  color:#9b9b9b;
+}
+
+.location-btn,
+.cart-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  height:46px;
+  padding:0 16px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  background:#fff;
+  color:#111;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.cart-btn{
+  background:#FFF0BF;
+  border-color:#F0D58A;
+}
+
+/* HERO */
+.hero{
+  padding:142px 6% 28px;
+  background:linear-gradient(180deg,#fff,#fff8ea);
+}
+
+.hero-shell{
+  max-width:1560px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.35fr .65fr;
+  gap:24px;
+  align-items:stretch;
+}
+
+.hero-main{
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.98), rgba(255,255,255,.86)),
+    url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;
+  background-position:center;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  min-height:520px;
+  padding:34px;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:22px;
+  align-items:center;
+}
+
+.hero-copy{
+  z-index:2;
+}
+
+.badge{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:10px 16px;
+  border-radius:999px;
+  background:#FFF3C9;
+  border:1px solid #F0D68F;
+  font-weight:900;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-size:clamp(2.8rem, 5.6vw, 5.2rem);
+  line-height:.92;
+  letter-spacing:-1.6px;
+  color:#111;
+  font-weight:900;
+  max-width:9.2ch;
+  margin-bottom:18px;
+}
+
+.hero p{
+  max-width:620px;
+  color:#404040;
+  font-size:1rem;
+  line-height:1.85;
+}
+
+.hero-actions{
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:28px;
+}
+
+.btn,
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 24px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+  transition:.25s;
+}
+
+.btn{
+  background:var(--yellow);
+  color:#111;
+  box-shadow:0 12px 28px rgba(244,197,66,.25);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-outline{
+  border:1px solid #C8AE55;
+  color:#111;
+  background:#fff;
+}
+
+.btn-outline:hover{
+  background:#FFF5D8;
+  transform:translateY(-2px);
+}
+
+.hero-meta{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:26px;
+}
+
+.hero-meta span{
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid #E7DEC5;
+  background:#fff;
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.hero-side{
+  display:grid;
+  grid-template-rows:1fr 1fr;
+  gap:18px;
+}
+
+.side-card{
+  border-radius:24px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,.06);
+  background:#fff;
+}
+
+.side-card.yellow{
+  background:linear-gradient(135deg,#FFE187,#FFD24E);
+  padding:22px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  min-height:252px;
+}
+
+.side-card.yellow h3{
+  color:#111;
+  font-size:1.75rem;
+  line-height:1.02;
+  margin-bottom:12px;
+  max-width:8ch;
+}
+
+.side-card.yellow p{
+  color:#222;
+  line-height:1.7;
+  font-weight:600;
+  max-width:360px;
+}
+
+.side-card.yellow .btn{
+  width:max-content;
+  margin-top:16px;
+}
+
+.side-card.qr{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  min-height:248px;
+}
+
+.qr-copy{
+  background:#FFF9E5;
+  padding:18px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  border-right:1px solid #f0ddb0;
+}
+
+.qr-copy small{
+  font-weight:900;
+  color:#7a5d00;
+  margin-bottom:8px;
+}
+
+.qr-copy h4{
+  font-size:1.15rem;
+  margin-bottom:10px;
+}
+
+.qr-copy p{
+  color:#4c4c4c;
+  line-height:1.75;
+}
+
+.qr-box{
+  background:#111;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  font-weight:900;
+  letter-spacing:1px;
+  padding:18px;
+}
+
+/* QUICK BAR */
+.quick-book{
+  max-width:1560px;
+  margin:18px auto 0;
+  padding:18px 6%;
+  background:#FFF2C9;
+  border-top:1px solid rgba(0,0,0,.04);
+  border-bottom:1px solid rgba(0,0,0,.04);
+}
+
+.quick-row{
+  display:grid;
+  grid-template-columns:auto auto 1fr auto;
+  gap:14px;
+  align-items:center;
+}
+
+.quick-title{
+  font-weight:900;
+  white-space:nowrap;
+}
+
+.quick-toggle{
+  display:flex;
+  gap:8px;
+  padding:6px;
+  border-radius:14px;
+  background:#fff;
+  border:1px solid #ead9a2;
+}
+
+.quick-toggle button{
+  border:none;
+  background:transparent;
+  padding:10px 15px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:800;
+  color:#222;
+}
+
+.quick-toggle button.active{
+  background:var(--yellow);
+}
+
+.quick-search{
+  width:100%;
+  min-width:0;
+  padding:13px 16px;
+  border-radius:14px;
+  border:1px solid #e0d6b2;
+  background:#fff;
+  color:#111;
+  outline:none;
+}
+
+.quick-go{
+  border:none;
+  background:#111;
+  color:#fff;
+  padding:13px 20px;
+  border-radius:14px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+/* SECONDARY NAV */
+.section-nav{
+  max-width:1560px;
+  margin:14px auto 0;
+  padding:0 6%;
+  display:flex;
+  gap:30px;
+  overflow-x:auto;
+  border-bottom:1px solid #eee;
+}
+
+.section-nav a{
+  padding:18px 0 16px;
+  text-decoration:none;
+  color:#111;
+  font-weight:800;
+  white-space:nowrap;
+  border-bottom:2px solid transparent;
+}
+
+.section-nav a.active,
+.section-nav a:hover{
+  color:var(--yellow-dark);
+  border-bottom-color:var(--yellow-dark);
+}
+
+/* COLLECTION STRIP */
+.collection-strip{
+  max-width:1560px;
+  margin:22px auto 0;
+  padding:0 6%;
+}
+
+.collection-row{
+  display:flex;
+  gap:12px;
+  overflow-x:auto;
+  padding-bottom:4px;
+}
+
+.collection-pill{
+  flex:0 0 auto;
+  min-width:120px;
+  padding:12px 16px;
+  border-radius:16px;
+  background:#fff;
+  color:#1b1b1b;
+  border:1px solid #e7e0ce;
+  box-shadow:0 8px 16px rgba(0,0,0,.06);
+  font-weight:900;
+  text-align:center;
+}
+
+/* SECTIONS */
+section{
+  padding:82px 6%;
+  scroll-margin-top:160px;
+}
+
+.container{
+  max-width:1560px;
+  margin:0 auto;
+}
+
+.section-header{
+  display:flex;
+  align-items:end;
+  justify-content:space-between;
+  gap:18px;
+  margin-bottom:28px;
+}
+
+.section-title{
+  font-size:clamp(2rem, 3.4vw, 3rem);
+  line-height:1.05;
+  font-weight:900;
+  letter-spacing:-.8px;
+  color:#111;
+}
+
+.section-subtitle{
+  color:var(--muted);
+  max-width:720px;
+  line-height:1.8;
+}
+
+/* POSTER GRID */
+.poster-grid{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0, 1fr));
+  gap:20px;
+}
+
+.poster-card{
+  position:relative;
+  background:#fff;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  border:1px solid #e9e3d3;
+  cursor:pointer;
+  transform:translateY(24px);
+  opacity:0;
+  transition:.45s ease;
+}
+
+.poster-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.poster-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 24px 50px rgba(0,0,0,.10);
+}
+
+.poster-tag{
+  position:absolute;
+  top:14px;
+  left:14px;
+  z-index:2;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(244,197,66,.96);
+  color:#111;
+  font-size:.72rem;
+  font-weight:900;
+}
+
+.poster-media{
+  aspect-ratio:4 / 5;
+  overflow:hidden;
+  background:#f5f5f5;
+}
+
+.poster-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.35s ease;
+}
+
+.poster-card:hover .poster-media img{
+  transform:scale(1.04);
+}
+
+.poster-body{
+  padding:16px 16px 18px;
+}
+
+.poster-body h3{
+  font-size:1rem;
+  margin-bottom:8px;
+}
+
+.poster-body p{
+  color:#5c5c5c;
+  font-size:.92rem;
+  line-height:1.65;
+  min-height:48px;
+}
+
+.poster-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-top:14px;
+}
+
+.poster-price{
+  display:flex;
+  flex-direction:column;
+  gap:4px;
+}
+
+.poster-price .old{
+  color:#999;
+  text-decoration:line-through;
+  font-size:.84rem;
+}
+
+.poster-price .new{
+  color:#111;
+  font-weight:900;
+  font-size:1.12rem;
+}
+
+.poster-btn{
+  border:none;
+  background:var(--yellow);
+  color:#111;
+  font-weight:900;
+  border-radius:12px;
+  padding:10px 14px;
+  cursor:pointer;
+}
+
+/* FEATURE BANNER */
+.feature-banner{
+  background:linear-gradient(90deg,#111,#222);
+  color:#fff;
+  border-radius:28px;
+  padding:28px;
+  box-shadow:var(--shadow);
+  display:grid;
+  grid-template-columns:1.2fr .8fr;
+  gap:22px;
+  align-items:center;
+  overflow:hidden;
+}
+
+.feature-banner .text h3{
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+.feature-banner .text p{
+  color:#ddd;
+  line-height:1.8;
+  max-width:700px;
+}
+
+.feature-banner .art{
+  background:#fff;
+  border-radius:22px;
+  padding:14px;
+  min-height:220px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#111;
+  font-weight:900;
+  text-align:center;
+}
+
+/* INFO CARDS */
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:20px;
+}
+
+.feature-card{
+  background:#fff;
+  border:1px solid #e8e3d3;
+  border-radius:24px;
+  padding:26px;
+  min-height:210px;
+  box-shadow:var(--shadow);
+  opacity:0;
+  transform:translateY(22px);
+  transition:.45s ease;
+}
+
+.feature-card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.feature-card h3{
+  font-size:1.15rem;
+  margin-bottom:10px;
+}
+
+.feature-card p{
+  color:#5a5a5a;
+  line-height:1.8;
+}
+
+/* INFO BLOCKS */
+.info-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.info-card{
+  background:#fff;
+  border:1px solid #e8e3d3;
+  border-radius:24px;
+  padding:26px;
+  box-shadow:var(--shadow);
+}
+
+.info-card h3{
+  margin-bottom:10px;
+  color:#111;
+}
+
+.info-card p{
+  color:#5a5a5a;
+  line-height:1.8;
+}
+
+.info-actions{
+  margin-top:18px;
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.info-actions a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:13px 20px;
+  border-radius:999px;
+  text-decoration:none;
+  font-weight:800;
+}
+
+.info-actions .primary{
+  background:var(--yellow);
+  color:#111;
+}
+
+.info-actions .secondary{
+  border:1px solid #c9af58;
+  background:#fff;
+  color:#111;
+}
+
+/* FOOTER */
+footer{
+  background:#0E0E0E;
+  color:#fff;
+  padding:70px 6% 40px;
+  margin-top:20px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.footer-grid{
+  max-width:1560px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr 1fr;
+  gap:24px;
+}
+
+.footer-col h4{
+  color:var(--yellow);
+  margin-bottom:14px;
+  font-size:1.05rem;
+}
+
+.footer-col a,
+.footer-col p{
+  display:block;
+  color:#d8d8d8;
+  text-decoration:none;
+  line-height:2;
+  font-size:.95rem;
+}
+
+.footer-col a:hover{
+  color:var(--yellow);
+}
+
+.footer-bottom{
+  max-width:1560px;
+  margin:34px auto 0;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  color:#a8a8a8;
+  font-size:.92rem;
+}
+
+/* POPCORN TRANSITION */
+.popcorn-transition{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.96);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:16px;
+  z-index:99999;
+}
+
+.popcorn{
+  font-size:72px;
+  animation:explode .8s forwards;
+}
+
+.smash-text{
+  position:absolute;
+  color:var(--yellow);
+  font-weight:900;
+  font-size:clamp(2rem, 4vw, 3.2rem);
+  letter-spacing:5px;
+  text-align:center;
+}
+
+@keyframes explode{
+  0%{ transform:scale(0); opacity:0; }
+  50%{ transform:scale(2); opacity:1; }
+  100%{
+    transform:translateY(-250px) rotate(720deg);
+    opacity:0;
+  }
+}
+
+/* REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(24px);
+  transition:.6s ease;
+}
+
+.reveal.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1280px){
+  .hero-shell{
+    grid-template-columns:1fr;
+  }
+
+  .hero-main{
+    grid-template-columns:1fr;
+  }
+
+  .poster-grid{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+
+  .feature-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+}
+
+@media (max-width: 980px){
+  .header-inner{
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .header-actions{
+    width:100%;
+    justify-content:center;
+  }
+
+  .search-box{
+    width:min(100%, 420px);
+  }
+
+  .quick-row{
+    grid-template-columns:1fr;
+  }
+
+  .quick-title{
+    text-align:center;
+  }
+
+  .quick-toggle{
+    justify-content:center;
+  }
+
+  .feature-banner{
+    grid-template-columns:1fr;
+  }
+
+  .info-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 640px){
+  .hero{
+    padding-top:160px;
+  }
+
+  .hero h1{
+    font-size:2.9rem;
+  }
+
+  .poster-grid{
+    grid-template-columns:1fr;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+
+  .nav-links{
+    gap:16px;
+  }
+
+  section{
+    padding:68px 6%;
+  }
+
+  .section-header{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .hero-main{
+    padding:22px;
+  }
+
+  .qr-panel{
+    grid-template-columns:1fr;
+  }
+
+  .qr-copy{
+    border-right:none;
+    border-bottom:1px solid #f0ddb0;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="promo-bar">
+  <div class="promo-track">
+    <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION • MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
+    <span>🍿 LIMITED EDITION DROPS • AUDIENCE KA REACTION • THEATRE INSPIRED APPAREL •</span>
+    <span>🎟 GRAND LAUNCH OFFER • ALL T-SHIRTS ₹999 • FREE GIVEAWAY •</span>
+    <span>📽 COMING SOON • NEW DROPS • COMMUNITY EVENTS •</span>
+    <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION • MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand">
+      <img src="favicon.png" alt="Audience Ka Brand">
+      <span>Audience Ka Brand</span>
+    </div>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#merch">Now Showing</a>
+      <a href="#coming-soon">Coming Soon</a>
+      <a href="#community">Community</a>
+      <a href="#giveaway">Giveaway</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <div class="header-actions">
+      <input class="search-box" type="text" id="collectionSearch" placeholder="Search Collection">
+      <a href="#" class="location-btn">Mumbai ▾</a>
+      <a href="cart.html" class="cart-btn">Cart</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section class="hero" id="home">
+    <div class="hero-shell">
+
+      <div class="hero-main reveal">
+        <div class="hero-copy">
+          <span class="badge">NOW SHOWING • THE CINEPHILE COLLECTION</span>
+          <h1>WEAR THE MOVIE EXPERIENCE</h1>
+          <p>
+            Premium cinema-inspired apparel for people who love opening-night energy,
+            movie culture, and the big-screen experience.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#merch" class="btn">Browse Collection</a>
+            <a href="#giveaway" class="btn-outline">Join Giveaway</a>
+          </div>
+
+          <div class="hero-meta">
+            <span>Premium Cotton</span>
+            <span>Oversized Fit</span>
+            <span>Limited Drops</span>
+          </div>
+        </div>
+
+        <div class="hero-side">
+          <div class="side-card yellow">
+            <div>
+              <h3>Season’s Biggest Cinephile Lineup</h3>
+              <p>Built like a movie release banner, designed like a premium merch store.</p>
+            </div>
+            <a href="#merch" class="btn">Shop Now</a>
+          </div>
+
+          <div class="side-card qr">
+            <div class="qr-copy">
+              <small>AUDIENCE REWARDS</small>
+              <h4>Win Free Merch</h4>
+              <p>Use giveaways and community pages to turn visitors into loyal fans.</p>
+            </div>
+            <div class="qr-box">
+              SCAN TO<br>ENTER
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="quick-book">
+    <div class="container">
+      <div class="quick-row">
+        <div class="quick-title">Quick Browse</div>
+
+        <div class="quick-toggle">
+          <button class="active" type="button">Tees</button>
+          <button type="button">New Drop</button>
+          <button type="button">Limited</button>
+          <button type="button">Giveaway</button>
+        </div>
+
+        <input class="quick-search" type="text" placeholder="Search by product or quote">
+
+        <button class="quick-go" type="button">Browse</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-nav">
+    <a class="active" href="#merch">Now Showing</a>
+    <a href="#coming-soon">Coming Soon</a>
+    <a href="#community">Experiences</a>
+    <a href="#giveaway">Offers</a>
+    <a href="#about">About</a>
+  </div>
+
+  <div class="collection-strip">
+    <div class="collection-row">
+      <div class="collection-pill">Cinephile</div>
+      <div class="collection-pill">Oversized</div>
+      <div class="collection-pill">Limited Edit</div>
+      <div class="collection-pill">Movie Quote</div>
+      <div class="collection-pill">Collector Drop</div>
+      <div class="collection-pill">Theatre Mood</div>
+      <div class="collection-pill">Audience Core</div>
+      <div class="collection-pill">Fan Favourite</div>
+      <div class="collection-pill">Premium Cotton</div>
+    </div>
+  </div>
+
+  <section id="merch">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🎬 Now Showing</div>
+          <div class="section-subtitle">
+            Your five products as premium poster cards, inspired by the way cinema sites present movie releases.
+          </div>
+        </div>
+      </div>
+
+      <div class="poster-grid" id="posterGrid">
+
+        <article class="poster-card reveal" data-name="see you at the movies" data-cat="limited" onclick="openProduct('product1.html')">
+          <div class="poster-tag">LIMITED EDITION</div>
+          <div class="poster-media">
+            <img src="seeyouatthemovies.png" alt="See You At The Movies">
+          </div>
+          <div class="poster-body">
+            <h3>See You At The Movies</h3>
+            <p>Premium black tee for opening-night energy and theatre lovers.</p>
+            <div class="poster-footer">
+              <div class="poster-price">
+                <span class="old">₹1299</span>
+                <span class="new">₹999</span>
+              </div>
+              <button class="poster-btn" type="button">View</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="poster-card reveal" data-name="i just love watching movies" data-cat="new" onclick="openProduct('product2.html')">
+          <div class="poster-tag">NEW DROP</div>
+          <div class="poster-media">
+            <img src="jimcarrey.png" alt="I Just Love Watching Movies">
+          </div>
+          <div class="poster-body">
+            <h3>I Just Love Watching Movies</h3>
+            <p>Soft, sky-toned apparel for everyday movie lovers.</p>
+            <div class="poster-footer">
+              <div class="poster-price">
+                <span class="old">₹1299</span>
+                <span class="new">₹999</span>
+              </div>
+              <button class="poster-btn" type="button">View</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="poster-card reveal" data-name="wanna go see a movie" data-cat="fan" onclick="openProduct('product3.html')">
+          <div class="poster-tag">FAN FAVOURITE</div>
+          <div class="poster-media">
+            <img src="wannagoseeamovie.png" alt="Wanna Go See A Movie">
+          </div>
+          <div class="poster-body">
+            <h3>Wanna Go See A Movie?</h3>
+            <p>A bold invite-to-theatre tee with a premium cinematic mood.</p>
+            <div class="poster-footer">
+              <div class="poster-price">
+                <span class="old">₹1299</span>
+                <span class="new">₹999</span>
+              </div>
+              <button class="poster-btn" type="button">View</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="poster-card reveal" data-name="too many films so little time" data-cat="collector" onclick="openProduct('product4.html')">
+          <div class="poster-tag">COLLECTOR</div>
+          <div class="poster-media">
+            <img src="toomanyfilms.png" alt="Too Many Films, So Little Time">
+          </div>
+          <div class="poster-body">
+            <h3>Too Many Films, So Little Time</h3>
+            <p>For the movie addict whose watchlist never stops growing.</p>
+            <div class="poster-footer">
+              <div class="poster-price">
+                <span class="old">₹1299</span>
+                <span class="new">₹999</span>
+              </div>
+              <button class="poster-btn" type="button">View</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="poster-card reveal" data-name="film addict" data-cat="best" onclick="openProduct('product5.html')">
+          <div class="poster-tag">BEST SELLER</div>
+          <div class="poster-media">
+            <img src="cinephile.png" alt="Film Addict">
+          </div>
+          <div class="poster-body">
+            <h3>Film Addict</h3>
+            <p>Minimal, clean, and designed like a classic cinema poster.</p>
+            <div class="poster-footer">
+              <div class="poster-price">
+                <span class="old">₹1299</span>
+                <span class="new">₹999</span>
+              </div>
+              <button class="poster-btn" type="button">View</button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section id="coming-soon">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🍿 Coming Soon</div>
+          <div class="section-subtitle">
+            Upcoming drops shown like movie releases and trailer cards.
+          </div>
+        </div>
+      </div>
+
+      <div class="feature-banner reveal">
+        <div class="text">
+          <h3>The Theatre Night Collection</h3>
+          <p>
+            A darker premium line inspired by late-night screenings, marquee lights, and cinema nostalgia.
+            Use this section to build anticipation the same way a movie trailer does.
+          </p>
+        </div>
+        <div class="art">COMING SOON<br>POSTER PREVIEW</div>
+      </div>
+
+      <div style="height:20px;"></div>
+
+      <div class="feature-grid">
+        <div class="feature-card reveal">
+          <h3>Limited Quote Drops</h3>
+          <p>Small-batch tees based on movie quotes, theatre moments, and fan culture.</p>
+        </div>
+        <div class="feature-card reveal">
+          <h3>Audience Special Edition</h3>
+          <p>Exclusive designs tied to Audience Ka Reaction and your community growth.</p>
+        </div>
+        <div class="feature-card reveal">
+          <h3>Collector Restocks</h3>
+          <p>Re-release your best selling designs with premium packaging and drop-style launches.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="community">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🎟 Audience Community</div>
+          <div class="section-subtitle">
+            Turn your YouTube audience into a real brand community with content, events, and fan stories.
+          </div>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="info-card reveal">
+          <h3>Audience Ka Reaction</h3>
+          <p>
+            Build the brand around your theatre visits, movie reactions, and behind-the-scenes YouTube content.
+            That creates trust and makes the merch feel like part of a real culture.
+          </p>
+          <div class="info-actions">
+            <a class="primary" href="https://youtube.com/@audiencekareaction" target="_blank">Watch Channel</a>
+            <a class="secondary" href="#giveaway">Join Giveaway</a>
+          </div>
+        </div>
+
+        <div class="info-card reveal">
+          <h3>Theatre Explorer</h3>
+          <p>
+            Add theatre visit stories, show experiences, and city-based pages later to create a wider cinema universe.
+            It makes the brand feel bigger than apparel alone.
+          </p>
+          <div class="info-actions">
+            <a class="primary" href="#about">Brand Story</a>
+            <a class="secondary" href="#merch">Shop Now</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="giveaway">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🎁 Giveaway</div>
+          <div class="section-subtitle">
+            Use a clean giveaway section to grow your email list, Instagram and YouTube audience.
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card reveal">
+        <h3>Win Free Audience Ka Brand Merch</h3>
+        <p>
+          Keep the website clean by linking your Google Form from a premium button instead of embedding a huge form on the homepage.
+        </p>
+        <div class="info-actions">
+          <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdPYJpunBpfYx5sGTskxypkDVc_lbjOlK7aQ3Xmiz5VYpviZQ/viewform" target="_blank">Enter Giveaway</a>
+          <a class="secondary" href="contact.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <div>
+          <div class="section-title">🍿 The Audience Experience</div>
+          <div class="section-subtitle">
+            A merch brand made for people who still love the big-screen experience.
+          </div>
+        </div>
+      </div>
+
+      <div class="info-card reveal">
+        <p>
+          Audience Ka Brand celebrates the feeling of a first day first show, the smell of popcorn, the darkness before the film starts,
+          and the excitement that lives in every theatre visit. Each drop should feel like a part of that journey.
+        </p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Audience Ka Brand</h4>
+      <p>Made by Movie Lovers, For Movie Lovers.</p>
+      <p>Contactus@audiencekabrand.com</p>
+      <p>Audience Ka Reaction</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Shop</h4>
+      <a href="#merch">Now Showing</a>
+      <a href="#coming-soon">Coming Soon</a>
+      <a href="cart.html">Cart</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Support</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="size-chart.html">Size Chart</a>
+    </div>
+
+    <div class="footer-col">
+      <h4>Legal</h4>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Audience Ka Brand • All Rights Reserved.
+  </div>
+</footer>
+
+<script>
+function openProduct(page){
+  const overlay = document.createElement('div');
+  overlay.className = 'popcorn-transition';
+  overlay.innerHTML =
+    '<div class="popcorn">🍿</div>' +
+    '<div class="popcorn">🍿</div>' +
+    '<div class="popcorn">🍿</div>' +
+    '<div class="smash-text">NOW SHOWING</div>';
+  document.body.appendChild(overlay);
+
+  setTimeout(() => {
+    window.location.href = page;
+  }, 1100);
+}
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add('show');
+    }
+  });
+},{ threshold: 0.15 });
+
+document.querySelectorAll('.reveal, .poster-card, .feature-card')
+  .forEach(el => revealObserver.observe(el));
+
+const searchInput = document.getElementById('collectionSearch');
+const posterCards = [...document.querySelectorAll('.poster-card')];
+const tabs = [...document.querySelectorAll('.quick-toggle button')];
+
+function applyFilter(){
+  const q = (searchInput?.value || '').trim().toLowerCase();
+  const activeTab = document.querySelector('.quick-toggle button.active')?.textContent.trim().toLowerCase() || 'tees';
+
+  posterCards.forEach(card => {
+    const name = (card.dataset.name || '').toLowerCase();
+    const cat = (card.dataset.cat || '').toLowerCase();
+
+    const matchesSearch = !q || name.includes(q);
+    const matchesTab =
+      activeTab === 'tees' ? true :
+      activeTab === 'new drop' ? (cat === 'new' || cat === 'limited' || cat === 'best') :
+      activeTab === 'limited' ? cat === 'limited' :
+      activeTab === 'giveaway' ? true :
+      true;
+
+    card.style.display = (matchesSearch && matchesTab) ? '' : 'none';
+  });
+}
+
+searchInput?.addEventListener('input', applyFilter);
+
+tabs.forEach(btn => {
+  btn.addEventListener('click', () => {
+    tabs.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    applyFilter();
+  });
+});
+
+document.querySelector('.quick-go')?.addEventListener('click', applyFilter);
+
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('dragstart', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+</script>
+
+</body>
+  </html>
