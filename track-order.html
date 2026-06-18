@@ -3,20 +3,195 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Track Order | Audience Ka Brand</title>
+
 <link rel="icon" href="favicon.png">
 <link rel="shortcut icon" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.track-layout{
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:20px;
+  align-items:start;
+}
+
+.track-card{
+  background:#fff;
+  border:1px solid #e8e3d3;
+  border-radius:26px;
+  box-shadow:var(--shadow);
+  padding:26px;
+}
+
+.track-form{
+  display:grid;
+  gap:14px;
+}
+
+.track-form label{
+  display:block;
+  margin-bottom:6px;
+  font-weight:700;
+  color:#111;
+}
+
+.track-form input{
+  width:100%;
+  padding:13px 14px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  background:#fff;
+  outline:none;
+}
+
+.track-form input:focus{
+  border-color:var(--yellow);
+  box-shadow:0 0 0 3px rgba(244,197,66,.15);
+}
+
+.track-result{
+  margin-top:16px;
+  padding:16px;
+  background:#fffdf2;
+  border:1px solid #ead9a2;
+  border-radius:18px;
+  line-height:1.8;
+  color:#333;
+  min-height:72px;
+}
+
+.order-steps{
+  display:grid;
+  gap:14px;
+}
+
+.step{
+  display:flex;
+  gap:14px;
+  align-items:flex-start;
+  padding:18px;
+  border-radius:18px;
+  background:#fff;
+  border:1px solid #e8e3d3;
+  box-shadow:0 10px 24px rgba(0,0,0,.05);
+}
+
+.step-num{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:var(--yellow);
+  color:#111;
+  font-weight:900;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex:0 0 auto;
+}
+
+.step h3{
+  margin-bottom:6px;
+  font-size:1.03rem;
+}
+
+.step p{
+  color:#555;
+  line-height:1.7;
+  font-size:.95rem;
+}
+
+.help-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.help-box{
+  background:#fff;
+  border:1px solid #e8e3d3;
+  border-radius:22px;
+  box-shadow:var(--shadow);
+  padding:22px;
+}
+
+.help-box h3{
+  margin-bottom:10px;
+  color:#111;
+}
+
+.help-box p{
+  color:#555;
+  line-height:1.75;
+}
+
+.badge-line{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:18px;
+}
+
+.badge-line span{
+  padding:10px 14px;
+  background:#fff8df;
+  border:1px solid #ead9a2;
+  border-radius:999px;
+  font-weight:700;
+  font-size:.92rem;
+}
+
+@media (max-width: 980px){
+  .track-layout{
+    grid-template-columns:1fr;
+  }
+
+  .help-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 640px){
+  .track-card{
+    padding:20px;
+  }
+
+  .step{
+    padding:16px;
+  }
+
+  .track-result{
+    font-size:.95rem;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<div class="topbar"><div class="container"><div class="ticker"><span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span><span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span><span>🎟 ALL T-SHIRTS ₹999 • LIMITED DROPS •</span><span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span></div></div></div>
+<div class="topbar">
+  <div class="container">
+    <div class="ticker">
+      <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span>
+      <span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
+      <span>🎟 ALL T-SHIRTS ₹999 • LIMITED DROPS •</span>
+      <span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span>
+    </div>
+  </div>
+</div>
 
 <header>
   <div class="container nav">
-    <a class="brand" href="index.html"><img src="favicon.png" alt=""><span>Audience Ka Brand</span></a>
+    <a class="brand" href="index.html">
+      <img src="favicon.png" alt="Audience Ka Brand">
+      <span>Audience Ka Brand</span>
+    </a>
+
     <nav class="navlinks" aria-label="Primary">
       <a href="shop.html">Shop</a>
       <a href="coming-soon.html">Coming Soon</a>
@@ -25,6 +200,7 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
+
     <div class="actions">
       <input class="search" placeholder="Search collection">
       <a class="pill" href="track-order.html">Track</a>
@@ -34,22 +210,114 @@
 </header>
 
 <main>
-<section class="hero" id="home">
+
+<section class="hero">
   <div class="container">
-    <div class="hero-shell">
-      <div class="hero-card hero-main reveal" style="grid-template-columns:1fr;min-height:auto">
-        <div class="hero-copy">
-          <div class="badge">TRACK ORDER</div>
-          <h1 style="max-width:12ch">TRACK ORDER</h1>
-          <p class="lead">Enter your order number and phone/email.</p>
-          <div class="cta-row">
-            <a class="btn" href="shop.html">Go to Shop</a>
-            <a class="btn-outline" href="index.html">Back Home</a>
+    <div class="hero-card hero-main reveal" style="grid-template-columns:1fr; min-height:auto;">
+      <div class="hero-copy" style="text-align:center;">
+        <div class="badge">TRACK ORDER</div>
+        <h1 style="max-width:12ch; margin:0 auto;">TRACK YOUR ORDER</h1>
+        <p class="lead">
+          Enter your order number and contact details to check the latest status of your Audience Ka Brand order.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="shop.html">Go to Shop</a>
+          <a class="btn-outline" href="index.html">Back Home</a>
+        </div>
+        <div class="meta">
+          <span>Order Status</span>
+          <span>Delivery Update</span>
+          <span>Support Help</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">Find Your Order</h2>
+        <p class="section-subtitle">
+          Use your order number from the confirmation page or email/SMS receipt.
+        </p>
+      </div>
+    </div>
+
+    <div class="track-layout">
+      <div class="track-card reveal">
+        <h3 style="margin-bottom:14px; color:#111;">Enter Order Details</h3>
+
+        <form class="track-form" id="trackForm">
+          <div>
+            <label for="orderNumber">Order Number *</label>
+            <input
+              id="orderNumber"
+              type="text"
+              placeholder="Example: AKB123456"
+              required
+            >
           </div>
-          <div class="meta">
-            <span>Premium Layout</span>
-            <span>Mobile Ready</span>
-            <span>SEO Friendly</span>
+
+          <div>
+            <label for="emailOrPhone">Email or Phone *</label>
+            <input
+              id="emailOrPhone"
+              type="text"
+              placeholder="Email or phone number"
+              required
+            >
+          </div>
+
+          <div class="cta-row" style="justify-content:flex-start; margin-top:8px;">
+            <button class="btn" type="submit">Track Order</button>
+            <a class="btn-outline" href="contact.html">Need Help?</a>
+          </div>
+        </form>
+
+        <div id="trackResult" class="track-result">
+          Your order status will appear here after you submit the form.
+        </div>
+
+        <div class="badge-line">
+          <span>Processing</span>
+          <span>Shipped</span>
+          <span>Out for Delivery</span>
+          <span>Delivered</span>
+        </div>
+      </div>
+
+      <div class="order-steps reveal">
+        <div class="step">
+          <div class="step-num">1</div>
+          <div>
+            <h3>Order Placed</h3>
+            <p>Your payment is confirmed and the order is added to our system.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">2</div>
+          <div>
+            <h3>Order Packed</h3>
+            <p>Your product is checked, packed carefully, and prepared for dispatch.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">3</div>
+          <div>
+            <h3>Shipped</h3>
+            <p>Your parcel has been handed over to the delivery partner and is on the way.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-num">4</div>
+          <div>
+            <h3>Delivered</h3>
+            <p>Your order arrives at your address. Time to wear the cinema vibe.</p>
           </div>
         </div>
       </div>
@@ -61,23 +329,41 @@
   <div class="container">
     <div class="section-header">
       <div>
-        <h2 class="section-title">Track Order</h2>
-        <p class="section-subtitle">Enter your order number and phone/email.</p>
+        <h2 class="section-title">Need Help?</h2>
+        <p class="section-subtitle">
+          If something feels off, reach out and we will sort it out.
+        </p>
       </div>
     </div>
 
-    <div class="info-grid">
-      <div class="info reveal">
-        <h3>Section 1</h3>
-        <p>This page is ready as a clean starter template. Replace this content with your final copy, forms, or policy text.</p>
+    <div class="help-grid">
+      <div class="help-box reveal">
+        <h3>📧 Email Support</h3>
+        <p>
+          Contactus@audiencekabrand.com
+        </p>
+        <p>
+          Send your order number, name, and concern for a faster reply.
+        </p>
       </div>
-      <div class="info reveal">
-        <h3>Section 2</h3>
-        <p>Keep the same header and footer so every page feels consistent across desktop, tablet, and mobile.</p>
+
+      <div class="help-box reveal">
+        <h3>🎟 Order Issues</h3>
+        <p>
+          Wrong size, address mistake, or delivery delay? Use the contact page so we can help.
+        </p>
+      </div>
+
+      <div class="help-box reveal">
+        <h3>🍿 Brand Updates</h3>
+        <p>
+          Follow Audience Ka Reaction for future drops, community updates, and launch announcements.
+        </p>
       </div>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
@@ -112,5 +398,35 @@
 </footer>
 
 <script src="assets/main.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const form = document.getElementById('trackForm');
+  const result = document.getElementById('trackResult');
+
+  if (!form || !result) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const orderNumber = document.getElementById('orderNumber').value.trim();
+    const contact = document.getElementById('emailOrPhone').value.trim();
+
+    if (!orderNumber || !contact) {
+      result.textContent = 'Please enter both your order number and email/phone.';
+      return;
+    }
+
+    // If your shared main.js is checking localStorage order data,
+    // this page can still show a friendly tracking response.
+    result.innerHTML = `
+      <strong>Order Number:</strong> ${orderNumber}<br>
+      <strong>Status:</strong> Processing<br>
+      <strong>Next Update:</strong> We are checking your order details right now.<br>
+      <strong>Contact:</strong> ${contact}
+    `;
+  });
+});
+</script>
+
 </body>
 </html>
