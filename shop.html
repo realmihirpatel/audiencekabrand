@@ -12,7 +12,236 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
+
+<style>
+.shop-hero{
+  padding:48px 0 30px;
+}
+
+.shop-banner{
+  background:
+    linear-gradient(90deg, rgba(17,17,17,.95), rgba(17,17,17,.75)),
+    url('assets/images/hero-banner.png');
+  background-size:cover;
+  background-position:center;
+  color:#fff;
+  border-radius:28px;
+  padding:34px;
+  box-shadow:var(--shadow);
+  overflow:hidden;
+  position:relative;
+}
+
+.shop-banner::after{
+  content:"";
+  position:absolute;
+  right:-40px;
+  top:-40px;
+  width:180px;
+  height:180px;
+  border-radius:50%;
+  background:rgba(244,197,66,.18);
+}
+
+.shop-banner .badge{
+  display:inline-block;
+  padding:10px 18px;
+  background:var(--yellow);
+  color:#111;
+  border-radius:999px;
+  font-weight:800;
+  margin-bottom:16px;
+}
+
+.shop-banner h1{
+  font-size:clamp(2.4rem,5vw,5rem);
+  line-height:1;
+  margin-bottom:12px;
+}
+
+.shop-banner p{
+  max-width:720px;
+  line-height:1.8;
+  color:#e9e9e9;
+}
+
+.shop-filters{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin-top:22px;
+}
+
+.filter-chip{
+  padding:11px 16px;
+  border-radius:999px;
+  background:#fff;
+  color:#111;
+  font-weight:700;
+  border:1px solid #e8e3d3;
+}
+
+.products-section{
+  padding:32px 0 0;
+}
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(5, minmax(0, 1fr));
+  gap:20px;
+}
+
+.product-link{
+  display:block;
+  color:inherit;
+  text-decoration:none;
+}
+
+.product-card{
+  background:#fff;
+  border:1px solid #e8e3d3;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:.3s ease;
+  transform:translateY(0);
+  height:100%;
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 24px 50px rgba(0,0,0,.12);
+}
+
+.product-media{
+  position:relative;
+  aspect-ratio:4 / 5;
+  overflow:hidden;
+  background:#f4f4f4;
+}
+
+.product-media img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.35s ease;
+}
+
+.product-card:hover .product-media img{
+  transform:scale(1.04);
+}
+
+.product-tag{
+  position:absolute;
+  top:14px;
+  left:14px;
+  z-index:2;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(244,197,66,.96);
+  color:#111;
+  font-size:.72rem;
+  font-weight:900;
+}
+
+.product-body{
+  padding:16px;
+}
+
+.product-body h3{
+  font-size:1.02rem;
+  margin-bottom:8px;
+  color:#111;
+}
+
+.product-body p{
+  color:#5c5c5c;
+  font-size:.92rem;
+  line-height:1.65;
+  min-height:70px;
+}
+
+.product-footer{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:10px;
+  margin-top:14px;
+}
+
+.price-box{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+}
+
+.old-price{
+  color:#9b9b9b;
+  text-decoration:line-through;
+  font-size:.84rem;
+}
+
+.new-price{
+  color:#111;
+  font-weight:900;
+  font-size:1.15rem;
+}
+
+.view-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px 14px;
+  border-radius:12px;
+  background:var(--yellow);
+  color:#111;
+  font-weight:900;
+}
+
+.feature-block{
+  margin-top:34px;
+  background:#111;
+  color:#fff;
+  border-radius:26px;
+  padding:28px;
+  box-shadow:var(--shadow);
+}
+
+.feature-block h2{
+  font-size:1.8rem;
+  margin-bottom:8px;
+}
+
+.feature-block p{
+  color:#ddd;
+  line-height:1.8;
+  max-width:800px;
+}
+
+@media (max-width: 1280px){
+  .product-grid{
+    grid-template-columns:repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px){
+  .product-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px){
+  .shop-banner{
+    padding:22px;
+  }
+
+  .product-grid{
+    grid-template-columns:1fr;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <div class="topbar">
@@ -52,160 +281,146 @@
 
 <main>
 
-<section class="hero" id="home">
+<section class="shop-hero">
   <div class="container">
-    <div class="hero-card">
+    <div class="shop-banner reveal">
       <div class="badge">NOW SHOWING</div>
-      <h1>SHOP THE COLLECTION</h1>
-      <p class="lead">
+      <h1>Shop The Collection</h1>
+      <p>
         Explore all five Audience Ka Brand drops in one premium storefront.
-        Built for movie lovers, theatre fans, and cinephiles who want to wear the culture.
+        Click any product to open its full details page.
       </p>
 
-      <div class="cta-row">
-        <a class="btn" href="#products">Browse Products</a>
-        <a class="btn-outline" href="index.html">Back Home</a>
-      </div>
-
-      <div class="meta">
-        <span>Premium Cotton</span>
-        <span>Oversized Fit</span>
-        <span>Limited Edition</span>
+      <div class="shop-filters">
+        <span class="filter-chip">Premium Cotton</span>
+        <span class="filter-chip">Oversized Fit</span>
+        <span class="filter-chip">Limited Edition</span>
+        <span class="filter-chip">Movie Lover Merch</span>
       </div>
     </div>
   </div>
 </section>
 
-<section id="products">
+<section class="products-section" id="products">
   <div class="container">
-
     <div class="section-header">
       <div>
         <h2 class="section-title">🎬 All Products</h2>
         <p class="section-subtitle">
-          Each product has its own identity, inspired by cinema, theatre emotion, and movie lover energy.
+          Tap any card to open the product page.
         </p>
       </div>
     </div>
 
-    <div class="poster-grid">
+    <div class="product-grid">
 
-      <article class="poster-card reveal" data-name="see you at the movies" onclick="openProduct('product1.html')">
-        <div class="poster-tag">LIMITED EDITION</div>
-        <div class="poster-media">
-          <img src="seeyouatthemovies.png" alt="See You At The Movies">
-        </div>
-        <div class="poster-body">
-          <h3>See You At The Movies</h3>
-          <p>
-            A premium black tee for opening-night energy and theatre lovers.
-            Clean, bold, and made to feel like a cinema statement piece.
-          </p>
-          <div class="poster-footer">
-            <div class="poster-price">
-              <span class="old">₹1299</span>
-              <span class="new">₹999</span>
-            </div>
-            <button class="poster-btn" type="button">View</button>
+      <a class="product-link reveal" href="product1.html">
+        <article class="product-card">
+          <div class="product-media">
+            <div class="product-tag">LIMITED EDITION</div>
+            <img src="seeyouatthemovies.png" alt="See You At The Movies">
           </div>
-        </div>
-      </article>
+          <div class="product-body">
+            <h3>See You At The Movies</h3>
+            <p>A premium black tee for opening-night energy and theatre lovers.</p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="old-price">₹1299</span>
+                <span class="new-price">₹999</span>
+              </div>
+              <span class="view-btn">View</span>
+            </div>
+          </div>
+        </article>
+      </a>
 
-      <article class="poster-card reveal" data-name="i just love watching movies" onclick="openProduct('product2.html')">
-        <div class="poster-tag">NEW DROP</div>
-        <div class="poster-media">
-          <img src="jimcarrey.png" alt="I Just Love Watching Movies">
-        </div>
-        <div class="poster-body">
-          <h3>I Just Love Watching Movies</h3>
-          <p>
-            A soft, sky-toned design for everyday movie lovers.
-            Simple, expressive, and easy to style with a premium streetwear feel.
-          </p>
-          <div class="poster-footer">
-            <div class="poster-price">
-              <span class="old">₹1299</span>
-              <span class="new">₹999</span>
-            </div>
-            <button class="poster-btn" type="button">View</button>
+      <a class="product-link reveal" href="product2.html">
+        <article class="product-card">
+          <div class="product-media">
+            <div class="product-tag">NEW DROP</div>
+            <img src="jimcarrey.png" alt="I Just Love Watching Movies">
           </div>
-        </div>
-      </article>
+          <div class="product-body">
+            <h3>I Just Love Watching Movies</h3>
+            <p>Soft, sky-toned apparel for everyday movie lovers.</p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="old-price">₹1299</span>
+                <span class="new-price">₹999</span>
+              </div>
+              <span class="view-btn">View</span>
+            </div>
+          </div>
+        </article>
+      </a>
 
-      <article class="poster-card reveal" data-name="wanna go see a movie" onclick="openProduct('product3.html')">
-        <div class="poster-tag">FAN FAVOURITE</div>
-        <div class="poster-media">
-          <img src="wannagoseeamovie.png" alt="Wanna Go See A Movie">
-        </div>
-        <div class="poster-body">
-          <h3>Wanna Go See A Movie?</h3>
-          <p>
-            A bold invite-to-the-theatre tee with a playful movie-night vibe.
-            Built for people who always say yes to the big screen.
-          </p>
-          <div class="poster-footer">
-            <div class="poster-price">
-              <span class="old">₹1299</span>
-              <span class="new">₹999</span>
-            </div>
-            <button class="poster-btn" type="button">View</button>
+      <a class="product-link reveal" href="product3.html">
+        <article class="product-card">
+          <div class="product-media">
+            <div class="product-tag">FAN FAVOURITE</div>
+            <img src="wannagoseeamovie.png" alt="Wanna Go See A Movie">
           </div>
-        </div>
-      </article>
+          <div class="product-body">
+            <h3>Wanna Go See A Movie?</h3>
+            <p>A bold invite-to-the-theatre tee with a playful movie-night vibe.</p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="old-price">₹1299</span>
+                <span class="new-price">₹999</span>
+              </div>
+              <span class="view-btn">View</span>
+            </div>
+          </div>
+        </article>
+      </a>
 
-      <article class="poster-card reveal" data-name="too many films so little time" onclick="openProduct('product4.html')">
-        <div class="poster-tag">COLLECTOR</div>
-        <div class="poster-media">
-          <img src="toomanyfilms.png" alt="Too Many Films, So Little Time">
-        </div>
-        <div class="poster-body">
-          <h3>Too Many Films, So Little Time</h3>
-          <p>
-            For the movie addict whose watchlist never ends.
-            A collector-style tee with a clean cinema-inspired look.
-          </p>
-          <div class="poster-footer">
-            <div class="poster-price">
-              <span class="old">₹1299</span>
-              <span class="new">₹999</span>
-            </div>
-            <button class="poster-btn" type="button">View</button>
+      <a class="product-link reveal" href="product4.html">
+        <article class="product-card">
+          <div class="product-media">
+            <div class="product-tag">COLLECTOR</div>
+            <img src="toomanyfilms.png" alt="Too Many Films, So Little Time">
           </div>
-        </div>
-      </article>
+          <div class="product-body">
+            <h3>Too Many Films, So Little Time</h3>
+            <p>For the movie addict whose watchlist never ends.</p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="old-price">₹1299</span>
+                <span class="new-price">₹999</span>
+              </div>
+              <span class="view-btn">View</span>
+            </div>
+          </div>
+        </article>
+      </a>
 
-      <article class="poster-card reveal" data-name="film addict" onclick="openProduct('product5.html')">
-        <div class="poster-tag">BEST SELLER</div>
-        <div class="poster-media">
-          <img src="cinephile.png" alt="Film Addict">
-        </div>
-        <div class="poster-body">
-          <h3>Film Addict</h3>
-          <p>
-            Minimal, clean, and designed like a classic cinema release poster.
-            Perfect for anyone who wants a premium everyday cinephile fit.
-          </p>
-          <div class="poster-footer">
-            <div class="poster-price">
-              <span class="old">₹1299</span>
-              <span class="new">₹999</span>
-            </div>
-            <button class="poster-btn" type="button">View</button>
+      <a class="product-link reveal" href="product5.html">
+        <article class="product-card">
+          <div class="product-media">
+            <div class="product-tag">BEST SELLER</div>
+            <img src="cinephile.png" alt="Film Addict">
           </div>
-        </div>
-      </article>
+          <div class="product-body">
+            <h3>Film Addict</h3>
+            <p>Minimal, clean, and designed like a classic cinema release poster.</p>
+            <div class="product-footer">
+              <div class="price-box">
+                <span class="old-price">₹1299</span>
+                <span class="new-price">₹999</span>
+              </div>
+              <span class="view-btn">View</span>
+            </div>
+          </div>
+        </article>
+      </a>
 
     </div>
-  </div>
-</section>
 
-<section>
-  <div class="container">
-    <div class="hero-card reveal">
-      <div class="badge">WHY SHOP HERE</div>
-      <h2 class="section-title" style="margin-top:10px;">Made For Real Movie Lovers</h2>
-      <p class="lead">
-        Audience Ka Brand is built around cinema culture, audience reactions, theatre memories, and premium merch that feels like part of the experience.
+    <div class="feature-block reveal">
+      <h2>Made For Real Movie Lovers</h2>
+      <p>
+        Audience Ka Brand is built around cinema culture, theatre memories, audience reactions,
+        and premium merch that feels like part of the experience.
       </p>
     </div>
   </div>
