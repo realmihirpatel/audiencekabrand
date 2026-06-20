@@ -33,6 +33,11 @@ color:var(--black);
 overflow-x:hidden;
 }
 
+a{
+text-decoration:none;
+color:inherit;
+}
+
 .container{
 width:min(1400px,92%);
 margin:auto;
@@ -86,6 +91,7 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 0;
+gap:18px;
 }
 
 .brand{
@@ -96,6 +102,7 @@ text-decoration:none;
 font-weight:800;
 font-size:22px;
 color:#111;
+white-space:nowrap;
 }
 
 .brand img{
@@ -107,6 +114,8 @@ object-fit:contain;
 .navlinks{
 display:flex;
 gap:25px;
+flex-wrap:wrap;
+justify-content:center;
 }
 
 .navlinks a{
@@ -118,12 +127,16 @@ font-weight:600;
 .actions{
 display:flex;
 gap:10px;
+flex-wrap:wrap;
+justify-content:flex-end;
 }
 
 .search{
 padding:12px 18px;
 border:1px solid #ddd;
 border-radius:30px;
+outline:none;
+min-width:220px;
 }
 
 .pill{
@@ -153,6 +166,7 @@ padding:70px;
 border-radius:30px;
 box-shadow:0 20px 60px rgba(0,0,0,.08);
 text-align:center;
+border:1px solid var(--border);
 }
 
 .badge{
@@ -165,16 +179,18 @@ margin-bottom:20px;
 }
 
 .hero h1{
-font-size:5rem;
+font-size:clamp(2.8rem,6vw,5rem);
 color:var(--gold);
 margin-bottom:20px;
+line-height:1;
 }
 
 .lead{
 font-size:1.2rem;
 color:#666;
-max-width:700px;
+max-width:820px;
 margin:auto;
+line-height:1.8;
 }
 
 .cta-row{
@@ -215,6 +231,7 @@ flex-wrap:wrap;
 background:#f3f3f3;
 padding:12px 20px;
 border-radius:25px;
+font-weight:600;
 }
 
 /* CONTENT */
@@ -227,11 +244,14 @@ padding:80px 0;
 font-size:3rem;
 color:var(--gold);
 margin-bottom:10px;
+line-height:1.1;
 }
 
 .section-subtitle{
 color:#666;
 margin-bottom:40px;
+line-height:1.8;
+max-width:900px;
 }
 
 .info-grid{
@@ -245,11 +265,45 @@ background:white;
 padding:40px;
 border-radius:25px;
 box-shadow:0 10px 30px rgba(0,0,0,.06);
+border:1px solid var(--border);
 }
 
 .info h3{
 color:var(--gold);
 margin-bottom:15px;
+font-size:1.35rem;
+}
+
+.info p{
+line-height:1.9;
+color:#555;
+}
+
+/* JOURNEY TIMELINE */
+
+.timeline{
+display:grid;
+gap:18px;
+}
+
+.timeline-item{
+background:white;
+padding:26px 30px;
+border-radius:22px;
+border:1px solid var(--border);
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+}
+
+.timeline-item strong{
+display:block;
+color:var(--gold);
+margin-bottom:8px;
+font-size:1.05rem;
+}
+
+.timeline-item p{
+color:#555;
+line-height:1.8;
 }
 
 /* FOOTER */
@@ -283,6 +337,7 @@ margin-bottom:10px;
 .footer-grid p{
 margin-bottom:10px;
 color:#ccc;
+line-height:1.8;
 }
 
 .footer-bottom{
@@ -294,25 +349,35 @@ color:#999;
 
 /* MOBILE */
 
+@media(max-width:1024px){
+.info-grid{
+grid-template-columns:1fr;
+}
+.footer-grid{
+grid-template-columns:repeat(2,1fr);
+}
+}
+
 @media(max-width:768px){
 
 .nav{
 flex-direction:column;
-gap:15px;
+align-items:flex-start;
 }
 
 .navlinks{
-flex-wrap:wrap;
-justify-content:center;
+justify-content:flex-start;
+gap:15px;
 }
 
 .actions{
-flex-wrap:wrap;
-justify-content:center;
+width:100%;
+justify-content:flex-start;
 }
 
 .search{
 width:100%;
+min-width:0;
 }
 
 .hero{
@@ -327,16 +392,12 @@ padding:35px 25px;
 font-size:2.8rem;
 }
 
-.info-grid{
-grid-template-columns:1fr;
+.section-title{
+font-size:2rem;
 }
 
 .footer-grid{
 grid-template-columns:1fr;
-}
-
-.section-title{
-font-size:2rem;
 }
 
 }
@@ -362,11 +423,11 @@ font-size:2rem;
 <div class="container nav">
 
 <a class="brand" href="index.html">
-<img src="favicon.png" alt="">
+<img src="favicon.png" alt="Audience Ka Brand">
 <span>Audience Ka Brand</span>
 </a>
 
-<nav class="navlinks">
+<nav class="navlinks" aria-label="Primary">
 <a href="shop.html">Shop</a>
 <a href="coming-soon.html">Coming Soon</a>
 <a href="community.html">Community</a>
@@ -384,6 +445,8 @@ font-size:2rem;
 </div>
 </header>
 
+<main>
+
 <section class="hero">
 <div class="container">
 
@@ -391,10 +454,13 @@ font-size:2rem;
 
 <div class="badge">ABOUT</div>
 
-<h1>Audience Ka Brand</h1>
+<h1>Made By Movie Lovers, For Movie Lovers</h1>
 
 <p class="lead">
-A premium cinephile clothing brand built for movie lovers, theatre enthusiasts and fans who live for the big-screen experience.
+Audience Ka Brand began with a simple love for movies.
+What started in April 2022 as Audience Ka Reaction grew into a community built around theatre experiences,
+real audience emotions, and the magic of cinema. Today, that passion has turned into a premium clothing brand
+for cinephiles who want to wear what they love.
 </p>
 
 <div class="cta-row">
@@ -416,25 +482,47 @@ A premium cinephile clothing brand built for movie lovers, theatre enthusiasts a
 <section>
 <div class="container">
 
-<h2 class="section-title">Our Story</h2>
+<h2 class="section-title">My Journey</h2>
 
 <p class="section-subtitle">
-Made by Movie Lovers, For Movie Lovers.
+From a movie-loving YouTube channel in April 2022 to a growing brand built for cinema fans.
 </p>
 
-<div class="info-grid">
+<div class="timeline">
 
-<div class="info">
-<h3>🎬 The Vision</h3>
+<div class="timeline-item">
+<strong>April 2022 — It Started With Audience Ka Reaction</strong>
 <p>
-Audience Ka Brand was created to bring cinema culture into everyday fashion. Every design celebrates the magic of movies and theatre experiences.
+The journey began with YouTube and a strong love for theatre culture.
+Audience Ka Reaction became the space where movie emotions, theatre visits,
+and audience energy could be shared with people who understood the feeling.
 </p>
 </div>
 
-<div class="info">
-<h3>🍿 The Community</h3>
+<div class="timeline-item">
+<strong>Building A Community</strong>
 <p>
-Powered by Audience Ka Reaction, this brand aims to unite movie fans through merchandise, events, screenings and giveaways.
+Over time, the channel grew beyond just videos.
+It became a place for movie lovers, cinephiles, and pop-culture fans
+who enjoy cinema as an experience, not just as entertainment.
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>Turning Passion Into A Brand</strong>
+<p>
+As the community grew, the idea became bigger.
+Audience Ka Brand was created to transform that movie-loving identity into clothing,
+so people could wear the culture they already lived and loved.
+</p>
+</div>
+
+<div class="timeline-item">
+<strong>Now — Audience Ka Brand</strong>
+<p>
+Today, the vision is bigger than merch.
+It is about building a premium cinephile lifestyle brand around cinema,
+theatre memories, audience reactions, events, giveaways, and future experiences.
 </p>
 </div>
 
@@ -442,6 +530,57 @@ Powered by Audience Ka Reaction, this brand aims to unite movie fans through mer
 
 </div>
 </section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Our Story</h2>
+
+<p class="section-subtitle">
+This brand exists because cinema deserves more than just a screen — it deserves a culture.
+</p>
+
+<div class="info-grid">
+
+<div class="info">
+<h3>🎬 The Vision</h3>
+<p>
+Audience Ka Brand was created to bring cinema culture into everyday fashion.
+Every design celebrates the magic of movies, theatre experiences, and audience emotions.
+</p>
+</div>
+
+<div class="info">
+<h3>🍿 The Community</h3>
+<p>
+Powered by Audience Ka Reaction, this brand aims to unite movie fans through
+merchandise, events, screenings, giveaways, and shared theatre moments.
+</p>
+</div>
+
+<div class="info">
+<h3>📽 What Cinema Means Here</h3>
+<p>
+For this brand, cinema is not just watching a film.
+It is the lights dimming, the crowd reacting, the opening scene hitting hard,
+and the memory that stays long after the credits end.
+</p>
+</div>
+
+<div class="info">
+<h3>🎟 What Comes Next</h3>
+<p>
+The goal is to keep growing into a full cinema-inspired lifestyle brand
+with premium drops, community events, theatre screenings, and future fan experiences.
+</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+</main>
 
 <footer>
 
