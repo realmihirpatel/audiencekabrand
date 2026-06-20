@@ -6,411 +6,872 @@
 
 <title>See You At The Movies | Audience Ka Brand</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.png">
+<link rel="shortcut icon" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <style>
-
 :root{
---gold:#D4AF37;
---gold-light:#F5D76E;
---black:#0B0B0B;
---card:#161616;
+  --gold:#F4C542;
+  --gold-dark:#D9A900;
+  --paper:#ffffff;
+  --bg:#fffdf7;
+  --ink:#111111;
+  --muted:#5f5f5f;
+  --line:#e9e3d1;
+  --shadow:0 16px 40px rgba(0,0,0,.08);
 }
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-background:var(--black);
-color:white;
+  background:var(--paper);
+  color:var(--ink);
+  overflow-x:hidden;
+  user-select:none;
+  -webkit-user-select:none;
 }
 
-header{
-padding:20px 8%;
-background:#111;
-position:sticky;
-top:0;
-z-index:100;
-}
 img{
-pointer-events:none;
-user-select:none;
--webkit-user-drag:none;
+  display:block;
+  max-width:100%;
+  pointer-events:none;
+  -webkit-user-drag:none;
+  user-select:none;
 }
 
-body{
--webkit-user-select:none;
-user-select:none;
+a{
+  text-decoration:none;
+  color:inherit;
 }
-.logo{
-font-size:28px;
-font-weight:800;
-color:var(--gold);
+
+button,
+input,
+select{
+  font:inherit;
 }
 
 .container{
-max-width:1300px;
-margin:auto;
-padding:60px 8%;
+  width:min(1400px,92%);
+  margin:auto;
 }
 
-.product-layout{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:50px;
-align-items:start;
+.topbar{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:42px;
+  background:var(--gold);
+  overflow:hidden;
+  z-index:1000;
+  display:flex;
+  align-items:center;
 }
 
-.product-image{
-background:#161616;
-border:2px solid var(--gold);
-border-radius:20px;
-overflow:hidden;
+.ticker{
+  display:flex;
+  white-space:nowrap;
+  animation:ticker 45s linear infinite;
+  font-weight:800;
+  color:#111;
 }
 
-.product-image img{
-width:100%;
-display:block;
+.ticker span{
+  padding-right:90px;
 }
 
-.product-title{
-font-size:3rem;
-color:var(--gold);
-margin-bottom:15px;
+@keyframes ticker{
+  0%{transform:translateX(0);}
+  100%{transform:translateX(-50%);}
 }
 
-.price-row{
-display:flex;
-gap:15px;
-align-items:center;
-margin:20px 0;
+header{
+  position:fixed;
+  top:42px;
+  left:0;
+  width:100%;
+  z-index:999;
+  background:rgba(255,255,255,.96);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(0,0,0,.06);
 }
 
-.old-price{
-text-decoration:line-through;
-color:#777;
-font-size:1.2rem;
+.nav{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:16px 0;
 }
 
-.new-price{
-font-size:2rem;
-font-weight:700;
-color:var(--gold-light);
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:900;
+  font-size:1.08rem;
+  color:#111;
+  white-space:nowrap;
 }
 
-.discount{
-background:#0d8c57;
-padding:8px 14px;
-border-radius:20px;
-font-size:13px;
+.brand img{
+  width:32px;
+  height:32px;
+  object-fit:contain;
+  border-radius:50%;
 }
 
-.size-grid{
-display:flex;
-gap:10px;
-margin:20px 0;
+.navlinks{
+  display:flex;
+  align-items:center;
+  gap:24px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
-.size-btn{
-padding:12px 20px;
-border:1px solid var(--gold);
-background:none;
-color:white;
-cursor:pointer;
-border-radius:10px;
+.navlinks a{
+  color:#111;
+  font-weight:700;
+  font-size:.98rem;
+  opacity:.92;
+  transition:.25s;
 }
 
-.size-btn:hover{
-background:var(--gold);
-color:black;
+.navlinks a:hover{
+  color:var(--gold-dark);
 }
 
-.qty{
-margin:20px 0;
+.header-actions{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
 }
 
-.qty input{
-width:80px;
-padding:10px;
-font-size:18px;
+.search{
+  width:220px;
+  padding:12px 16px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  background:#fff;
+  outline:none;
 }
 
-.btn{
-display:inline-block;
-padding:15px 30px;
-border-radius:40px;
-font-weight:700;
-text-decoration:none;
-margin-right:15px;
-margin-top:15px;
-}
-
-.buy-btn{
-background:var(--gold);
-color:black;
+.location-btn,
+.cart-btn{
+  height:46px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:0 16px;
+  border-radius:14px;
+  border:1px solid #ddd;
+  font-weight:700;
+  background:#fff;
+  color:#111;
 }
 
 .cart-btn{
-border:1px solid var(--gold);
-color:var(--gold);
+  background:#FFF1CC;
+  border-color:#F0D38A;
 }
 
-.section{
-margin-top:60px;
-background:#161616;
-padding:30px;
-border-radius:20px;
+.page-wrap{
+  padding-top:150px;
+  padding-bottom:60px;
+  background:
+    linear-gradient(180deg,#ffffff,#fff9e8);
 }
 
-.section h2{
-color:var(--gold);
-margin-bottom:20px;
+.breadcrumb{
+  display:flex;
+  gap:8px;
+  align-items:center;
+  flex-wrap:wrap;
+  color:#6a6a6a;
+  font-size:.92rem;
+  margin-bottom:18px;
 }
 
-.back-btn{
-display:inline-block;
-margin-bottom:30px;
-color:var(--gold);
-text-decoration:none;
+.breadcrumb a{
+  color:#111;
+  font-weight:700;
 }
-
-@media(max-width:900px){
 
 .product-layout{
-grid-template-columns:1fr;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:24px;
+  align-items:start;
+}
+
+.product-gallery{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  overflow:hidden;
+  box-shadow:var(--shadow);
+}
+
+.main-image-wrap{
+  position:relative;
+  aspect-ratio:4 / 5;
+  background:#f6f6f6;
+}
+
+.main-image{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.badge{
+  position:absolute;
+  top:16px;
+  left:16px;
+  z-index:2;
+  display:inline-flex;
+  align-items:center;
+  padding:10px 14px;
+  border-radius:999px;
+  background:rgba(244,197,66,.96);
+  color:#111;
+  font-size:.75rem;
+  font-weight:900;
+  letter-spacing:.6px;
+}
+
+.thumbs{
+  display:flex;
+  gap:10px;
+  padding:14px;
+  overflow-x:auto;
+  background:#fff;
+}
+
+.thumbs img{
+  width:92px;
+  height:92px;
+  border-radius:16px;
+  object-fit:cover;
+  border:1px solid #eee;
+  cursor:pointer;
+  opacity:.85;
+  transition:.2s;
+}
+
+.thumbs img:hover,
+.thumbs img.active{
+  opacity:1;
+  border-color:var(--gold);
+  transform:translateY(-1px);
+}
+
+.product-panel{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:28px;
+  box-shadow:var(--shadow);
+  padding:28px;
 }
 
 .product-title{
-font-size:2rem;
+  font-size:clamp(2.1rem,4vw,3.8rem);
+  line-height:1.02;
+  color:#111;
+  margin-bottom:10px;
+  font-weight:900;
 }
 
+.product-sub{
+  color:var(--muted);
+  line-height:1.8;
+  font-size:1rem;
+  max-width:640px;
 }
 
+.price-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+  align-items:center;
+  margin:20px 0 18px;
+}
+
+.old-price{
+  text-decoration:line-through;
+  color:#8c8c8c;
+  font-size:1.1rem;
+}
+
+.new-price{
+  font-size:2rem;
+  font-weight:900;
+  color:var(--gold-dark);
+}
+
+.discount{
+  display:inline-flex;
+  align-items:center;
+  padding:8px 12px;
+  border-radius:999px;
+  background:#fff3d0;
+  border:1px solid #ead9a2;
+  color:#111;
+  font-weight:800;
+  font-size:.85rem;
+}
+
+.info-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  margin:18px 0 8px;
+}
+
+.pill{
+  padding:10px 14px;
+  border-radius:999px;
+  background:#fffdf7;
+  border:1px solid #e6dfc9;
+  font-size:.9rem;
+  font-weight:700;
+}
+
+.select-area,
+.qty-area{
+  margin-top:18px;
+}
+
+.select-area h3,
+.qty-area h3{
+  margin-bottom:10px;
+  font-size:1rem;
+  color:#111;
+}
+
+.size-grid{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.size-btn{
+  padding:12px 16px;
+  border:1px solid var(--gold);
+  background:none;
+  color:#111;
+  cursor:pointer;
+  border-radius:12px;
+  font-weight:700;
+  transition:.2s ease;
+}
+
+.size-btn:hover,
+.size-btn.active{
+  background:var(--gold);
+  border-color:var(--gold);
+}
+
+.qty-box{
+  width:100%;
+  max-width:140px;
+  padding:12px 14px;
+  font-size:1rem;
+  border-radius:12px;
+  border:1px solid #ddd;
+  outline:none;
+  background:#fff;
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:24px;
+}
+
+.btn,
+.btn-outline{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:14px 22px;
+  border-radius:999px;
+  font-weight:800;
+  transition:.25s ease;
+  border:none;
+  cursor:pointer;
+}
+
+.btn{
+  background:var(--gold);
+  color:#111;
+  box-shadow:0 12px 28px rgba(244,197,66,.24);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+}
+
+.btn-outline{
+  background:transparent;
+  border:1px solid #C7A631;
+  color:#111;
+}
+
+.btn-outline:hover{
+  background:#FFF5D6;
+  transform:translateY(-2px);
+}
+
+.section-grid{
+  margin-top:24px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+
+.section-card{
+  background:#fff;
+  border:1px solid var(--line);
+  border-radius:24px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+
+.section-card h2{
+  color:#111;
+  margin-bottom:12px;
+  font-size:1.25rem;
+}
+
+.section-card p,
+.section-card li{
+  color:#555;
+  line-height:1.9;
+}
+
+.section-card ul{
+  padding-left:18px;
+}
+
+.feature-strip{
+  margin-top:24px;
+  background:#111;
+  color:#fff;
+  border-radius:24px;
+  padding:22px;
+  box-shadow:var(--shadow);
+}
+
+.feature-strip h2{
+  color:var(--gold);
+  margin-bottom:8px;
+  font-size:1.3rem;
+}
+
+.feature-strip p{
+  color:#ddd;
+  line-height:1.8;
+}
+
+footer{
+  background:#0e0e0e;
+  color:#fff;
+  padding:70px 4.5% 40px;
+  margin-top:30px;
+  border-top:1px solid rgba(255,255,255,.06);
+}
+
+.footer-grid{
+  max-width:1400px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1.2fr 1fr 1fr 1fr;
+  gap:24px;
+}
+
+.footer-grid h4{
+  color:var(--gold);
+  margin-bottom:14px;
+  font-size:1.05rem;
+}
+
+.footer-grid a,
+.footer-grid p{
+  display:block;
+  color:#d8d8d8;
+  text-decoration:none;
+  line-height:2;
+  font-size:.95rem;
+}
+
+.footer-grid a:hover{
+  color:var(--gold);
+}
+
+.footer-bottom{
+  max-width:1400px;
+  margin:34px auto 0;
+  padding-top:18px;
+  border-top:1px solid rgba(255,255,255,.08);
+  text-align:center;
+  color:#a8a8a8;
+  font-size:.92rem;
+}
+
+@media (max-width: 1180px){
+  .product-layout{
+    grid-template-columns:1fr;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .section-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+@media (max-width: 768px){
+  header{
+    padding:0 0;
+  }
+
+  .nav{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:14px;
+    padding:14px 0;
+  }
+
+  .navlinks{
+    justify-content:flex-start;
+    gap:14px;
+  }
+
+  .header-actions{
+    width:100%;
+    justify-content:flex-start;
+  }
+
+  .search{
+    width:100%;
+  }
+
+  .page-wrap{
+    padding-top:210px;
+  }
+
+  .product-panel{
+    padding:20px;
+  }
+
+  .product-title{
+    font-size:2.1rem;
+  }
+
+  .new-price{
+    font-size:1.7rem;
+  }
+
+  .actions{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .btn,
+  .btn-outline{
+    width:100%;
+  }
+
+  .footer-grid{
+    grid-template-columns:1fr;
+  }
+}
 </style>
 </head>
 
 <body>
 
+<div class="topbar">
+  <div class="container">
+    <div class="ticker">
+      <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span>
+      <span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
+      <span>🎟 LIMITED DROPS • PREMIUM COTTON •</span>
+      <span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span>
+      <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span>
+    </div>
+  </div>
+</div>
+
 <header>
-<div class="logo">🎬 Audience Ka Brand</div>
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <img src="favicon.png" alt="Audience Ka Brand">
+      <span>Audience Ka Brand</span>
+    </a>
+
+    <nav class="navlinks" aria-label="Primary">
+      <a href="shop.html">Shop</a>
+      <a href="coming-soon.html">Coming Soon</a>
+      <a href="community.html">Community</a>
+      <a href="giveaway.html">Giveaway</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="header-actions">
+      <input class="search" placeholder="Search collection">
+      <a class="location-btn" href="track-order.html">Track</a>
+      <a class="cart-btn" href="cart.html">Cart</a>
+    </div>
+  </div>
 </header>
 
-<div class="container">
+<main class="page-wrap">
+  <div class="container">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="shop.html">Shop</a>
+      <span>›</span>
+      <span>See You At The Movies</span>
+    </div>
 
-<a href="index.html" class="back-btn">
-← Back To Collection
-</a>
+    <div class="product-layout">
+      <div class="product-gallery">
+        <div class="main-image-wrap">
+          <div class="badge">LIMITED EDITION</div>
+          <img id="mainImage" class="main-image" src="seeyouatthemovies.png" alt="See You At The Movies">
+        </div>
 
-<div class="product-layout">
+        <div class="thumbs">
+          <img class="active" src="seeyouatthemovies.png" alt="See You At The Movies thumbnail" onclick="setMainImage(this.src, this)">
+          <img src="seeyouatthemovies.png" alt="See You At The Movies thumbnail 2" onclick="setMainImage(this.src, this)">
+          <img src="seeyouatthemovies.png" alt="See You At The Movies thumbnail 3" onclick="setMainImage(this.src, this)">
+        </div>
+      </div>
 
-<div class="product-image">
-<img src="seeyouatthemovies.png" alt="See You At The Movies">
-</div>
+      <div class="product-panel">
+        <h1 class="product-title">See You At The Movies</h1>
+        <p class="product-sub">
+          A premium oversized tee made for true cinephiles.
+          Inspired by the magic of theatres and unforgettable movie nights.
+        </p>
 
-<div>
+        <div class="price-row">
+          <span class="old-price">₹1299</span>
+          <span class="new-price">₹999</span>
+          <span class="discount">23% OFF</span>
+        </div>
 
-<h1 class="product-title">
-See You At The Movies
-</h1>
+        <div class="info-row">
+          <span class="pill">100% Premium Cotton</span>
+          <span class="pill">240 GSM</span>
+          <span class="pill">Oversized Fit</span>
+        </div>
 
-<p>
-A premium oversized tee made for true cinephiles.
-Inspired by the magic of theatres and unforgettable movie nights.
-</p>
+        <div class="select-area">
+          <h3>Select Size</h3>
+          <div class="size-grid" id="sizeGrid">
+            <button type="button" class="size-btn" data-size="S">S</button>
+            <button type="button" class="size-btn" data-size="M">M</button>
+            <button type="button" class="size-btn active" data-size="L">L</button>
+            <button type="button" class="size-btn" data-size="XL">XL</button>
+            <button type="button" class="size-btn" data-size="XXL">XXL</button>
+          </div>
+        </div>
 
-<div class="price-row">
+        <div class="qty-area">
+          <h3>Quantity</h3>
+          <input type="number" value="1" min="1" id="quantity" class="qty-box">
+        </div>
 
-<span class="old-price">
-₹1299
-</span>
+        <div class="actions">
+          <button type="button" class="btn-outline" onclick="addToCart()">Add To Cart</button>
+          <button type="button" class="btn" onclick="buyNow()">Buy Now</button>
+        </div>
 
-<span class="new-price">
-₹999
-</span>
+        <div class="feature-strip">
+          <h2>Why this drop stands out</h2>
+          <p>
+            This design is built to feel like a cinema statement piece:
+            clean, bold, premium, and easy to wear to theatre nights, fan screenings, and everyday outings.
+          </p>
+        </div>
+      </div>
+    </div>
 
-<span class="discount">
-23% OFF
-</span>
+    <div class="section-grid">
+      <div class="section-card">
+        <h2>🎬 Product Description</h2>
+        <p>
+          Designed for movie lovers who believe the theatre experience never gets old.
+          Wear your passion for cinema proudly with a premium, comfortable fit.
+        </p>
+      </div>
 
-</div>
+      <div class="section-card">
+        <h2>🧵 Fabric Details</h2>
+        <ul>
+          <li>100% Premium Cotton</li>
+          <li>240 GSM Heavyweight Fabric</li>
+          <li>Oversized Relaxed Fit</li>
+          <li>Screen Printed Design</li>
+        </ul>
+      </div>
 
-<h3>Select Size</h3>
+      <div class="section-card">
+        <h2>🧼 Wash Care</h2>
+        <ul>
+          <li>Machine Wash Cold</li>
+          <li>Wash Inside Out</li>
+          <li>Do Not Iron On Print</li>
+          <li>Do Not Bleach</li>
+        </ul>
+      </div>
 
-<div class="size-grid">
-<select id="sizeSelect" style="padding:12px;border-radius:10px;background:#111;color:white;border:1px solid #D4AF37;">
+      <div class="section-card">
+        <h2>🚚 Shipping Information</h2>
+        <p>
+          Orders are processed within 2–4 business days.
+          Delivery usually takes 4–10 days across India.
+        </p>
+      </div>
+    </div>
+  </div>
+</main>
 
-<option value="S">S</option>
-<option value="M">M</option>
-<option value="L" selected>L</option>
-<option value="XL">XL</option>
-<option value="XXL">XXL</option>
+<footer>
+  <div class="footer-grid">
+    <div>
+      <h4>Audience Ka Brand</h4>
+      <p>Made by Movie Lovers, For Movie Lovers.</p>
+      <p>Contactus@audiencekabrand.com</p>
+      <p>Audience Ka Reaction</p>
+    </div>
 
-</select>
-</div>
+    <div>
+      <h4>Store</h4>
+      <a href="shop.html">Shop</a>
+      <a href="cart.html">Cart</a>
+      <a href="track-order.html">Track Order</a>
+    </div>
 
-<div class="qty">
+    <div>
+      <h4>Support</h4>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="faq.html">FAQ</a>
+    </div>
 
-<label>
-Quantity
-</label>
+    <div>
+      <h4>Legal</h4>
+      <a href="privacy-policy.html">Privacy Policy</a>
+      <a href="shipping-policy.html">Shipping Policy</a>
+      <a href="refund-policy.html">Refund Policy</a>
+      <a href="terms.html">Terms & Conditions</a>
+    </div>
+  </div>
 
-<br><br>
+  <div class="footer-bottom">© 2026 Audience Ka Brand • All Rights Reserved.</div>
+</footer>
 
-<input
-type="number"
-value="1"
-min="1"
-id="quantity">
-
-</div>
-<button onclick="addToCart()" class="btn cart-btn">
-Add To Cart
-</button>
-
-<button onclick="buyNow()" class="btn buy-btn">
-Buy Now
-</button>
-
-</div>
-
-</div>
-
-<div class="section">
-
-<h2>
-🎬 Product Description
-</h2>
-
-<p>
-Designed for movie lovers who believe the theatre experience never gets old.
-Wear your passion for cinema proudly.
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>
-🧵 Fabric Details
-</h2>
-
-<ul>
-<li>100% Premium Cotton</li>
-<li>240 GSM</li>
-<li>Oversized Fit</li>
-<li>Screen Printed Design</li>
-</ul>
-
-</div>
-
-<div class="section">
-
-<h2>
-🧼 Wash Care
-</h2>
-
-<ul>
-<li>Machine Wash Cold</li>
-<li>Do Not Iron On Print</li>
-<li>Wash Inside Out</li>
-<li>Do Not Bleach</li>
-</ul>
-
-</div>
-
-<div class="section">
-
-<h2>
-🚚 Shipping Information
-</h2>
-
-<p>
-Orders are processed within 2-4 business days.
-Delivery usually takes 4-10 days across India.
-</p>
-
-</div>
-
-</div>
 <script>
-// Disable right click
-document.addEventListener("contextmenu", e => e.preventDefault());
+const CART_KEY = 'akb_cart';
 
-// Disable drag
-document.addEventListener("dragstart", e => e.preventDefault());
-
-// Disable text selection
-document.addEventListener("selectstart", e => e.preventDefault());
-
-// Disable some common shortcuts
-document.addEventListener("keydown", function(e){
-
-if(
-(e.ctrlKey && ["s","u","p"].includes(e.key.toLowerCase())) ||
-e.key === "F12"
-){
-e.preventDefault();
+function setMainImage(src, thumbEl){
+  document.getElementById('mainImage').src = src;
+  document.querySelectorAll('.thumbs img').forEach(img => img.classList.remove('active'));
+  thumbEl.classList.add('active');
 }
 
+function getSelectedSize(){
+  const active = document.querySelector('.size-btn.active');
+  return active ? active.dataset.size : 'L';
+}
+
+document.querySelectorAll('.size-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  });
 });
 
-  function addToCart(){
+function loadCart(){
+  try{
+    return JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+  }catch{
+    return [];
+  }
+}
 
-const product = {
+function saveCart(cart){
+  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+}
 
-name:"See You At The Movies",
+function addToCart(){
+  const product = {
+    id: 'product1',
+    name: 'See You At The Movies',
+    price: 999,
+    image: 'seeyouatthemovies.png',
+    size: getSelectedSize(),
+    quantity: Math.max(1, parseInt(document.getElementById('quantity').value) || 1)
+  };
 
-price:999,
+  const cart = loadCart();
+  const existing = cart.find(item => item.id === product.id && item.size === product.size);
 
-image:"seeyouatthemovies.png",
+  if(existing){
+    existing.quantity += product.quantity;
+  }else{
+    cart.push(product);
+  }
 
-size:document.getElementById("sizeSelect").value,
-
-quantity:parseInt(
-document.getElementById("quantity").value
-)
-
-};
-
-localStorage.setItem(
-"cartItem",
-JSON.stringify(product)
-);
-
-window.location.href="cart.html";
-
+  saveCart(cart);
+  window.location.href = 'cart.html';
 }
 
 function buyNow(){
-
-const product = {
-
-name:"See You At The Movies",
-
-price:999,
-
-image:"seeyouatthemovies.png",
-
-size:document.getElementById("sizeSelect").value,
-
-quantity:parseInt(
-document.getElementById("quantity").value
-)
-
-};
-
-localStorage.setItem(
-"cartItem",
-JSON.stringify(product)
-);
-
-window.location.href="checkout.html";
-
+  addToCart();
+  setTimeout(() => {
+    window.location.href = 'checkout.html';
+  }, 50);
 }
+
+/* Disable right click */
+document.addEventListener('contextmenu', e => e.preventDefault());
+document.addEventListener('dragstart', e => e.preventDefault());
+document.addEventListener('selectstart', e => e.preventDefault());
+
+/* Disable some common shortcuts */
+document.addEventListener('keydown', function(e){
+  if(
+    (e.ctrlKey && ['s','u','p'].includes(e.key.toLowerCase())) ||
+    e.key === 'F12'
+  ){
+    e.preventDefault();
+  }
+});
 </script>
+
 </body>
 </html>
