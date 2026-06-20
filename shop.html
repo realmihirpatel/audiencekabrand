@@ -3,20 +3,36 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Shop | Audience Ka Brand</title>
+
 <link rel="icon" href="favicon.png">
 <link rel="shortcut icon" href="favicon.png">
 <link rel="apple-touch-icon" href="favicon.png">
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 
-<div class="topbar"><div class="container"><div class="ticker"><span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span><span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span><span>🎟 ALL T-SHIRTS ₹999 • LIMITED DROPS •</span><span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span></div></div></div>
+<div class="topbar">
+  <div class="container">
+    <div class="ticker">
+      <span>🎬 NOW SHOWING • PREMIUM CINEPHILE COLLECTION •</span>
+      <span>🍿 MADE BY MOVIE LOVERS • FOR MOVIE LOVERS •</span>
+      <span>🎟 ALL T-SHIRTS ₹999 • LIMITED DROPS •</span>
+      <span>📽 COMMUNITY • GIVEAWAYS • EVENTS •</span>
+    </div>
+  </div>
+</div>
 
 <header>
   <div class="container nav">
-    <a class="brand" href="index.html"><img src="favicon.png" alt=""><span>Audience Ka Brand</span></a>
+    <a class="brand" href="index.html">
+      <img src="favicon.png" alt="Audience Ka Brand">
+      <span>Audience Ka Brand</span>
+    </a>
+
     <nav class="navlinks" aria-label="Primary">
       <a href="shop.html">Shop</a>
       <a href="coming-soon.html">Coming Soon</a>
@@ -25,6 +41,7 @@
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </nav>
+
     <div class="actions">
       <input class="search" placeholder="Search collection">
       <a class="pill" href="track-order.html">Track</a>
@@ -34,50 +51,166 @@
 </header>
 
 <main>
+
 <section class="hero" id="home">
   <div class="container">
-    <div class="hero-shell">
-      <div class="hero-card hero-main reveal" style="grid-template-columns:1fr;min-height:auto">
-        <div class="hero-copy">
-          <div class="badge">SHOP.html</div>
-          <h1 style="max-width:12ch">SHOP</h1>
-          <p class="lead">All products are displayed in one premium storefront.</p>
-          <div class="cta-row">
-            <a class="btn" href="shop.html">Go to Shop</a>
-            <a class="btn-outline" href="index.html">Back Home</a>
-          </div>
-          <div class="meta">
-            <span>Premium Layout</span>
-            <span>Mobile Ready</span>
-            <span>SEO Friendly</span>
+    <div class="hero-card">
+      <div class="badge">NOW SHOWING</div>
+      <h1>SHOP THE COLLECTION</h1>
+      <p class="lead">
+        Explore all five Audience Ka Brand drops in one premium storefront.
+        Built for movie lovers, theatre fans, and cinephiles who want to wear the culture.
+      </p>
+
+      <div class="cta-row">
+        <a class="btn" href="#products">Browse Products</a>
+        <a class="btn-outline" href="index.html">Back Home</a>
+      </div>
+
+      <div class="meta">
+        <span>Premium Cotton</span>
+        <span>Oversized Fit</span>
+        <span>Limited Edition</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="products">
+  <div class="container">
+
+    <div class="section-header">
+      <div>
+        <h2 class="section-title">🎬 All Products</h2>
+        <p class="section-subtitle">
+          Each product has its own identity, inspired by cinema, theatre emotion, and movie lover energy.
+        </p>
+      </div>
+    </div>
+
+    <div class="poster-grid">
+
+      <article class="poster-card reveal" data-name="see you at the movies" onclick="openProduct('product1.html')">
+        <div class="poster-tag">LIMITED EDITION</div>
+        <div class="poster-media">
+          <img src="seeyouatthemovies.png" alt="See You At The Movies">
+        </div>
+        <div class="poster-body">
+          <h3>See You At The Movies</h3>
+          <p>
+            A premium black tee for opening-night energy and theatre lovers.
+            Clean, bold, and made to feel like a cinema statement piece.
+          </p>
+          <div class="poster-footer">
+            <div class="poster-price">
+              <span class="old">₹1299</span>
+              <span class="new">₹999</span>
+            </div>
+            <button class="poster-btn" type="button">View</button>
           </div>
         </div>
-      </div>
+      </article>
+
+      <article class="poster-card reveal" data-name="i just love watching movies" onclick="openProduct('product2.html')">
+        <div class="poster-tag">NEW DROP</div>
+        <div class="poster-media">
+          <img src="jimcarrey.png" alt="I Just Love Watching Movies">
+        </div>
+        <div class="poster-body">
+          <h3>I Just Love Watching Movies</h3>
+          <p>
+            A soft, sky-toned design for everyday movie lovers.
+            Simple, expressive, and easy to style with a premium streetwear feel.
+          </p>
+          <div class="poster-footer">
+            <div class="poster-price">
+              <span class="old">₹1299</span>
+              <span class="new">₹999</span>
+            </div>
+            <button class="poster-btn" type="button">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="poster-card reveal" data-name="wanna go see a movie" onclick="openProduct('product3.html')">
+        <div class="poster-tag">FAN FAVOURITE</div>
+        <div class="poster-media">
+          <img src="wannagoseeamovie.png" alt="Wanna Go See A Movie">
+        </div>
+        <div class="poster-body">
+          <h3>Wanna Go See A Movie?</h3>
+          <p>
+            A bold invite-to-the-theatre tee with a playful movie-night vibe.
+            Built for people who always say yes to the big screen.
+          </p>
+          <div class="poster-footer">
+            <div class="poster-price">
+              <span class="old">₹1299</span>
+              <span class="new">₹999</span>
+            </div>
+            <button class="poster-btn" type="button">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="poster-card reveal" data-name="too many films so little time" onclick="openProduct('product4.html')">
+        <div class="poster-tag">COLLECTOR</div>
+        <div class="poster-media">
+          <img src="toomanyfilms.png" alt="Too Many Films, So Little Time">
+        </div>
+        <div class="poster-body">
+          <h3>Too Many Films, So Little Time</h3>
+          <p>
+            For the movie addict whose watchlist never ends.
+            A collector-style tee with a clean cinema-inspired look.
+          </p>
+          <div class="poster-footer">
+            <div class="poster-price">
+              <span class="old">₹1299</span>
+              <span class="new">₹999</span>
+            </div>
+            <button class="poster-btn" type="button">View</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="poster-card reveal" data-name="film addict" onclick="openProduct('product5.html')">
+        <div class="poster-tag">BEST SELLER</div>
+        <div class="poster-media">
+          <img src="cinephile.png" alt="Film Addict">
+        </div>
+        <div class="poster-body">
+          <h3>Film Addict</h3>
+          <p>
+            Minimal, clean, and designed like a classic cinema release poster.
+            Perfect for anyone who wants a premium everyday cinephile fit.
+          </p>
+          <div class="poster-footer">
+            <div class="poster-price">
+              <span class="old">₹1299</span>
+              <span class="new">₹999</span>
+            </div>
+            <button class="poster-btn" type="button">View</button>
+          </div>
+        </div>
+      </article>
+
     </div>
   </div>
 </section>
 
 <section>
   <div class="container">
-    <div class="section-header">
-      <div>
-        <h2 class="section-title">Shop.Html</h2>
-        <p class="section-subtitle">All products are displayed in one premium storefront.</p>
-      </div>
-    </div>
-
-    <div class="info-grid">
-      <div class="info reveal">
-        <h3>Section 1</h3>
-        <p>This page is ready as a clean starter template. Replace this content with your final copy, forms, or policy text.</p>
-      </div>
-      <div class="info reveal">
-        <h3>Section 2</h3>
-        <p>Keep the same header and footer so every page feels consistent across desktop, tablet, and mobile.</p>
-      </div>
+    <div class="hero-card reveal">
+      <div class="badge">WHY SHOP HERE</div>
+      <h2 class="section-title" style="margin-top:10px;">Made For Real Movie Lovers</h2>
+      <p class="lead">
+        Audience Ka Brand is built around cinema culture, audience reactions, theatre memories, and premium merch that feels like part of the experience.
+      </p>
     </div>
   </div>
 </section>
+
 </main>
 
 <footer>
