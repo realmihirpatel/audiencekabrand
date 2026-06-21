@@ -210,6 +210,7 @@ input{
   padding-right:0;
   background:#fff;
 }
+
 .hero-shell{
   width:100%;
   max-width:100%;
@@ -220,26 +221,22 @@ input{
 .hero-main{
   width:100%;
   min-height:85vh;
-
   display:grid;
   grid-template-columns:65% 35%;
-
   padding:80px;
-
   background:
-  linear-gradient(
-  90deg,
-  rgba(255,255,255,.95) 0%,
-  rgba(255,255,255,.75) 45%,
-  rgba(255,255,255,.35) 100%
-  ),
-  url('hero.jpg');
-
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,.95) 0%,
+      rgba(255,255,255,.75) 45%,
+      rgba(255,255,255,.35) 100%
+    ),
+    url('hero.jpg');
   background-size:cover;
   background-position:center center;
-
   gap:40px;
 }
+
 .hero-copy{
   z-index:2;
   display:flex;
@@ -263,6 +260,7 @@ input{
   font-size:.9rem;
   width:max-content;
 }
+
 .hero h1{
   font-size:clamp(4rem,8vw,8rem);
   line-height:.9;
@@ -605,7 +603,6 @@ section{
   border-radius:24px;
   overflow:hidden;
   box-shadow:var(--shadow);
-  cursor:pointer;
   transform:translateY(24px);
   opacity:0;
   transition:.45s ease;
@@ -697,6 +694,9 @@ section{
 }
 
 .poster-btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
   border:none;
   background:var(--yellow);
   color:#111;
@@ -704,6 +704,13 @@ section{
   border-radius:12px;
   padding:10px 14px;
   cursor:pointer;
+  text-decoration:none;
+  transition:.25s ease;
+}
+
+.poster-btn:hover{
+  background:var(--yellow-dark);
+  transform:translateY(-2px);
 }
 
 /* FEATURE BANNER */
@@ -939,14 +946,6 @@ footer{
 
 /* TABLET */
 @media (max-width: 1280px){
-  .hero-shell{
-    grid-template-columns:1fr;
-  }
-
-  .hero-main{
-    grid-template-columns:1fr .9fr;
-  }
-
   .poster-grid{
     grid-template-columns:repeat(3, minmax(0, 1fr));
   }
@@ -1141,8 +1140,8 @@ footer{
 
     <div class="header-actions">
       <input class="search-box" type="text" id="collectionSearch" placeholder="Search Collection">
-      <a href="#" class="location-btn">Mumbai ▾</a>
-      <a href="cart.html" class="cart-btn">Cart</a>
+      <a href="#merch" class="location-btn">Shop</a>
+      <a href="checkout.html" class="cart-btn">Checkout</a>
     </div>
   </div>
 </header>
@@ -1151,7 +1150,7 @@ footer{
 
   <section class="hero" id="home">
     <div class="hero-shell">
-   <div class="hero-main reveal">
+      <div class="hero-main reveal">
         <div class="hero-copy">
           <span class="badge">NOW SHOWING • THE CINEPHILE COLLECTION</span>
           <h1>WEAR THE MOVIE EXPERIENCE</h1>
@@ -1249,7 +1248,7 @@ footer{
       </div>
 
       <div class="poster-grid" id="posterGrid">
-        <article class="poster-card reveal" data-name="see you at the movies" data-cat="limited" onclick="openProduct('product1.html')">
+        <article class="poster-card reveal" data-name="see you at the movies" data-cat="limited">
           <div class="poster-tag">LIMITED EDITION</div>
           <div class="poster-media">
             <img src="seeyouatthemovies.png" alt="See You At The Movies">
@@ -1262,12 +1261,12 @@ footer{
                 <span class="old">₹1299</span>
                 <span class="new">₹999</span>
               </div>
-              <button class="poster-btn" type="button">View</button>
+              <a class="poster-btn" href="checkout.html?product=SeeYouAtTheMovies">BUY NOW</a>
             </div>
           </div>
         </article>
 
-        <article class="poster-card reveal" data-name="i just love watching movies" data-cat="new" onclick="openProduct('product2.html')">
+        <article class="poster-card reveal" data-name="i just love watching movies" data-cat="new">
           <div class="poster-tag">NEW DROP</div>
           <div class="poster-media">
             <img src="jimcarrey.png" alt="I Just Love Watching Movies">
@@ -1280,12 +1279,12 @@ footer{
                 <span class="old">₹1299</span>
                 <span class="new">₹999</span>
               </div>
-              <button class="poster-btn" type="button">View</button>
+              <a class="poster-btn" href="checkout.html?product=IJustLoveWatchingMovies">BUY NOW</a>
             </div>
           </div>
         </article>
 
-        <article class="poster-card reveal" data-name="wanna go see a movie" data-cat="fan" onclick="openProduct('product3.html')">
+        <article class="poster-card reveal" data-name="wanna go see a movie" data-cat="fan">
           <div class="poster-tag">FAN FAVOURITE</div>
           <div class="poster-media">
             <img src="wannagoseeamovie.png" alt="Wanna Go See A Movie">
@@ -1298,12 +1297,12 @@ footer{
                 <span class="old">₹1299</span>
                 <span class="new">₹999</span>
               </div>
-              <button class="poster-btn" type="button">View</button>
+              <a class="poster-btn" href="checkout.html?product=WannaGoSeeAMovie">BUY NOW</a>
             </div>
           </div>
         </article>
 
-        <article class="poster-card reveal" data-name="too many films so little time" data-cat="collector" onclick="openProduct('product4.html')">
+        <article class="poster-card reveal" data-name="too many films so little time" data-cat="collector">
           <div class="poster-tag">COLLECTOR</div>
           <div class="poster-media">
             <img src="toomanyfilms.png" alt="Too Many Films, So Little Time">
@@ -1316,12 +1315,12 @@ footer{
                 <span class="old">₹1299</span>
                 <span class="new">₹999</span>
               </div>
-              <button class="poster-btn" type="button">View</button>
+              <a class="poster-btn" href="checkout.html?product=TooManyFilms">BUY NOW</a>
             </div>
           </div>
         </article>
 
-        <article class="poster-card reveal" data-name="film addict" data-cat="best" onclick="openProduct('product5.html')">
+        <article class="poster-card reveal" data-name="film addict" data-cat="best">
           <div class="poster-tag">BEST SELLER</div>
           <div class="poster-media">
             <img src="cinephile.png" alt="Film Addict">
@@ -1334,7 +1333,7 @@ footer{
                 <span class="old">₹1299</span>
                 <span class="new">₹999</span>
               </div>
-              <button class="poster-btn" type="button">View</button>
+              <a class="poster-btn" href="checkout.html?product=FilmAddict">BUY NOW</a>
             </div>
           </div>
         </article>
@@ -1480,7 +1479,7 @@ footer{
       <h4>Shop</h4>
       <a href="#merch">Now Showing</a>
       <a href="#coming-soon">Coming Soon</a>
-      <a href="cart.html">Cart</a>
+      <a href="checkout.html">Checkout</a>
     </div>
 
     <div class="footer-col">
@@ -1505,21 +1504,6 @@ footer{
 </footer>
 
 <script>
-function openProduct(page){
-  const overlay = document.createElement('div');
-  overlay.className = 'popcorn-transition';
-  overlay.innerHTML =
-    '<div class="popcorn">🍿</div>' +
-    '<div class="popcorn">🍿</div>' +
-    '<div class="popcorn">🍿</div>' +
-    '<div class="smash-text">NOW SHOWING</div>';
-  document.body.appendChild(overlay);
-
-  setTimeout(() => {
-    window.location.href = page;
-  }, 1100);
-}
-
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
@@ -1532,11 +1516,12 @@ document.querySelectorAll('.reveal, .poster-card, .feature-card')
   .forEach(el => revealObserver.observe(el));
 
 const searchInput = document.getElementById('collectionSearch');
+const quickSearch = document.querySelector('.quick-search');
 const posterCards = [...document.querySelectorAll('.poster-card')];
 const tabs = [...document.querySelectorAll('.quick-toggle button')];
 
 function applyFilter(){
-  const q = (searchInput?.value || '').trim().toLowerCase();
+  const q = ((searchInput?.value || quickSearch?.value || '')).trim().toLowerCase();
   const activeTab = document.querySelector('.quick-toggle button.active')?.textContent.trim().toLowerCase() || 'tees';
 
   posterCards.forEach(card => {
@@ -1556,6 +1541,7 @@ function applyFilter(){
 }
 
 searchInput?.addEventListener('input', applyFilter);
+quickSearch?.addEventListener('input', applyFilter);
 
 tabs.forEach(btn => {
   btn.addEventListener('click', () => {
