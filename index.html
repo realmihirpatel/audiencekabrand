@@ -141,8 +141,7 @@ input{
   align-items:center;
   justify-content:center;
   gap:22px;
-  flex-wrap:nowrap;
-  overflow:hidden;
+  flex-wrap:wrap;
 }
 
 .nav-links a{
@@ -204,45 +203,41 @@ input{
 
 /* HERO */
 .hero{
-  padding-top:140px;
-  padding-bottom:0;
-  padding-left:0;
-  padding-right:0;
-  background:#fff;
+  padding-top:145px;
+  padding-bottom:32px;
+  background:linear-gradient(180deg,#ffffff,#fffaf0);
 }
 
-.hero-shell{
+.hero-grid{
   width:100%;
-  max-width:100%;
-  margin:0;
-  padding:0;
+  max-width:1400px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:2fr 1fr;
+  gap:30px;
+  padding:0 4.5%;
 }
 
 .hero-main{
-  width:100%;
-  min-height:85vh;
+  min-height:82vh;
   display:grid;
-  grid-template-columns:65% 35%;
-  padding:80px;
+  grid-template-columns:1.2fr .8fr;
+  gap:28px;
+  align-items:center;
+  padding:52px;
   background:
-    linear-gradient(
-      90deg,
-      rgba(255,255,255,.95) 0%,
-      rgba(255,255,255,.75) 45%,
-      rgba(255,255,255,.35) 100%
-    ),
+    linear-gradient(90deg, rgba(255,255,255,.96) 0%, rgba(255,255,255,.82) 45%, rgba(255,255,255,.55) 100%),
     url('hero.jpg');
   background-size:cover;
   background-position:center center;
-  gap:40px;
+  border-radius:32px;
+  box-shadow:var(--shadow);
 }
 
 .hero-copy{
-  z-index:2;
   display:flex;
   flex-direction:column;
   justify-content:center;
-  padding-right:12px;
 }
 
 .badge{
@@ -263,7 +258,7 @@ input{
 
 .hero h1{
   font-size:clamp(4rem,8vw,8rem);
-  line-height:.9;
+  line-height:.92;
   max-width:7ch;
   font-weight:900;
 }
@@ -333,7 +328,7 @@ input{
   color:#222;
 }
 
-/* RIGHT SIDE PANELS */
+/* HERO RIGHT */
 .hero-visual{
   display:grid;
   grid-template-rows:1fr auto;
@@ -351,6 +346,7 @@ input{
   position:relative;
   overflow:hidden;
   min-height:100%;
+  box-shadow:var(--shadow);
 }
 
 .showcase-panel::after{
@@ -632,22 +628,44 @@ section{
   font-weight:900;
 }
 
-.poster-media{
+/* IMAGE SWAP */
+.product-image-wrapper{
   position:relative;
   aspect-ratio:4 / 5;
   overflow:hidden;
   background:#f4f4f4;
+  cursor:pointer;
 }
 
-.poster-media img{
+.product-img{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  transition:.35s ease;
+  transition:.45s ease;
 }
 
-.poster-card:hover .poster-media img{
-  transform:scale(1.04);
+.main-img{
+  opacity:1;
+  transform:scale(1);
+}
+
+.hover-img{
+  opacity:0;
+  transform:scale(1.05);
+}
+
+.product-image-wrapper:hover .main-img,
+.product-image-wrapper.active .main-img{
+  opacity:0;
+  transform:scale(1.05);
+}
+
+.product-image-wrapper:hover .hover-img,
+.product-image-wrapper.active .hover-img{
+  opacity:1;
+  transform:scale(1);
 }
 
 .poster-body{
@@ -888,38 +906,6 @@ footer{
   font-size:.92rem;
 }
 
-/* POPCORN TRANSITION */
-.popcorn-transition{
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.96);
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:16px;
-  z-index:99999;
-}
-
-.popcorn{
-  font-size:72px;
-  animation:explode .8s forwards;
-}
-
-.smash-text{
-  position:absolute;
-  color:var(--yellow);
-  font-weight:900;
-  font-size:clamp(2rem, 4vw, 3.2rem);
-  letter-spacing:5px;
-  text-align:center;
-}
-
-@keyframes explode{
-  0%{ transform:scale(0); opacity:0; }
-  50%{ transform:scale(2); opacity:1; }
-  100%{ transform:translateY(-250px) rotate(720deg); opacity:0; }
-}
-
 /* REVEAL */
 .reveal{
   opacity:0;
@@ -932,20 +918,12 @@ footer{
   transform:translateY(0);
 }
 
-/* LARGE DESKTOP */
-@media (min-width:1500px){
-  .hero-main{
-    min-height:700px;
-    grid-template-columns:minmax(0,1.05fr) minmax(360px, 420px);
-  }
-
-  .hero h1{
-    font-size:6rem;
-  }
-}
-
-/* TABLET */
+/* RESPONSIVE */
 @media (max-width: 1280px){
+  .hero-grid{
+    grid-template-columns:1fr;
+  }
+
   .poster-grid{
     grid-template-columns:repeat(3, minmax(0, 1fr));
   }
@@ -1007,17 +985,8 @@ footer{
     grid-template-columns:1fr;
     min-height:auto;
   }
-
-  .hero-copy{
-    padding-right:0;
-  }
-
-  .hero-visual{
-    grid-template-rows:auto auto;
-  }
 }
 
-/* MOBILE */
 @media (max-width: 640px){
   .hero{
     padding-top:190px;
@@ -1082,7 +1051,6 @@ footer{
   }
 }
 
-/* VERY SMALL MOBILE */
 @media (max-width: 420px){
   .promo-track{
     font-size:12px;
@@ -1149,7 +1117,7 @@ footer{
 <main>
 
   <section class="hero" id="home">
-    <div class="hero-shell">
+    <div class="hero-grid">
       <div class="hero-main reveal">
         <div class="hero-copy">
           <span class="badge">NOW SHOWING • THE CINEPHILE COLLECTION</span>
@@ -1248,11 +1216,15 @@ footer{
       </div>
 
       <div class="poster-grid" id="posterGrid">
+
         <article class="poster-card reveal" data-name="see you at the movies" data-cat="limited">
           <div class="poster-tag">LIMITED EDITION</div>
-          <div class="poster-media">
-            <img src="seeyouatthemovies.png" alt="See You At The Movies">
+
+          <div class="product-image-wrapper" onclick="toggleMobilePreview(this)">
+            <img class="product-img main-img" src="seeyouatthemovies.jpg" alt="See You At The Movies">
+            <img class="product-img hover-img" src="seeyouatthemoviesmodel.jpg" alt="See You At The Movies model">
           </div>
+
           <div class="poster-body">
             <h3>See You At The Movies</h3>
             <p>Premium black tee for opening-night energy and theatre lovers.</p>
@@ -1268,9 +1240,12 @@ footer{
 
         <article class="poster-card reveal" data-name="i just love watching movies" data-cat="new">
           <div class="poster-tag">NEW DROP</div>
-          <div class="poster-media">
-            <img src="jimcarrey.png" alt="I Just Love Watching Movies">
+
+          <div class="product-image-wrapper" onclick="toggleMobilePreview(this)">
+            <img class="product-img main-img" src="jimcarrey.jpg" alt="I Just Love Watching Movies">
+            <img class="product-img hover-img" src="jimcarreymodel.jpg" alt="I Just Love Watching Movies model">
           </div>
+
           <div class="poster-body">
             <h3>I Just Love Watching Movies</h3>
             <p>Soft, sky-toned apparel for everyday movie lovers.</p>
@@ -1286,9 +1261,12 @@ footer{
 
         <article class="poster-card reveal" data-name="wanna go see a movie" data-cat="fan">
           <div class="poster-tag">FAN FAVOURITE</div>
-          <div class="poster-media">
-            <img src="wannagoseeamovie.png" alt="Wanna Go See A Movie">
+
+          <div class="product-image-wrapper" onclick="toggleMobilePreview(this)">
+            <img class="product-img main-img" src="wannagoseeamovie.jpg" alt="Wanna Go See A Movie">
+            <img class="product-img hover-img" src="wannagoseeamoviemodel.jpg" alt="Wanna Go See A Movie model">
           </div>
+
           <div class="poster-body">
             <h3>Wanna Go See A Movie?</h3>
             <p>A bold invite-to-the-theatre tee with a premium cinematic mood.</p>
@@ -1304,9 +1282,12 @@ footer{
 
         <article class="poster-card reveal" data-name="too many films so little time" data-cat="collector">
           <div class="poster-tag">COLLECTOR</div>
-          <div class="poster-media">
-            <img src="toomanyfilms.png" alt="Too Many Films, So Little Time">
+
+          <div class="product-image-wrapper" onclick="toggleMobilePreview(this)">
+            <img class="product-img main-img" src="toomanyfilms.jpg" alt="Too Many Films, So Little Time">
+            <img class="product-img hover-img" src="toomanyfilmsmodel.jpg" alt="Too Many Films, So Little Time model">
           </div>
+
           <div class="poster-body">
             <h3>Too Many Films, So Little Time</h3>
             <p>For the movie addict whose watchlist never stops growing.</p>
@@ -1322,9 +1303,12 @@ footer{
 
         <article class="poster-card reveal" data-name="film addict" data-cat="best">
           <div class="poster-tag">BEST SELLER</div>
-          <div class="poster-media">
-            <img src="cinephile.png" alt="Film Addict">
+
+          <div class="product-image-wrapper" onclick="toggleMobilePreview(this)">
+            <img class="product-img main-img" src="cinephile.jpg" alt="Film Addict">
+            <img class="product-img hover-img" src="cinephilamodel.jpg" alt="Film Addict model">
           </div>
+
           <div class="poster-body">
             <h3>Film Addict</h3>
             <p>Minimal, clean, and designed like a classic cinema release poster.</p>
@@ -1337,6 +1321,7 @@ footer{
             </div>
           </div>
         </article>
+
       </div>
     </div>
   </section>
@@ -1504,6 +1489,10 @@ footer{
 </footer>
 
 <script>
+function toggleMobilePreview(wrapper){
+  wrapper.classList.toggle('active');
+}
+
 const revealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if(entry.isIntersecting){
